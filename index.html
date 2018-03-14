@@ -1,13 +1,52 @@
 <head>
 <meta charset="utf-8">
 <title>Suspeito</title>
-<link rel="shortcut icon" href="favicon.png"> 
+<link rel="shortcut icon" href="img/favicon.png"> 
 	
 <!-- Load jQuery library -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <script src="lightbox/lightbox.js"></script>
 <link href="lightbox/lightbox.css" rel="stylesheet" />
+
+<script>
+
+$(function() {
+
+	var nrs = [0,1,2,3,4,5,6,7,8,9];
+	nrs.sort(function(a,b){
+    	return Math.floor(Math.random()*9 - 1);
+	});
+
+	var randomColor = [
+		"rgb(187, 189, 246)",
+		"rgb(203, 255, 140)",
+		"rgb(227, 227, 106)",
+		"rgb(255, 172, 129)",
+		"rgb(242, 246, 208)",
+		"rgb(197, 239, 203)",
+		"rgb(242, 243, 174)",
+		"rgb(235, 233, 233)",
+		"rgb(229, 159, 113)",
+		"rgb(172, 184, 205)"];
+
+	var color;
+
+	color =  randomColor[nrs[0]];
+	$("header").css("background-color", color);
+	
+	for (i = 1; i < 10; i++) { 
+		color = randomColor[nrs[i]];
+		$(".half:nth-child("+i+")").css(
+			"background-color", color
+		);
+    }
+
+	/*console.log(color);*/
+
+});
+
+</script>
 	
 	<style>
 		* {
@@ -19,51 +58,13 @@
 		}
 		header {
 			height: calc(100% / 10);
-			background-color: rgb(187, 189, 246);
 		}
 		main {
 			height: calc(100% / 10 * 9);
-		background-color: rgb(167, 167, 169);
 		}
 		.half {
 			height: calc(100% / 9);
 		}
-		.half:nth-child(1) {
-		background-color: rgb(203, 255, 140);
-		}
-		.half:nth-child(2) {
-		background-color: rgb(227, 227, 106);
-		}
-		.half:nth-child(3) {
-		background-color: rgb(255, 172, 129);
-		}
-		.half:nth-child(4) {
-		background-color: rgb(242, 246, 208);
-		}
-		.half:nth-child(5) {
-		background-color: rgb(197, 239, 203);
-		}
-		.half:nth-child(6) {
-		background-color: rgb(242, 243, 174);
-		}
-		.half:nth-child(7) {
-		background-color: rgb(235, 233, 233);
-		}
-		.half:nth-child(8) {
-		background-color: rgb(229, 159, 113);
-		}
-		.half:nth-child(9) {
-		background-color: rgb(142, 154, 175);
-		}
-		/*
-		.half:nth-child(i) {
-			position: relative;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-image: url("...");
-		}
-		*/
 		img{
 		float: left;
 		height: 100%;
@@ -78,23 +79,11 @@
 			align-items: center;
 			justify-content: flex-end;
 			height: 100%;
-			
-			/*font-family: 'Lato', sans-serif;
-			text-decoration: none;
-			font-size: 20px;
-			color: #000;
-			margin-right: 2%;
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;*/
-			/*border: 1px solid red;*/
-			/*height: 100%;*/
 		}
 		span {
 		font-size: 12px; 
 		margin-right: 30px;
 		}
-		
 		
 		@media only screen and (max-device-width: 800px) {
 		    p {
