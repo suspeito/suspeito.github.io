@@ -68,24 +68,23 @@ $(function() {
 
 $(function() {
 
-var images = new Array();
-for (var i = 2; i < 9; i++) {
-    images.push("img/old/" + i + ".png");
-}
-		
-var x = 0;
+	var images = new Array();
+	for (var i = 0; i < 99; i++) {
+    	images.push("img/old/" + i + ".png");
+	}
+	
+	var y = 1;
 
-function changeImage() {
-    document.getElementById('ad').src = images[x];
-    if (x < 8) {
-        x += 1;
-    } else {
-        x = 0;
-    }
-}
-setInterval(function () {
-    changeImage();
-}, 2000);
+	function changeImage() {
+		for (var i = 1; i < 9; i++) {
+	    document.getElementById('ad'+i).src = images[y*10*i+i];
+		}
+	    if (y < 1) {y += 1;} else {y = 0;}
+	}
+	
+	setInterval(function () {
+    	changeImage();
+	}, 2000);
 
 });
 
@@ -158,7 +157,7 @@ setInterval(function () {
         <section class="half">
 
 			<a href="img/unb/unb1.jpg" rel="lightbox[unbalanced]"  Visible="false" title="escrever título..">
-				<img id="ad" src="img/old/1.png">
+				<img id="ad1" src="img/old/1.png">
 			</a>
 			<a href="img/unb/unb2.jpg" rel="lightbox[unbalanced]"  Visible="false" title="escrever título.."></a>
 			<a href="img/unb/unb3.jpg" rel="lightbox[unbalanced]"  Visible="false" title="escrever título.."></a>
@@ -170,41 +169,41 @@ setInterval(function () {
         </section>
         
         <section class="half">
-        <img src="img/2.gif">
+        <img id="ad2" src="img/2.gif">
         	<p><span>Light installation blabla blabla blablablalblalblbalbalablab  (2017) for Alumia.</span>Manifesto da Luz</p>
         </section>
         
         <section class="half">
 			<a href="img/cottoncandy.jpg" rel="lightbox[cotton]"  Visible="false" title="escrever título..">
-				<img src="img/3.gif">
+				<img id="ad3" src="img/3.gif">
 			</a>
         	<p><span>Concept blabla blabla blablablalblalblbalbalablab  (2017)</span>Cotton Candy</p>
         </section>
 
         <section class="half">
 			<a href="img/sweetride.jpg" rel="lightbox[SR]"  Visible="false" title="escrever título..">
-				<img src="img/4.gif">
+				<img id="ad4" src="img/4.gif">
 			</a>
         	<p><span>Concept (2016)</span>Sweet Ride</p>
         </section>
 
         <section class="half">
 			<a href="img/orquestraliquida.jpg" rel="lightbox[orq]"  Visible="false" title="escrever título..">
-				<img src="img/5.gif">
+				<img id="ad5" src="img/5.gif">
 			</a>
         	<p><span>Concept (2017)</span>Orquestra Líquida</p>
         </section>
 
         <section class="half">
 			<a href="img/proxemics.jpg" rel="lightbox[prox]"  Visible="false" title="escrever título..">
-				<img src="img/6.gif">
+				<img id="ad6" src="img/6.gif">
 			</a>
         	<p><span>Concept (2017)</span>Proxemics</p>
         </section>
 
 		<section class="half">
 			<a href="img/EO/120.jpg" rel="lightbox[EO]"  Visible="false" title="escrever título..">
-				<img src="img/7.gif">
+				<img id="ad7" src="img/7.gif">
 			</a>
 			<a href="img/EO/ea2a-pagar.jpg" rel="lightbox[EO]"  Visible="false" title="escrever título.."></a>	
 			<p><span>Concept (2018)</span>Each Other</p>
@@ -212,14 +211,14 @@ setInterval(function () {
 		
 		<section class="half">
 			<a href="img/intransparencia.jpg" rel="lightbox[int]"  Visible="false" title="escrever título..">
-				<img src="img/8.gif">
+				<img id="ad8" src="img/8.gif">
 			</a>
 			<p><span>Concept (2017)</span>Intransparência</p>
 		</section>
 
 		<section class="half">
 			<a href="img/deep/light.jpg" rel="lightbox[deep]"  Visible="false" title="escrever título..">
-				<img src="img/9.gif">
+				<img id="ad9" src="img/9.gif">
 			</a>
 			<a href="img/deep/expl.jpg" rel="lightbox[deep]"  Visible="false" title="escrever título.."></a>	
 			<p><span>Concept (2018)</span>Deep Breath</p>
