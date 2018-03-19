@@ -61,7 +61,34 @@ $(function() {
 	/*console.log(color);*/
 	setTimeout(arguments.callee, 2000);
 
+
 });
+
+
+
+$(function() {
+
+var images = new Array();
+for (var i = 2; i < 9; i++) {
+    images.push("img/old/" + i + ".png");
+}
+		
+var x = 0;
+
+function changeImage() {
+    document.getElementById('ad').src = images[x];
+    if (x < 8) {
+        x += 1;
+    } else {
+        x = 0;
+    }
+}
+setInterval(function () {
+    changeImage();
+}, 2000);
+
+});
+
 
 </script>
 	
@@ -131,7 +158,7 @@ $(function() {
         <section class="half">
 
 			<a href="img/unb/unb1.jpg" rel="lightbox[unbalanced]"  Visible="false" title="escrever título..">
-				<img src="img/1.gif">
+				<img id="ad" src="img/old/1.png">
 			</a>
 			<a href="img/unb/unb2.jpg" rel="lightbox[unbalanced]"  Visible="false" title="escrever título.."></a>
 			<a href="img/unb/unb3.jpg" rel="lightbox[unbalanced]"  Visible="false" title="escrever título.."></a>
