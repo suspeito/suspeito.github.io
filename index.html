@@ -69,14 +69,14 @@ $(function() {
 $(function() {
 
 	var images = new Array();
-	for (var i = 0; i < 99; i++) {
+	for (var i = 0; i < 100; i++) {
     	images.push("img/old/" + i + ".png");
 	}
 	
 	var y = 1;
 
 	function changeImage() {
-		for (var i = 1; i < 9; i++) {
+		for (var i = 1; i < 10; i++) {
 	    document.getElementById('ad'+i).src = images[y*10*i+i];
 		}
 	    if (y < 1) {y += 1;} else {y = 0;}
