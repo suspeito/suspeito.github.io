@@ -13,18 +13,6 @@
 
 $(function() {
 
-/*
-	var nrs = [0,1,2,3,4,5,6,7,8,9];
-	nrs.sort(function(a,b){
-    	return Math.floor(Math.random()*9 - 1);
-	});
-*/
-	var nrs = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
-	nrs.sort(function(a,b){
-    	return Math.floor(Math.random()*18 - 1);
-	});
-
-
 	var randomColor = [
 		"rgb(187, 189, 246)",
 		"rgb(203, 255, 140)",
@@ -46,27 +34,32 @@ $(function() {
 		"rgb(146, 153, 130)",
 		"rgb(156, 173, 206)"]; /*extracolors... 19*/
 
-	var color;
+	function mixColors() {
+	/*
+		var nrs = [0,1,2,3,4,5,6,7,8,9];
+		nrs.sort(function(a,b){
+			return Math.floor(Math.random()*9 - 1);
+		});
+	*/
+		var nrs = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
+		nrs.sort(function(a,b){
+			return Math.floor(Math.random()*18 - 1);
+		});
 
-	color =  randomColor[nrs[0]];
-	$("header").css("background-color", color);
+		var color;
+
+		color =  randomColor[nrs[0]];
+		$("header").css("background-color", color);
 	
-	for (i = 1; i < 10; i++) { 
-		color = randomColor[nrs[i]];
-		$(".half:nth-child("+i+")").css(
-			"background-color", color
-		);
-    }
-
-	/*console.log(color);*/
-	setTimeout(arguments.callee, 2000);
-
-
-});
-
-
-
-$(function() {
+		for (i = 1; i < 10; i++) { 
+			color = randomColor[nrs[i]];
+			$(".half:nth-child("+i+")").css(
+				"background-color", color
+			);
+		}
+	}
+	
+	mixColors();
 
 	var images = new Array();
 	for (var i = 0; i < 100; i++) {
@@ -83,7 +76,7 @@ $(function() {
 	}
 	
 	setInterval(function () {
-    	changeImage();
+    	changeImage();mixColors()
 	}, 2000);
 
 });
