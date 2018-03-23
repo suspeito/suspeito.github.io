@@ -78,7 +78,7 @@ html.lb-disable-scrolling {
   margin: 0 auto;
 
 /*  background: url(../lightbox/images/loading.gif) no-repeat; */
-background: url(../lightbox/images/loading.png);
+											background: url(../lightbox/images/loading.png);
 }
 
 .lb-nav {
