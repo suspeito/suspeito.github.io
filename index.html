@@ -120,7 +120,7 @@ $(document).ready(function(){
     margin: 0; /* Space from this element (entire page) and others*/
     padding: 0; /*space from content and border*/
     border: solid Tomato;
-    border-width: 2px;
+    border-width: 5px;
     display:block;
     box-sizing: border-box;
     overflow:hidden;
@@ -135,10 +135,10 @@ $(document).ready(function(){
 			height: calc( 100% / 10 * 9);
 		}
 		.half {
-			height: calc(100% / 9 - 2px);
+			height: calc(100% / 9 - 5px);
 		}
 		.halfhalf {
-			height: 2px;
+			height: 5px;
 		}
 		img{
 			float: left;
@@ -168,10 +168,10 @@ cursor:pointer;
 opacity:1;
 background-color:Tomato;
 position:fixed;
-width: calc(100% - 8px);
-height: calc(100% - 12px);
-top:6px;
-left:4px;
+width: calc(100% - 20px);
+height: calc(100% - 30px);
+top:15px;
+left:10px;
 z-index:1000;
 }
 
@@ -190,32 +190,36 @@ z-index:1000;
 
 <body>
 
+<!--
 <div class="overlay">
 
-<a href="img/pessoas/suspeito.jpg" rel="lightbox[pessoas]"  Visible="false" title="Collective suspeito blablabla, by...">
-			<img style="height: calc( 100% / 10);" src="img/00.png">
+<a href="img/about/us.jpg" rel="lightbox[about]"  Visible="false" title="Collective suspeito blablabla, by...">
+			<img style="height: calc( 100% / 10 - 10px);" src="img/00.png">
 		</a>
-		<a href="img/pessoas/joao.jpg" rel="lightbox[pessoas]"  Visible="false" title="João Dias-Oliveira é designer e engenheiro. Tem-se dedicado à conceção e desenvolvimento de instalações artísticas."></a>
-		<a href="img/pessoas/nuno.jpg" rel="lightbox[pessoas]"  Visible="false" title="Nuno Mota é arquitecto. Questiona as fronteiras da arquitectura e a sua relação com outros campos de criação,
-tendo vindo a desenvolver o seu trabalho entre a arquitectura, o design, a ilustração, a instalação artística e a performance."></a>
-		<a href="img/pessoas/rossana.jpg" rel="lightbox[pessoas]"  Visible="false" title="Rossana Ribeiro é arquitecta. O seus interesses e áreas de
-criação extravasam a arquitectura estendendo-se à cenografia e artes plásticas, sobretudo a instalação."></a>
-
-<p id="hide" style="height: calc( 100% / 10);color:green;">-entre-linhas-</p>
+		<a href="img/about/joao.jpg" rel="lightbox[about]"  Visible="false" title="João Dias-Oliveira é designer e engenheiro. Dedicado à concepção e desenvolvimento de instalações artísticas e interessado no impacto social do design."></a>
+		<a href="img/about/nuno.jpg" rel="lightbox[about]"  Visible="false" title="Nuno Mota é arquitecto. Questiona as fronteiras da arquitectura e a sua relação com outros campos de criação como o design, a ilustração, a instalação artística e a performance."></a>
+		<a href="img/about/rossana.jpg" rel="lightbox[about]"  Visible="false" title="Rossana Ribeiro é arquitecta. O seus interesses e áreas de criação extravasam a arquitectura estendendo-se à cenografia e artes plásticas, sobretudo a instalação."></a>
+		
+		<p id="hide" style="height: calc( 100% / 10 - 10px);color:green;">-entre-linhas-</p>
 
 </div>
+-->
+
+			
+<div class="overlay" id="hide">
+			<img style="height: 100px;width: 285px;margin-left: calc(50% - 142.5px);margin-top: 35vh;" src="img/00.png">
+</div>
+
 
 
 	<header>
 
-    	<a href="img/pessoas/suspeito.jpg" rel="lightbox[pessoas]"  Visible="false" title="Collective suspeito blablabla, by...">
-			<img src="img/0.png">
+    	<a href="img/about/us.jpg" rel="lightbox[about]"  Visible="false" title="Collective suspeito blablabla, by...">
+			<img src="img/000.png">
 		</a>
-		<a href="img/pessoas/joao.jpg" rel="lightbox[pessoas]"  Visible="false" title="João Dias-Oliveira é designer e engenheiro. Tem-se dedicado à conceção e desenvolvimento de instalações artísticas."></a>
-		<a href="img/pessoas/nuno.jpg" rel="lightbox[pessoas]"  Visible="false" title="Nuno Mota é arquitecto. Questiona as fronteiras da arquitectura e a sua relação com outros campos de criação,
-tendo vindo a desenvolver o seu trabalho entre a arquitectura, o design, a ilustração, a instalação artística e a performance."></a>
-		<a href="img/pessoas/rossana.jpg" rel="lightbox[pessoas]"  Visible="false" title="Rossana Ribeiro é arquitecta. O seus interesses e áreas de
-criação extravasam a arquitectura estendendo-se à cenografia e artes plásticas, sobretudo a instalação."></a>
+		<a href="img/about/joao.jpg" rel="lightbox[about]"  Visible="false" title="João Dias-Oliveira é designer e engenheiro. Dedicado à concepção e desenvolvimento de instalações artísticas e interessado no impacto social do design."></a>
+		<a href="img/about/nuno.jpg" rel="lightbox[about]"  Visible="false" title="Nuno Mota é arquitecto. Questiona as fronteiras da arquitectura e a sua relação com outros campos de criação como o design, a ilustração, a instalação artística e a performance."></a>
+		<a href="img/about/rossana.jpg" rel="lightbox[about]"  Visible="false" title="Rossana Ribeiro é arquitecta. O seus interesses e áreas de criação extravasam a arquitectura estendendo-se à cenografia e artes plásticas, sobretudo a instalação."></a>
     	<p>-entre-linhas-</p>
     </header>
     
@@ -233,51 +237,76 @@ criação extravasam a arquitectura estendendo-se à cenografia e artes plástic
 			<a href="img/unb/unb4.jpg" rel="lightbox[unbalanced]"  Visible="false" title="escrever título.."></a>
 			<a href="img/unb/unb5.jpg" rel="lightbox[unbalanced]"  Visible="false" title="escrever título.."></a>
 
-        	<p><span>Swing blabla blabla blablablalblalblbalbalablab (2016) for Mala Voadra.</span>(Un)Balanced</p> 
+        	<p><span>Swing measuring action/reaction for Mala Voadora in 2016.</span>(Un)Balanced</p> 
 
         </section>
         
         <section class="halfhalf"></section>
         
         <section class="half">
-        <img id="anim2" src="img/old/2.png">
-        	<p><span>Light installation blabla blabla blablablalblalblbalbalablab  (2017) for Alumia.</span>Manifesto da Luz</p>
+        
+			<a href="img/manifesto/a.jpg" rel="lightbox[manifesto]"  Visible="false" title="escrever título..">
+				<img id="anim2" src="img/old/2.png">
+			</a>
+			<a href="img/manifesto/b.jpg" rel="lightbox[manifesto]"  Visible="false" title="escrever título.."></a>
+			<a href="img/manifesto/c.jpg" rel="lightbox[manifesto]"  Visible="false" title="escrever título.."></a>
+			<a href="img/manifesto/d.jpg" rel="lightbox[manifesto]"  Visible="false" title="escrever título.."></a>
+			<a href="img/manifesto/e.jpg" rel="lightbox[manifesto]"  Visible="false" title="escrever título.."></a>        
+        
+        	<p><span>Narrative of a Light for the Alumia project in 2017.</span>Manifesto da Luz</p>
         </section>
         
         <section class="halfhalf"></section>
         
         <section class="half">
-			<a href="img/cottoncandy.jpg" rel="lightbox[cotton]"  Visible="false" title="escrever título..">
+			
+			<a href="img/cotton/a.jpg" rel="lightbox[cotton]"  Visible="false" title="escrever título..">
 				<img id="anim3" src="img/old/3.png">
 			</a>
-        	<p><span>Concept blabla blabla blablablalblalblbalbalablab  (2017)</span>Cotton Candy</p>
+			<a href="img/cotton/b.jpg" rel="lightbox[cotton]"  Visible="false" title="escrever título.."></a>
+			<a href="img/cotton/c.jpg" rel="lightbox[cotton]"  Visible="false" title="escrever título.."></a>
+			<a href="img/cotton/d.jpg" rel="lightbox[cotton]"  Visible="false" title="escrever título.."></a>     
+			
+        	<p><span>Magic cloud for Guimarães noc noc in 2016.</span>Cotton Candy</p>
         </section>
 
 		<section class="halfhalf"></section>
 
         <section class="half">
-			<a href="img/sweetride.jpg" rel="lightbox[SR]"  Visible="false" title="escrever título..">
+        
+        
+        
+        	<a href="img/sweet/a.jpg" rel="lightbox[sweet]"  Visible="false" title="escrever título..">
 				<img id="anim4" src="img/old/4.png">
 			</a>
-        	<p><span>Concept (2016)</span>Sweet Ride</p>
+			<a href="img/sweet/b.jpg" rel="lightbox[sweet]"  Visible="false" title="escrever título.."></a>
+			<a href="img/sweet/c.jpg" rel="lightbox[sweet]"  Visible="false" title="escrever título.."></a>
+			<a href="img/sweet/d.jpg" rel="lightbox[sweet]"  Visible="false" title="escrever título.."></a>
+			<a href="img/sweet/e.jpg" rel="lightbox[sweet]"  Visible="false" title="escrever título.."></a>
+			
+        	<p><span>Urban cradle for Festival Doce in 2016.</span>Sweet Ride</p>
         </section>
 
 		<section class="halfhalf"></section>
 
         <section class="half">
-			<a href="img/orquestraliquida.jpg" rel="lightbox[orq]"  Visible="false" title="escrever título..">
+			<a href="img/orq/01.jpg" rel="lightbox[orq]"  Visible="false" title="escrever título..">
 				<img id="anim5" src="img/old/5.png">
-			</a>
-        	<p><span>Concept (2017)</span>Orquestra Líquida</p>
+			<a href="img/orq/02.jpg" rel="lightbox[orq]"  Visible="false" title="escrever título.."></a>
+			
+        	<p><span>Concept for fountain. Project of 2017.</span>Orquestra Líquida</p>
         </section>
 		
 		<section class="halfhalf"></section>
 		
         <section class="half">
-			<a href="img/proxemics.jpg" rel="lightbox[prox]"  Visible="false" title="escrever título..">
+	        <a href="img/proxemics/a.jpg" rel="lightbox[prox]"  Visible="false" title="escrever título..">
 				<img id="anim6" src="img/old/6.png">
 			</a>
-        	<p><span>Concept (2017)</span>Proxemics</p>
+			<a href="img/proxemics/b.jpg" rel="lightbox[prox]"  Visible="false" title="escrever título.."></a>	
+			<a href="img/proxemics/c.jpg" rel="lightbox[prox]"  Visible="false" title="escrever título.."></a>	
+        
+        	<p><span>Concept to test density. Project of 2017.</span>Proxemics</p>
         </section>
 
 		<section class="halfhalf"></section>
@@ -287,7 +316,8 @@ criação extravasam a arquitectura estendendo-se à cenografia e artes plástic
 				<img id="anim7" src="img/old/7.png">
 			</a>
 			<a href="img/EO/ea2a-pagar.jpg" rel="lightbox[EO]"  Visible="false" title="escrever título.."></a>	
-			<p><span>Concept (2018)</span>Each Other</p>
+			<a href="img/EO/a.jpg" rel="lightbox[EO]"  Visible="false" title="escrever título.."></a>	
+			<p><span>Scenic project to share interactions. Project of 2018.</span>Each Other</p>
 		</section>
 		
 		<section class="halfhalf"></section>
@@ -296,7 +326,7 @@ criação extravasam a arquitectura estendendo-se à cenografia e artes plástic
 			<a href="img/intransparencia.jpg" rel="lightbox[int]"  Visible="false" title="escrever título..">
 				<img id="anim8" src="img/old/8.png">
 			</a>
-			<p><span>Concept (2017)</span>Intransparência</p>
+			<p><span>Shape of water. Concept of 2017.</span>Intransparência</p>
 		</section>
 
 		<section class="halfhalf"></section>
@@ -305,8 +335,9 @@ criação extravasam a arquitectura estendendo-se à cenografia e artes plástic
 			<a href="img/deep/light.jpg" rel="lightbox[deep]"  Visible="false" title="escrever título..">
 				<img id="anim9" src="img/old/9.png">
 			</a>
+			<a href="img/deep/amsterdam.jpg" rel="lightbox[deep]"  Visible="false" title="escrever título.."></a>
 			<a href="img/deep/expl.jpg" rel="lightbox[deep]"  Visible="false" title="escrever título.."></a>	
-			<p><span>Concept (2018)</span>Deep Breath</p>
+			<p><span>Birth of light and its meaning. Concept of 2018.</span>Deep Breath</p>
 		</section>
 
     </main>
