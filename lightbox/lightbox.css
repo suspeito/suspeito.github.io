@@ -34,8 +34,9 @@ html.lb-disable-scrolling {
   max-height: none;
   border-radius: 3px;
 
-  /* Image border */
-											border: 5px solid Tomato;
+  /* Image border 
+											border: 5px solid Tomato;*/
+											border: 5px solid;
 }
 
 .lightbox a img {
@@ -52,7 +53,7 @@ html.lb-disable-scrolling {
 
   /* Background color behind image.
      This is visible during transitions. */
-										  background-color: Tomato;
+	/*									  background-color: Tomato; */
 }
 
 .lb-outerContainer:after {
@@ -77,8 +78,8 @@ html.lb-disable-scrolling {
   height: 32px;
   margin: 0 auto;
 
-/*  background: url(../lightbox/images/loading.gif) no-repeat; */
-											background: url(../lightbox/images/loading.png);
+/*  background: url(../lightbox/images/loading.gif) no-repeat;*/
+														background: url(../lightbox/images/loading.png);
 }
 
 .lb-nav {
@@ -170,7 +171,7 @@ html.lb-disable-scrolling {
 
 .lb-data .lb-caption {
 											font-family: 'Lato', sans-serif;
-						color: Tomato;
+						/*color: Tomato;*/
   											font-size: 12px;
 											font-weight: normal;
   line-height: 1em;
@@ -186,8 +187,8 @@ html.lb-disable-scrolling {
   padding-bottom: 1em;
 										  	font-family: 'Lato', sans-serif;
 											font-size: 10px;
-/*  color: #999999;*/
-							color: Tomato;
+  color: #999999;
+							/*color: Tomato;*/
 }
 
 .lb-data .lb-close {
