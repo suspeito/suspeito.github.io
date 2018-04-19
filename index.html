@@ -129,10 +129,14 @@ $(document).ready(function(){
 			height: calc( 100% / 8 * 7);
 		}
 		.half {
-			height: calc(100% / 7 - 10px);
+			height: calc(100% / 7 - 8px);
 		}
 		.halfhalf {
-			height: 10px;
+			height: 3px;
+			background-color: #000;
+		}
+		.halfsmall {
+			height: 13px;
 			background-color: #000;
 		}
 		img{
@@ -154,6 +158,23 @@ $(document).ready(function(){
 			font-size: 12px; 
 			margin-right: 30px;
 		}
+		
+		h2 {
+			font-family: 'Lato', sans-serif;
+			text-decoration: none;
+			font-size: 9px;
+			color: #bbb;
+		}
+.alignleft {
+	float: left;
+	margin-left: 1%;
+	margin-top:2px;
+}
+.alignright {
+	float: right;
+	margin-right: 1%;
+	margin-top:2px;
+}
 		
 #hide:hover {
 cursor:pointer;
@@ -232,18 +253,25 @@ z-index:1000;
 		<a href="img/about/joao.jpg" rel="lightbox[about]"  Visible="false" title="João Dias-Oliveira é designer e engenheiro. Dedicado à concepção e desenvolvimento de instalações artísticas e interessado no impacto social do design."></a>
 		<a href="img/about/nuno.jpg" rel="lightbox[about]"  Visible="false" title="Nuno Mota é arquitecto. Questiona as fronteiras da arquitectura e a sua relação com outros campos de criação como o design, a ilustração, a instalação artística e a performance."></a>
 		<a href="img/about/rossana.jpg" rel="lightbox[about]"  Visible="false" title="Rossana Ribeiro é arquitecta. O seus interesses e áreas de criação extravasam a arquitectura estendendo-se à cenografia e artes plásticas, sobretudo a instalação."></a>
-    	<p>Collective Suspeito</p>
+    	<p>Cu Lectivo SOS Peito</p>
     </header>
     
     <main>
 
-        <section class="halfhalf"></section>
+        <section class="halfsmall">
+			<div id="textbox">
+				<h2 class="alignleft">0</h2>
+				<h2 class="alignright">0</h2>
+			</div>
+			<div style="clear: both;"></div>
+		</section>
         
         <section class="half">
         
 			<a href="img/manifesto/a.jpg" rel="lightbox[manifesto]"  Visible="false" title="escrever título..">
 				<img id="anim2" src="img/anim/2.png">
 			</a>
+			<a href="img/manifesto/a1.jpg" rel="lightbox[manifesto]"  Visible="false" title="escrever título.."></a>
 			<a href="img/manifesto/b.jpg" rel="lightbox[manifesto]"  Visible="false" title="escrever título.."></a>
 			<a href="img/manifesto/c.jpg" rel="lightbox[manifesto]"  Visible="false" title="escrever título.."></a>
 			<a href="img/manifesto/d.jpg" rel="lightbox[manifesto]"  Visible="false" title="escrever título.."></a>
@@ -268,7 +296,13 @@ z-index:1000;
 
         </section>
         
-		<section class="halfhalf"></section>
+        <section class="halfsmall">
+			<div id="textbox">
+				<h2 class="alignleft">1</h2>
+				<h2 class="alignright">1</h2>
+			</div>
+			<div style="clear: both;"></div>
+		</section>
 
         <section class="half">
         
@@ -297,7 +331,13 @@ z-index:1000;
         	<p><span>&mdash; Magic cloud for Guimarães noc noc in 2016. &mdash;</span>Cotton Candy</p>
         </section>
 
-		<section class="halfhalf"></section>
+        <section class="halfsmall">
+			<div id="textbox">
+				<h2 class="alignleft">2</h2>
+				<h2 class="alignright">2</h2>
+			</div>
+			<div style="clear: both;"></div>
+		</section>
 
 		<section class="half">
 			<a href="img/EO/120.jpg" rel="lightbox[EO]"  Visible="false" title="escrever título..">
@@ -320,7 +360,13 @@ z-index:1000;
         	<p><span>&mdash; Concept to test density. Project of 2017. &mdash;</span>Proxemics</p>
         </section>
 
-		<section class="halfhalf"></section>
+        <section class="halfsmall">
+			<div id="textbox">
+				<h2 class="alignleft">3</h2>
+				<h2 class="alignright">3</h2>
+			</div>
+			<div style="clear: both;"></div>
+		</section>
 
 		<section class="half">
 			<a href="img/deep/light.jpg" rel="lightbox[deep]"  Visible="false" title="escrever título..">
