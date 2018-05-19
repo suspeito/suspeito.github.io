@@ -189,6 +189,19 @@ letter-spacing: 0px;
 			font-size: 9px;
 			color: #bbb;
 		}
+		
+.half img{
+   margin-left: 5%;
+}
+header img{
+   margin-left: 5%;
+}
+a:link {
+    text-decoration: none;
+    color: #000;
+}
+
+
 .alignleft {
 	float: left;
 	margin-left: 1%;
@@ -232,6 +245,15 @@ z-index:1000;
 
 		
 		@media only screen and (max-device-width: 800px) {
+html, body {
+    border-width: 20px;
+}
+.overlay{
+width: calc(100% - 80px);
+height: calc(100% - 80px);
+top:40px;
+left:40px;
+}
 		    p {
         		font-size: 5vw;
   				vertical-align: middle;
@@ -280,11 +302,12 @@ z-index:1000;
 
     	<a href="img/about/us.jpg" rel="lightbox[about]"  Visible="false" title="These are the main suspects who have committed the crime of creating this collective.">
 			<img src="img/anim/SUSPEITOO.png" title="Poke it!">
+			<p>Collective Suspeito</p>
 		</a>
 		<a href="img/about/joao.jpg" rel="lightbox[about]"  Visible="false" title="João Dias-Oliveira is allegedly a designer and engineer who is dedicated to the conception and development of art installations, and is interested on the social impact of design."></a>
 		<a href="img/about/nuno.jpg" rel="lightbox[about]"  Visible="false" title="Some say Nuno Mota is an architect questioning the boundaries of architecture and its relation with different areas of creation, such as design, illustration, installations and performance."></a>
 		<a href="img/about/rossana.jpg" rel="lightbox[about]"  Visible="false" title="A witness assures Rossana Ribeiro is an architect... however there are indications she has creations for set design, plastic arts, and mainly art installations."></a>
-    	<p>Collective Suspeito</p>
+    	
     </header>
     
     <main>
@@ -301,6 +324,7 @@ z-index:1000;
         
 			<a href="img/manifesto/a.jpg" rel="lightbox[manifesto]"  Visible="false" title="Promotion.">
 				<img id="anim2" src="img/anim/2.png" title="Leave your fingertips here to open Manifesto.">
+				<p><span>&mdash; Narrative of a Light for the Alumia project in 2017. &mdash;</span>Manifesto da Luz</p>
 			</a>
 			<a href="img/manifesto/a1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Narrative."></a>
 			<a href="img/manifesto/b.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
@@ -308,7 +332,6 @@ z-index:1000;
 			<a href="img/manifesto/d.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
 			<a href="img/manifesto/e.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>        
         
-        	<p><span>&mdash; Narrative of a Light for the Alumia project in 2017. &mdash;</span>Manifesto da Luz</p>
         </section>
     
     	<section class="halfhalf"></section>
@@ -317,6 +340,7 @@ z-index:1000;
 
 			<a href="img/unb/10seg.gif" rel="lightbox[unbalanced]"  Visible="false" title="Construction.">
 				<img id="anim1" src="img/anim/1.png" title="Leave your fingertips here to open (Un)Balanced.">
+				<p><span>&mdash; Swing measuring action/reaction for Mala Voadora in 2016. &mdash;</span>(Un)Balanced</p> 
 			</a>
 			<a href="img/unb/unb1.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Side view."></a>
 			<a href="img/unb/unb2.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction."></a>
@@ -324,7 +348,7 @@ z-index:1000;
 			<a href="img/unb/unb4.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction."></a>
 			<a href="img/unb/unb5.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Performance."></a>
 
-        	<p><span>&mdash; Swing measuring action/reaction for Mala Voadora in 2016. &mdash;</span>(Un)Balanced</p> 
+        	
 
         </section>
         
@@ -340,13 +364,14 @@ z-index:1000;
         
         	<a href="img/sweet/a.jpg" rel="lightbox[sweet]"  Visible="false" title="At night.">
 				<img id="anim4" src="img/anim/4.png"  title="Leave your fingertips here to open Sweet Ride.">
+				<p><span>&mdash; Urban cradle for Festival Doce in 2016. &mdash;</span>Sweet Ride</p>
 			</a>
 			<a href="img/sweet/b.jpg" rel="lightbox[sweet]"  Visible="false" title="At night."></a>
 			<a href="img/sweet/c.jpg" rel="lightbox[sweet]"  Visible="false" title="At night."></a>
 			<a href="img/sweet/d.jpg" rel="lightbox[sweet]"  Visible="false" title="During the day."></a>
 			<a href="img/sweet/e.jpg" rel="lightbox[sweet]"  Visible="false" title="During the day."></a>
 			
-        	<p><span>&mdash; Urban cradle for Festival Doce in 2016. &mdash;</span>Sweet Ride</p>
+        	
         </section>
         
         <section class="halfhalf"></section>
@@ -355,12 +380,13 @@ z-index:1000;
 			
 			<a href="img/cotton/a.jpg" rel="lightbox[cotton]"  Visible="false" title="Detail.">
 				<img id="anim3" src="img/anim/3.png"  title="Leave your fingertips here to open Cotton Candy.">
+				<p><span>&mdash; Magic cloud for Guimarães noc noc in 2016. &mdash;</span>Cotton Candy</p>
 			</a>
 			<a href="img/cotton/b.jpg" rel="lightbox[cotton]"  Visible="false" title="Detail."></a>
 			<a href="img/cotton/c.jpg" rel="lightbox[cotton]"  Visible="false" title="At night."></a>
 			<a href="img/cotton/d.jpg" rel="lightbox[cotton]"  Visible="false" title="During the day."></a>     
 			
-        	<p><span>&mdash; Magic cloud for Guimarães noc noc in 2016. &mdash;</span>Cotton Candy</p>
+        	
         </section>
 
         <section class="halfsmall">
@@ -374,10 +400,11 @@ z-index:1000;
 		<section class="half">
 			<a href="img/EO/120.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept.">
 				<img id="anim6" src="img/anim/6.png"  title="Leave your fingertips here to open Each Other.">
+				<p><span>&mdash; Scenic project to share interactions. Project of 2018. &mdash;</span>Each Other</p>
 			</a>
 			<a href="img/EO/ea2a-pagar.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept."></a>	
 			<a href="img/EO/a.jpg" rel="lightbox[EO]"  Visible="false" title="Using a prototype."></a>	
-			<p><span>&mdash; Scenic project to share interactions. Project of 2018. &mdash;</span>Each Other</p>
+			
 		</section>
 		
 		<section class="halfhalf"></section>
@@ -385,11 +412,12 @@ z-index:1000;
         <section class="half">
 	        <a href="img/proxemics/a.jpg" rel="lightbox[prox]"  Visible="false" title="Promotion of concept.">
 				<img id="anim5" src="img/anim/5.png"  title="Leave your fingertips here to open Proxemics.">
+				<p><span>&mdash; Concept to test density. Project of 2017. &mdash;</span>Proxemics</p>
 			</a>
 			<a href="img/proxemics/b.jpg" rel="lightbox[prox]"  Visible="false" title="Promotion of concept."></a>	
 			<a href="img/proxemics/c.jpg" rel="lightbox[prox]"  Visible="false" title="Dossier with concept."></a>	
         
-        	<p><span>&mdash; Concept to test density. Project of 2017. &mdash;</span>Proxemics</p>
+        	
         </section>
 
         <section class="halfsmall">
@@ -403,10 +431,11 @@ z-index:1000;
 		<section class="half">
 			<a href="img/deep/light.jpg" rel="lightbox[deep]"  Visible="false" title="Promotion of concept.">
 				<img id="anim7" src="img/anim/7.png"  title="Leave your fingertips here to open Deep Breath.">
+				<p><span>&mdash; Birth of light and its meaning. Concept of 2018. &mdash;</span>Deep Breath</p>
 			</a>
 			<a href="img/deep/amsterdam.jpg" rel="lightbox[deep]"  Visible="false" title="Implantation."></a>
 			<a href="img/deep/expl.jpg" rel="lightbox[deep]"  Visible="false" title="Execution."></a>	
-			<p><span>&mdash; Birth of light and its meaning. Concept of 2018. &mdash;</span>Deep Breath</p>
+			
 		</section>
 		
 
