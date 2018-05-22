@@ -1,7 +1,6 @@
 <head>
 <meta charset="utf-8">
-<title>Suspeito</title>
-
+<title>suspeito</title>
 <link rel="shortcut icon" href="img/favicon.png"> 
 	
 <!-- Load jQuery library -->
@@ -37,7 +36,12 @@ $(function() {
 		"rgb(140, 140, 140)",]; /*extracolors... 19*/
 
 	function mixColors() {
-
+	/*
+		var nrs = [0,1,2,3,4,5,6,7,8,9];
+		nrs.sort(function(a,b){
+			return Math.floor(Math.random()*9 - 1);
+		});
+	*/
 		var nrs = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
 		nrs.sort(function(a,b){
 			return Math.floor(Math.random()*18 - 1);
@@ -54,6 +58,16 @@ $(function() {
 				"background-color", color
 			);
 		}
+		
+		
+/*
+		for (i = 1; i < 22; i++) { 
+			color = randomColor[nrs[i]];
+			$(".halfhalf:nth-child("+i+")").css(
+				"background-color", color
+			);
+		}
+*/
 		
 	}
 	
@@ -88,20 +102,25 @@ $(document).ready(function(){
 </script>
 	
 	<style>
-
 		* {
 			margin: 0; padding: 0;
 		}
 		html, body {
-		    width: 100%;
-			height: 100%;
-			margin: 0; /* Space from this element (entire page) and others*/
-			padding: 0; /*space from content and border*/
-			border: solid #000;
-			border-width: 10px;
-			display:block;
-			box-sizing: border-box;
-			overflow:hidden;
+			
+			
+
+    width: 100%;
+    height: 100%;
+    margin: 0; /* Space from this element (entire page) and others*/
+    padding: 0; /*space from content and border*/
+    border: solid #000;
+    border-width: 10px;
+    display:block;
+    box-sizing: border-box;
+    overflow:hidden;
+
+
+
 		}
 		header {
 			height: calc( 100% / 8);
@@ -125,115 +144,116 @@ $(document).ready(function(){
 			height: 100%;
 		}
 		
-		@font-face {
-		   font-family: myFirstFont;
-		   src: url(earwig-factory-rg.ttf);
-		}
-		@font-face {
-		   font-family: mySecondFont;
-		   src: url(All-rights-reserved.ttf);
-		}
-		@font-face {
-		   font-family: myThirdFont;
-			/*src: url(1942.ttf);*/
-			/*src: url(veteran-typewriter.ttf);*/
-			src: url(SpecialElite.ttf);
-		}
+@font-face {
+   font-family: myFirstFont;
+   src: url(earwig-factory-rg.ttf);
+}
+@font-face {
+   font-family: mySecondFont;
+   src: url(All-rights-reserved.ttf);
+}
+@font-face {
+   font-family: myThirdFont;
+/*   src: url(1942.ttf);*/
+src: url(veteran-typewriter.ttf);
+src: url(SpecialElite.ttf);
+}
+
 
 		p {
-			/*font-family: 'Lato', sans-serif;*/
-			font-family: myThirdFont;
+/*			font-family: 'Lato', sans-serif;*/
+font-family: myThirdFont;
 			text-decoration: none;
-			/*font-size: 20px;*/
-			font-size: 20px;
-			/*letter-spacing: -3px;*/
+/*			font-size: 20px;*/
+font-size: 20px;
+/*letter-spacing: -3px;*/
 			margin-right: 2%;
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
 			height: 100%;
-			/*color: Tomato;*/
+/*			color: Tomato; */
 		}
-
 		span {
-			/*font-size: 12px;*/
-			font-family: myThirdFont;
-			font-size: 12px;
-			letter-spacing: 0px;
+/*			font-size: 12px;*/
+font-family: myThirdFont;
+font-size: 12px;
+letter-spacing: 0px;
 			margin-right: 30px;
 		}
 		
 		h2 {
 			font-family: 'Lato', sans-serif;
-			/*font-family: mySecondFont2;*/
+/*font-family: mySecondFont2;*/
 			text-decoration: none;
 			font-size: 9px;
 			color: #bbb;
 		}
 		
-		.half img {
-		   margin-left: 5%;
-		}
-		header img {
-		   margin-left: 5%;
-		}
-		a:link {
-			text-decoration: none;
-			color: #000;
-		}
+.half img{
+   margin-left: 5%;
+}
+header img{
+   margin-left: 5%;
+}
+a:link {
+    text-decoration: none;
+    color: #000;
+}
 
-		.alignleft {
-			float: left;
-			margin-left: 1%;
-			margin-top:2px;
-		}
-		.alignright {
-			float: right;
-			margin-right: 1%;
-			margin-top:2px;
-		}
+
+.alignleft {
+	float: left;
+	margin-left: 1%;
+	margin-top:2px;
+}
+.alignright {
+	float: right;
+	margin-right: 1%;
+	margin-top:2px;
+}
 		
-		#hide:hover {
-			cursor:pointer;
-		}
+#hide:hover {
+cursor:pointer;
+}
 		
-		.overlay{
-			opacity:1;
+.overlay{
+opacity:1;
 
-			background: #fff;
-			/*
-			background: repeating-linear-gradient(
-				180deg,
-				#fff,
-				#fff 40px,
-				#000 40px,
-				#000 45px,
-				#fff 45px,
-				#fff 85px,
-				#000 85px,
-				#000 95px
-			  );
-			*/
+background: #fff;
+/*
+background: repeating-linear-gradient(
+    180deg,
+    #fff,
+    #fff 40px,
+    #000 40px,
+    #000 45px,
+    #fff 45px,
+    #fff 85px,
+    #000 85px,
+    #000 95px
+  );
+*/
 
-			position:fixed;
-			width: calc(100% - 40px);
-			height: calc(100% - 40px);
-			top:20px;
-			left:20px;
-			z-index:1000;
-		}
+position:fixed;
+width: calc(100% - 40px);
+height: calc(100% - 40px);
+top:20px;
+left:20px;
+z-index:1000;
+}
 
 		
 		@media only screen and (max-device-width: 800px) {
-			html, body {
-				border-width: 20px;
-			}
-			.overlay{
-				width: calc(100% - 80px);
-				height: calc(100% - 80px);
-				top:40px;
-				left:40px;
-			}
+html, body {
+    border-width: 20px;
+}
+.overlay{
+width: calc(100% - 80px);
+height: calc(100% - 80px);
+top:40px;
+left:40px;
+}
 		    p {
         		font-size: 5vw;
   				vertical-align: middle;
@@ -251,13 +271,36 @@ $(document).ready(function(){
 
 <body>
 
-	<div class="overlay" id="hide">
-		<img style="height: 150px;width: 150px;margin-left: calc(50% - 75px);margin-top: 30vh;" src="img/SUSPEITO.gif">
-	</div>
+<!--
+<div class="overlay">
+
+<a href="img/about/us.jpg" rel="lightbox[about]"  Visible="false" title="Collective suspeito blablabla, by...">
+			<img style="height: calc( 100% / 10 - 10px);" src="img/00.png">
+		</a>
+		<a href="img/about/joao.jpg" rel="lightbox[about]"  Visible="false" title="João Dias-Oliveira é designer e engenheiro. Dedicado à concepção e desenvolvimento de instalações artísticas e interessado no impacto social do design."></a>
+		<a href="img/about/nuno.jpg" rel="lightbox[about]"  Visible="false" title="Nuno Mota é arquitecto. Questiona as fronteiras da arquitectura e a sua relação com outros campos de criação como o design, a ilustração, a instalação artística e a performance."></a>
+		<a href="img/about/rossana.jpg" rel="lightbox[about]"  Visible="false" title="Rossana Ribeiro é arquitecta. O seus interesses e áreas de criação extravasam a arquitectura estendendo-se à cenografia e artes plásticas, sobretudo a instalação."></a>
+		
+		<p id="hide" style="height: calc( 100% / 10 - 10px);color:green;">-entre-linhas-</p>
+
+</div>
+-->
+
+			
+<div class="overlay" id="hide">
+<!--
+			<img style="height: 100px;width: 285px;margin-left: calc(50% - 142.5px);margin-top: 35vh;" src="img/SUSPEITO.png">
+-->
+<img style="height: 150px;width: 150px;margin-left: calc(50% - 75px);margin-top: 30vh;" src="img/SUSPEITO.gif">
+</div>
+
+</div>
+
+
 
 	<header>
 
-    	<a href="img/about/us.jpg" rel="lightbox[about]"  Visible="false" title="These are the main suspects who have committed the crime of creating this collective, Nuno, Rossana and João.">
+    	<a href="img/about/us.jpg" rel="lightbox[about]"  Visible="false" title="These are the main suspects who have committed the crime of creating this collective.">
 			<img src="img/anim/SUSPEITOO.png" title="Poke it!">
 			<p>Collective Suspeito</p>
 		</a>
@@ -278,40 +321,35 @@ $(document).ready(function(){
 		</section>
         
         <section class="half">
-			<a href="img/test4.jpg" rel="lightbox[manifesto]"  Visible="false" title="
-Does that which are unable to see really exist? Without light, there is no perception of matter. It can be nothing, it can be anything. Here, Light quietly manifests its existence. Interestingly, it does so through the reverse phenomenon that it alone is able to produce: Shadow.
-
-For Alumia event celebrating 20th anniversary of the Historic Centre of Porto as a UNESCO World Heritage site and National Day of Historic Centres. The event was organised and sponsored by Porto Lazer, and logistics for artists were supported by Opium.
-			">
+        
+			<a href="img/manifesto/a.jpg" rel="lightbox[manifesto]"  Visible="false" title="Promotion.">
 				<img id="anim2" src="img/anim/2.png" title="Leave your fingertips here to open Manifesto.">
 				<p><span>&mdash; Narrative of a Light for the Alumia project in 2017. &mdash;</span>Manifesto da Luz</p>
 			</a>
-			<a href="img/manifesto/a.jpg" rel="lightbox[manifesto]"  Visible="false" title="Promotion."></a>
 			<a href="img/manifesto/a1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Narrative."></a>
 			<a href="img/manifesto/b.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
 			<a href="img/manifesto/c.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
 			<a href="img/manifesto/d.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
 			<a href="img/manifesto/e.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>        
+        
         </section>
     
     	<section class="halfhalf"></section>
     
         <section class="half">
-			<a href="img/test4.jpg" rel="lightbox[unbalanced]"  Visible="false" title="
-(Un)Balanced is an interactive installation, built with wood structure, in which two swings are suspended, connected by a circuit of strings that work together, shifting in vertical oscillatory motion according to the weight and force imposed by the users. There is a subversion of the typical swing that uses a pendulum movement to front and rear with individual function, for this proposal it acquires an up and down action that is dependent on the binomial relationship. 
-The object has three definitions, 1) sculptural, with a minimalist elegance, 2) dynamic, providing fun, and 3) reflective of the relationship with the other. aims to be an analogy of human, social and political relations and as well a demonstration that balance only depends on the harmonious relationship between the parts.
 
-Developed with Patrick Hubmann (designer) for the event “Happy Together 2016” organised by Mala Voadora for Forum of the Future. It was also presented in Porto Innovation Hub and event Second Chance.
-">
+			<a href="img/unb/10seg.gif" rel="lightbox[unbalanced]"  Visible="false" title="Construction.">
 				<img id="anim1" src="img/anim/1.png" title="Leave your fingertips here to open (Un)Balanced.">
 				<p><span>&mdash; Swing measuring action/reaction for Mala Voadora in 2016. &mdash;</span>(Un)Balanced</p> 
 			</a>
-			<a href="img/unb/10seg.gif" rel="lightbox[unbalanced]"  Visible="false" title="Construction."></a>
 			<a href="img/unb/unb1.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Side view."></a>
 			<a href="img/unb/unb2.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction."></a>
 			<a href="img/unb/unb3.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Details."></a>
 			<a href="img/unb/unb4.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction."></a>
 			<a href="img/unb/unb5.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Performance."></a>
+
+        	
+
         </section>
         
         <section class="halfsmall">
@@ -323,36 +361,32 @@ Developed with Patrick Hubmann (designer) for the event “Happy Together 2016�
 		</section>
 
         <section class="half">
-        	<a href="img/test4.jpg" rel="lightbox[sweet]"  Visible="false" title="
-BLABLA
-
-Developed by suspects Nuno Mota and Rossana Ribeiro for the event Festival Doce.
-">
+        
+        	<a href="img/sweet/a.jpg" rel="lightbox[sweet]"  Visible="false" title="At night.">
 				<img id="anim4" src="img/anim/4.png"  title="Leave your fingertips here to open Sweet Ride.">
 				<p><span>&mdash; Urban cradle for Festival Doce in 2016. &mdash;</span>Sweet Ride</p>
 			</a>
-			<a href="img/sweet/a.jpg" rel="lightbox[sweet]"  Visible="false" title="At night."></a>
 			<a href="img/sweet/b.jpg" rel="lightbox[sweet]"  Visible="false" title="At night."></a>
 			<a href="img/sweet/c.jpg" rel="lightbox[sweet]"  Visible="false" title="At night."></a>
 			<a href="img/sweet/d.jpg" rel="lightbox[sweet]"  Visible="false" title="During the day."></a>
 			<a href="img/sweet/e.jpg" rel="lightbox[sweet]"  Visible="false" title="During the day."></a>
+			
+        	
         </section>
         
         <section class="halfhalf"></section>
         
         <section class="half">
-			<a href="img/test4.jpg" rel="lightbox[cotton]"  Visible="false" title="
-BLABLA
-
-Developed by suspects Nuno Mota and Rossana Ribeiro for the event noc noc.
-">
+			
+			<a href="img/cotton/a.jpg" rel="lightbox[cotton]"  Visible="false" title="Detail.">
 				<img id="anim3" src="img/anim/3.png"  title="Leave your fingertips here to open Cotton Candy.">
 				<p><span>&mdash; Magic cloud for Guimarães noc noc in 2016. &mdash;</span>Cotton Candy</p>
 			</a>
-			<a href="img/cotton/a.jpg" rel="lightbox[cotton]"  Visible="false" title="Detail."></a>
 			<a href="img/cotton/b.jpg" rel="lightbox[cotton]"  Visible="false" title="Detail."></a>
 			<a href="img/cotton/c.jpg" rel="lightbox[cotton]"  Visible="false" title="At night."></a>
 			<a href="img/cotton/d.jpg" rel="lightbox[cotton]"  Visible="false" title="During the day."></a>     
+			
+        	
         </section>
 
         <section class="halfsmall">
@@ -364,35 +398,26 @@ Developed by suspects Nuno Mota and Rossana Ribeiro for the event noc noc.
 		</section>
 
 		<section class="half">
-			<a href="img/test4.jpg" rel="lightbox[EO]"  Visible="false" title="
-A project aiming to merge two distinct creative fields – architecture+design and performing arts - into the creation of several pieces that define, through a mechanical and scenic artefact, a place and physical condition for the viewer in relation with the other spectators.
-In the same way there is, in each piece, an instructive proposal that guides the way in which the situation will be experienced, considering the user simultaneously the visitor and the performative body of the work. It articulates the conception and design of various objects to the dramaturgy of a performance based on the creation of three mechanical artefacts inspired by notions of unstable movement aiming to motivate the reflection on balance, relations, forces, weights, dependencies, presupposing to establish action-reaction dynamics between at least two people.
-
-Project in development in collaboration with Diogo Alvim (musician and composer), Lígia Soares (choreographer and playwright) and Rita Vilhena (performer, dancer and choreographer).
-">
+			<a href="img/EO/120.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept.">
 				<img id="anim6" src="img/anim/6.png"  title="Leave your fingertips here to open Each Other.">
 				<p><span>&mdash; Scenic project to share interactions. Project of 2018. &mdash;</span>Each Other</p>
 			</a>
-			<a href="img/EO/120.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept."></a>
-			<a href="img/EO/ea2a-pagar.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept."></a>
+			<a href="img/EO/ea2a-pagar.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept."></a>	
 			<a href="img/EO/a.jpg" rel="lightbox[EO]"  Visible="false" title="Using a prototype."></a>	
+			
 		</section>
 		
 		<section class="halfhalf"></section>
 		
         <section class="half">
-	        <a href="img/test4.jpg" rel="lightbox[prox]"  Visible="false" title="
-It is an interactive installation that proposes an observation focused on how space is occupied and appropriated by humans.
-its morphology is composed by a set of twenty swings, displayed by an orthogonal grid with gaps distanced in a way that promote potential development of conflictual interactions. Every swing is suspended by five beams connected to two reflecting walls made of a scaffolding structure.
-
-Originally developed for the festival SOHO in Ottakring.
-">
+	        <a href="img/proxemics/a.jpg" rel="lightbox[prox]"  Visible="false" title="Promotion of concept.">
 				<img id="anim5" src="img/anim/5.png"  title="Leave your fingertips here to open Proxemics.">
 				<p><span>&mdash; Concept to test density. Project of 2017. &mdash;</span>Proxemics</p>
 			</a>
-			<a href="img/proxemics/a.jpg" rel="lightbox[prox]"  Visible="false" title="Promotion of concept."></a>
 			<a href="img/proxemics/b.jpg" rel="lightbox[prox]"  Visible="false" title="Promotion of concept."></a>	
 			<a href="img/proxemics/c.jpg" rel="lightbox[prox]"  Visible="false" title="Dossier with concept."></a>	
+        
+        	
         </section>
 
         <section class="halfsmall">
@@ -404,18 +429,15 @@ Originally developed for the festival SOHO in Ottakring.
 		</section>
 
 		<section class="half">
-			<a href="img/test4.jpg" rel="lightbox[deep]"  Visible="false" title="
-Technology is imprisoning our reality inside a digital world. And light is kept manipulated by us to fulfill our demands. This installation breaks the theme into two particular contexts: human communication and nature calling. Human communication is addressed mainly through the provocation of morse code via light signals, defying society with an outdated and subverted technological medium. The content within the context, on the other hand, will force ideas about life and nature, such as our respect for the planet, our desire to put a name and force equations to adapt to everything inside this little cosmos, and finally our abusive disguise of innovation and growth with ideas of progressivism. It is time for us to feel the nature and characteristics of what we conceive and create (the medium) by virtue of the changes that result from it (the message).
-
-Originally developed for the Amsterdam Light Festival.
-">
+			<a href="img/deep/light.jpg" rel="lightbox[deep]"  Visible="false" title="Promotion of concept.">
 				<img id="anim7" src="img/anim/7.png"  title="Leave your fingertips here to open Deep Breath.">
 				<p><span>&mdash; Birth of light and its meaning. Concept of 2018. &mdash;</span>Deep Breath</p>
 			</a>
-			<a href="img/deep/light.jpg" rel="lightbox[deep]"  Visible="false" title="Promotion of concept."></a>
 			<a href="img/deep/amsterdam.jpg" rel="lightbox[deep]"  Visible="false" title="Implantation."></a>
 			<a href="img/deep/expl.jpg" rel="lightbox[deep]"  Visible="false" title="Execution."></a>	
+			
 		</section>
+		
 
     </main>
 
