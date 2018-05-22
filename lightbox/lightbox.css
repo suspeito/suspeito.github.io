@@ -215,3 +215,14 @@ html.lb-disable-scrolling {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
+
+
+@media only screen and (max-device-width: 800px) {
+	.lb-data .lb-caption {
+		font-size: 24px;
+	}
+
+	.lb-data .lb-number {
+		font-size: 20px;
+	}
+}
