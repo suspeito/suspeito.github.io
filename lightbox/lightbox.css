@@ -171,7 +171,8 @@ html.lb-disable-scrolling {
 
 .lb-data .lb-caption {
 											/*font-family: 'Lato', sans-serif;*/
-											font-family: myThirdFont;
+font-family: 'Helvetica', 'Open Sans', sans-serif;
+/*font-family: myThirdFont;*/
 						/*color: Tomato;*/
   											/*font-size: 12px;*/
   											font-size: 12px;
@@ -188,7 +189,8 @@ html.lb-disable-scrolling {
   clear: left;
   padding-bottom: 1em;
 											/*font-family: 'Lato', sans-serif;*/
-											font-family: myThirdFont;
+font-family: 'Helvetica', 'Open Sans', sans-serif;
+/*font-family: myThirdFont;*/
 											font-size: 10px;
   color: #999999;
 							/*color: Tomato;*/
