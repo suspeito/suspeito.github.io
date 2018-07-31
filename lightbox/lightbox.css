@@ -33,7 +33,7 @@ html.lb-disable-scrolling {
   max-width: inherit;
   max-height: none;
   border-radius: 3px;
-											border: 5px solid #f2f2f2;
+											border: 5px solid #fff;
 }
 
 .lightbox a img {
@@ -50,7 +50,7 @@ html.lb-disable-scrolling {
 
   /* Background color behind image.
      This is visible during transitions. */
-										  background-color: #f2f2f2;
+										  background-color: #fff;
 }
 
 .lb-outerContainer:after {
@@ -170,7 +170,7 @@ html.lb-disable-scrolling {
 											/*font-family: 'Lato', sans-serif;*/
 font-family: 'Helvetica', 'Open Sans', sans-serif;
 /*font-family: myThirdFont;*/
-						color: #f2f2f2;
+						color: #fff;
   											/*font-size: 12px;*/
   											font-size: 12px;
 											font-weight: normal;
@@ -190,7 +190,7 @@ font-family: 'Helvetica', 'Open Sans', sans-serif;
 /*font-family: myThirdFont;*/
 											font-size: 10px;
 /*  color: #999999;*/
-							color: #f2f2f2;
+							color: #fff;
 }
 
 .lb-data .lb-close {
