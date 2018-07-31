@@ -14,33 +14,25 @@
 
 $(function() {
 
-	var randomColor = [
-		"rgb(230, 230, 230)",
-		"rgb(200, 200, 200)",
-		"rgb(150, 150, 150)",
-		"rgb(160, 160, 160)",
-		"rgb(170, 170, 170)",
-		"rgb(180, 180, 180)",
-		"rgb(190, 190, 190)",
-		"rgb(210, 210, 210)",
-		"rgb(220, 220, 220)",
-		"rgb(140, 140, 140)", /*extracolors... 10*/
-		"rgb(150, 150, 150)",
-		"rgb(190, 190, 190)",
-		"rgb(170, 170, 170)",
-		"rgb(150, 150, 150)",
-		"rgb(190, 190, 190)",
-		"rgb(180, 180, 180)",
-		"rgb(170, 170, 170)",
-		"rgb(160, 160, 160)",
-		"rgb(150, 150, 150)",
-		"rgb(140, 140, 140)",]; /*extracolors... 19*/
 
+	var randomColor = [
+"rgb(203, 255, 140)",
+"rgb(227, 227, 106)",
+"rgb(255, 172, 129)",
+"rgb(242, 246, 208)",
+"rgb(197, 239, 203)",
+"rgb(242, 243, 174)",
+"rgb(235, 233, 233)",
+"rgb(229, 159, 113)",
+"rgb(142, 154, 175)",
+]; 
+		
+		
 	function mixColors() {
 
-		var nrs = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
+		var nrs = [0,1,2,3,4,5,6,7,8];
 		nrs.sort(function(a,b){
-			return Math.floor(Math.random()*18 - 1);
+			return Math.floor(Math.random()*8 - 1);
 		});
 
 		var color;
@@ -48,11 +40,15 @@ $(function() {
 		color =  randomColor[nrs[0]];
 		$("header").css("background-color", color);
 	
-		for (i = 1; i < 20; i++) { 
+		for (i = 1; i < 10; i++) { 
 			color = randomColor[nrs[i]];
 			$(".half:nth-child("+i+")").css(
 				"background-color", color
 			);
+			$(".overlay").css(
+				"background-color", color
+			);
+
 		}
 		
 	}
@@ -67,7 +63,7 @@ $(function() {
 	var y = 1;
 
 	function changeImage() {
-		for (var i = 1; i < 8; i++) {
+		for (var i = 1; i < 9; i++) {
 	    document.getElementById('anim'+i).src = images[y*10*i+i];
 		}
 	    if (y < 1) {y += 1;} else {y = 0;}
@@ -95,30 +91,22 @@ $(document).ready(function(){
 		html, body {
 		    width: 100%;
 			height: 100%;
-			margin: 0; /* Space from this element (entire page) and others*/
-			padding: 0; /*space from content and border*/
+/*			margin: 0; 
+			padding: 0;
 			border: solid #000;
-			border-width: 10px;
 			display:block;
 			box-sizing: border-box;
 			overflow:hidden;
+*/
 		}
 		header {
-			height: calc( 100% / 8);
+			height: calc( 100% / 9);
 		}
 		main {
-			height: calc( 100% / 8 * 7);
+			height: calc( 100% / 9 * 8);
 		}
 		.half {
-			height: calc(100% / 7 - 8px);
-		}
-		.halfhalf {
-			height: 3px;
-			background-color: #000;
-		}
-		.halfsmall {
-			height: 13px;
-			background-color: #000;
+			height: calc(100% / 8);
 		}
 		img{
 			float: left;
@@ -202,39 +190,26 @@ font-family: 'Helvetica', 'Open Sans', sans-serif;
 		.overlay{
 			opacity:1;
 
-			background: #fff;
-			/*
-			background: repeating-linear-gradient(
-				180deg,
-				#fff,
-				#fff 40px,
-				#000 40px,
-				#000 45px,
-				#fff 45px,
-				#fff 85px,
-				#000 85px,
-				#000 95px
-			  );
-			*/
+			background: rgb(242, 243, 174);
 
 			position:fixed;
-			width: calc(100% - 40px);
-			height: calc(100% - 40px);
-			top:20px;
-			left:20px;
+			width: calc(100% - 0px);
+			height: calc(100% - 0px);
+			top:0px;
+			left:0px;
 			z-index:1000;
 		}
 
 		
 		@media only screen and (max-device-width: 800px) {
 			html, body {
-				border-width: 20px;
+				border-width: 0px;
 			}
 			.overlay{
-				width: calc(100% - 80px);
-				height: calc(100% - 80px);
-				top:40px;
-				left:40px;
+				width: calc(100% - 0px);
+				height: calc(100% - 0px);
+				top:0px;
+				left:0px;
 			}
 		    p {
         		font-size: 5vw;
@@ -270,17 +245,44 @@ font-family: 'Helvetica', 'Open Sans', sans-serif;
     </header>
     
     <main>
+    
+    
+        <section class="half">
+			<a href="img/suspeitobanner.gif" rel="lightbox[manifesto]"  Visible="false" title="
+Ápice represents an instant perpetuated in an infinite time.
+Materialized in a (dis)charge of energy, memory or emotion,
+it develops until its resolution, being simultaneously beginning and end.
+A tiny fragment of the order of the universe, where everything is transformed.
+For the event Trilhos Culturais in Caldas de São Jorge.
+We thank for José Martins, José Luís, Jorge Silva, Jorge Gomes, Paulo Gouveia, Maria Irene Ribeiro, Elísio Mota, Hélder Cunha, Vítor Santos, João Peranda, Pedro Cavaco Leitão and Alfredo Ceia.
+			">
+				<img id="anim8" src="img/anim/8.png" title="Leave your fingertips here to open Manifesto.">
+				<p><span>&mdash; Journey of a light particle for the event Trilhos Culturais in 2018. &mdash;</span>Ápice</p>
+			</a>
+<a href="img/apice/a1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Genesis."></a>
+<a href="img/apice/a2.jpg" rel="lightbox[manifesto]"  Visible="false" title="Genesis."></a>
+<a href="img/apice/a3.jpg" rel="lightbox[manifesto]"  Visible="false" title="Genesis."></a>
+<a href="img/apice/b1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Linear journey."></a>
+<a href="img/apice/b2.jpg" rel="lightbox[manifesto]"  Visible="false" title="Linear journey."></a>
+<a href="img/apice/b3.jpg" rel="lightbox[manifesto]"  Visible="false" title="Linear journey."></a>
+<a href="img/apice/b4.jpg" rel="lightbox[manifesto]"  Visible="false" title="Linear journey."></a>
+<a href="img/apice/b5.jpg" rel="lightbox[manifesto]"  Visible="false" title="Linear journey."></a>
+<a href="img/apice/b6.jpg" rel="lightbox[manifesto]"  Visible="false" title="Linear journey."></a>
+<a href="img/apice/c1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Fragmentation."></a>
+<a href="img/apice/c2.jpg" rel="lightbox[manifesto]"  Visible="false" title="Fragmentation."></a>
+<a href="img/apice/d1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Explosion."></a>
+<a href="img/apice/d2.jpg" rel="lightbox[manifesto]"  Visible="false" title="Explosion."></a>
+<a href="img/apice/d3.jpg" rel="lightbox[manifesto]"  Visible="false" title="Explosion."></a>
+<a href="img/apice/d4.jpg" rel="lightbox[manifesto]"  Visible="false" title="Explosion."></a>
+<a href="img/apice/e1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Debris."></a>
+<a href="img/apice/e2.jpg" rel="lightbox[manifesto]"  Visible="false" title="Debris."></a>
+<a href="img/apice/e3.jpg" rel="lightbox[manifesto]"  Visible="false" title="Visitors."></a>       
+        </section>
 
-        <section class="halfsmall">
-			<div id="textbox">
-				<h2 class="alignleft">0</h2>
-				<h2 class="alignright">0</h2>
-			</div>
-			<div style="clear: both;"></div>
-		</section>
+    
         
         <section class="half">
-			<a href="img/test6.jpg" rel="lightbox[manifesto]"  Visible="false" title="
+			<a href="img/suspeitobanner.gif" rel="lightbox[manifesto]"  Visible="false" title="
 Does that which are unable to see really exist? Without light, there is no perception of matter. It can be nothing, it can be anything. Here, Light quietly manifests its existence. Interestingly, it does so through the reverse phenomenon that it alone is able to produce: Shadow.
 
 For Alumia event celebrating 20th anniversary of the Historic Centre of Porto as a UNESCO World Heritage site and National Day of Historic Centres. The event was organised and sponsored by Porto Lazer, and logistics for artists were supported by Opium.
@@ -296,10 +298,8 @@ For Alumia event celebrating 20th anniversary of the Historic Centre of Porto as
 			<a href="img/manifesto/e.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>        
         </section>
     
-    	<section class="halfhalf"></section>
-    
         <section class="half">
-			<a href="img/test6.jpg" rel="lightbox[unbalanced]"  Visible="false" title="
+			<a href="img/suspeitobanner.gif" rel="lightbox[unbalanced]"  Visible="false" title="
 (Un)Balanced is an interactive installation, built with wood structure, in which two swings are suspended, connected by a circuit of strings that work together, shifting in vertical oscillatory motion according to the weight and force imposed by the users. There is a subversion of the typical swing that uses a pendulum movement to front and rear with individual function, for this proposal it acquires an up and down action that is dependent on the binomial relationship. 
 The object has three definitions, 1) sculptural, with a minimalist elegance, 2) dynamic, providing fun, and 3) reflective of the relationship with the other. aims to be an analogy of human, social and political relations and as well a demonstration that balance only depends on the harmonious relationship between the parts.
 
@@ -315,17 +315,10 @@ Developed with Patrick Hubmann (designer) for the event “Happy Together 2016�
 			<a href="img/unb/unb4.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction."></a>
 			<a href="img/unb/unb5.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Performance."></a>
         </section>
-        
-        <section class="halfsmall">
-			<div id="textbox">
-				<h2 class="alignleft">1</h2>
-				<h2 class="alignright">1</h2>
-			</div>
-			<div style="clear: both;"></div>
-		</section>
+
 
         <section class="half">
-        	<a href="img/test6.jpg" rel="lightbox[sweet]"  Visible="false" title="
+        	<a href="img/suspeitobanner.gif" rel="lightbox[sweet]"  Visible="false" title="
 As an allusion to carousels, it is intended to take people on a journey. The intervention is an appropriation of a bandstand, while users consequently takes advantage of that empty space.
 Interpreted as a lounge, it supports itself on the surrounding landscape, namely, the river and the green spaces.
 It seeks to be a stopping point, a place of rest, of fruition, of a challenge, creating a new dynamizing pole within the circuit of the event.
@@ -342,10 +335,8 @@ Developed by suspects Nuno Mota and Rossana Ribeiro for the event Festival Doce.
 			<a href="img/sweet/e.jpg" rel="lightbox[sweet]"  Visible="false" title="During the day."></a>
         </section>
         
-        <section class="halfhalf"></section>
-        
         <section class="half">
-			<a href="img/test6.jpg" rel="lightbox[cotton]"  Visible="false" title="
+			<a href="img/suspeitobanner.gif" rel="lightbox[cotton]"  Visible="false" title="
 Shaped as a typical cloud of a warm evening, Cotton Candy portrays a magical universe. In the form of an unusual, almost surreal levitating object, it creates a striking image. It is also a meeting place in the city center.
 
 Developed by suspects Nuno Mota and Rossana Ribeiro for the 6th edition of noc noc.
@@ -358,17 +349,11 @@ Developed by suspects Nuno Mota and Rossana Ribeiro for the 6th edition of noc n
 			<a href="img/cotton/c.jpg" rel="lightbox[cotton]"  Visible="false" title="At night."></a>
 			<a href="img/cotton/d.jpg" rel="lightbox[cotton]"  Visible="false" title="During the day."></a>     
         </section>
-
-        <section class="halfsmall">
-			<div id="textbox">
-				<h2 class="alignleft">2</h2>
-				<h2 class="alignright">2</h2>
-			</div>
-			<div style="clear: both;"></div>
-		</section>
+        
+        
 
 		<section class="half">
-			<a href="img/test6.jpg" rel="lightbox[EO]"  Visible="false" title="
+			<a href="img/suspeitobanner.gif" rel="lightbox[EO]"  Visible="false" title="
 A project aiming to merge two distinct creative fields – architecture+design and performing arts - into the creation of several pieces that define, through a mechanical and scenic artefact, a place and physical condition for the viewer in relation with the other spectators.
 In the same way there is, in each piece, an instructive proposal that guides the way in which the situation will be experienced, considering the user simultaneously the visitor and the performative body of the work. It articulates the conception and design of various objects to the dramaturgy of a performance based on the creation of three mechanical artefacts inspired by notions of unstable movement aiming to motivate the reflection on balance, relations, forces, weights, dependencies, presupposing to establish action-reaction dynamics between at least two people.
 
@@ -382,10 +367,8 @@ Project in development in collaboration with Diogo Alvim (musician and composer)
 			<a href="img/EO/a.jpg" rel="lightbox[EO]"  Visible="false" title="Using a prototype."></a>	
 		</section>
 		
-		<section class="halfhalf"></section>
-		
         <section class="half">
-	        <a href="img/test6.jpg" rel="lightbox[prox]"  Visible="false" title="
+	        <a href="img/suspeitobanner.gif" rel="lightbox[prox]"  Visible="false" title="
 It is an interactive installation that proposes an observation focused on how space is occupied and appropriated by humans.
 its morphology is composed by a set of twenty swings, displayed by an orthogonal grid with gaps distanced in a way that promote potential development of conflictual interactions. Every swing is suspended by five beams connected to two reflecting walls made of a scaffolding structure.
 
@@ -399,16 +382,9 @@ Originally developed for the festival SOHO in Ottakring.
 			<a href="img/proxemics/c.jpg" rel="lightbox[prox]"  Visible="false" title="Dossier with concept."></a>	
         </section>
 
-        <section class="halfsmall">
-			<div id="textbox">
-				<h2 class="alignleft">3</h2>
-				<h2 class="alignright">3</h2>
-			</div>
-			<div style="clear: both;"></div>
-		</section>
 
 		<section class="half">
-			<a href="img/test6.jpg" rel="lightbox[deep]"  Visible="false" title="
+			<a href="img/suspeitobanner.gif" rel="lightbox[deep]"  Visible="false" title="
 Technology is imprisoning our reality inside a digital world. And light is kept manipulated by us to fulfill our demands. This installation breaks the theme into two particular contexts: human communication and nature calling. Human communication is addressed mainly through the provocation of morse code via light signals, defying society with an outdated and subverted technological medium. The content within the context, on the other hand, will force ideas about life and nature, such as our respect for the planet, our desire to put a name and force equations to adapt to everything inside this little cosmos, and finally our abusive disguise of innovation and growth with ideas of progressivism. It is time for us to feel the nature and characteristics of what we conceive and create (the medium) by virtue of the changes that result from it (the message).
 
 Originally developed for the Amsterdam Light Festival.

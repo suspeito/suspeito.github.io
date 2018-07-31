@@ -33,10 +33,7 @@ html.lb-disable-scrolling {
   max-width: inherit;
   max-height: none;
   border-radius: 3px;
-
-  /* Image border 
-											border: 5px solid Tomato;*/
-											border: 5px solid;
+											border: 5px solid #f2f2f2;
 }
 
 .lightbox a img {
@@ -53,7 +50,7 @@ html.lb-disable-scrolling {
 
   /* Background color behind image.
      This is visible during transitions. */
-	/*									  background-color: Tomato; */
+										  background-color: #f2f2f2;
 }
 
 .lb-outerContainer:after {
@@ -173,7 +170,7 @@ html.lb-disable-scrolling {
 											/*font-family: 'Lato', sans-serif;*/
 font-family: 'Helvetica', 'Open Sans', sans-serif;
 /*font-family: myThirdFont;*/
-						/*color: Tomato;*/
+						color: #f2f2f2;
   											/*font-size: 12px;*/
   											font-size: 12px;
 											font-weight: normal;
@@ -192,8 +189,8 @@ font-family: 'Helvetica', 'Open Sans', sans-serif;
 font-family: 'Helvetica', 'Open Sans', sans-serif;
 /*font-family: myThirdFont;*/
 											font-size: 10px;
-  color: #999999;
-							/*color: Tomato;*/
+/*  color: #999999;*/
+							color: #f2f2f2;
 }
 
 .lb-data .lb-close {
