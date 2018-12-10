@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Suspeito</title>
+	
+<!-- Load jQuery library -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script>
+
+var mouseX = 0,
+  mouseY = 0,
+  limitX = 150 - 120,
+  limitY = 150 - 120;
+var mouseX2 = 0,
+  mouseY2 = 0,
+  limitX2 = 105 - 35,
+  limitY2 = 105 - 35;
+$(window).mousemove(function(e) {
+  mouseX = Math.min(e.pageX, limitX);
+  mouseY = Math.min(e.pageY, limitY);
+  mouseX2 = Math.min(e.pageX, limitX2);
+  mouseY2 = Math.min(e.pageY, limitY2);
+});
+
+// cache the selector
+var follower = $("#follower");
+var follower2 = $("#follower2");
+var xp = 0,
+  yp = 0;
+var xp2 = 0,
+  yp2 = 0;
+var loop = setInterval(function() {
+  // change 12 to alter damping higher is slower
+  xp += (mouseX - xp) / 12;
+  yp += (mouseY - yp) / 12;
+  follower.css({
+    left: xp,
+    top: yp
+  });
+  xp2 += (mouseX2 - xp2) / 12;
+  yp2 += (mouseY2 - yp2) / 12;
+  follower2.css({
+    left: xp2,
+    top: yp2
+  });
+}, 30);
+
+</script>
+
+<style>
+		
+#follower {
+  position: relative;
+  background-color: white;
+  width: 105px;
+  height: 105px;
+  border-radius: 105px;
+}
+
+#follower2 {
+  position: relative;
+  background-color: black;
+  width: 21px;
+  height: 21px;
+  border-radius: 21px;
+}
+
+.container {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border: 1px solid #000000;
+  background-color: black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+  <div id="follower">
+    <div id="follower2"></div>
+  </div>
+</div>
+
+</body>
+
+</html>
