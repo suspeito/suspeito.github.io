@@ -3,52 +3,16 @@
 <head>
 <title>Suspeito</title>
 	
-<!-- Load jQuery library -->
+<!-- Load jQuery library  -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-<script>
-
-var mouseX = 0,
-  mouseY = 0,
-  limitX = 150 - 120,
-  limitY = 150 - 120;
-var mouseX2 = 0,
-  mouseY2 = 0,
-  limitX2 = 105 - 35,
-  limitY2 = 105 - 35;
-$(window).mousemove(function(e) {
-  mouseX = Math.min(e.pageX, limitX);
-  mouseY = Math.min(e.pageY, limitY);
-  mouseX2 = Math.min(e.pageX, limitX2);
-  mouseY2 = Math.min(e.pageY, limitY2);
-});
-
-// cache the selector
-var follower = $("#follower");
-var follower2 = $("#follower2");
-var xp = 0,
-  yp = 0;
-var xp2 = 0,
-  yp2 = 0;
-var loop = setInterval(function() {
-  // change 12 to alter damping higher is slower
-  xp += (mouseX - xp) / 12;
-  yp += (mouseY - yp) / 12;
-  follower.css({
-    left: xp,
-    top: yp
-  });
-  xp2 += (mouseX2 - xp2) / 12;
-  yp2 += (mouseY2 - yp2) / 12;
-  follower2.css({
-    left: xp2,
-    top: yp2
-  });
-}, 30);
-
-</script>
 
 <style>
+
+body {
+			height: 100%;
+			margin: 0;
+		}
 		
 #follower {
   position: relative;
@@ -69,6 +33,7 @@ var loop = setInterval(function() {
 .container {
   width: 150px;
   height: 150px;
+  border-radius: 150px;
   position: absolute;
   top: 0;
   left: 0;
@@ -92,3 +57,77 @@ var loop = setInterval(function() {
 </body>
 
 </html>
+
+
+<script>
+
+	var mouseX = 0,
+	  mouseY = 0,
+	  limitX = 150,
+	  limitY = 150;
+	var mouseX2 = 0,
+	  mouseY2 = 0,
+	  limitX2 = 150,
+	  limitY2 = 150;
+
+
+	var centerX = limitX / 2, centerY = limitY / 2;
+	var centerX2 = limitX2 / 2, centerY2 = limitY2 / 2;
+	var radius = centerX - 60;
+	var radius2 = centerX2 - 45;
+	$(window).mousemove(function(e) {
+	   var diffX = e.pageX - centerX;
+	   var diffY = e.pageY - centerY;
+	   var diffX2 = e.pageX - centerX2;
+	   var diffY2 = e.pageY - centerY2;
+
+	   // Get the mouse distance from the center
+	   var r = Math.sqrt(diffX * diffX + diffY * diffY);
+	   var r2 = Math.sqrt(diffX2 * diffX2 + diffY2 * diffY2);
+
+	   if (r > radius) {
+		 // Scale the distance down to length 1 
+		 diffX /= r;
+		 diffY /= r;
+
+		 // Scale back up to the radius
+		 diffX *= radius;
+		 diffY *= radius;
+	   }
+
+	   mouseX = centerX + diffX - 52.5;
+	   mouseY = centerY + diffY - 52.5;
+
+	if (r2 > radius2) {
+		 // Scale the distance down to length 1 
+		 diffX2 /= r2;
+		 diffY2 /= r2;
+
+		 // Scale back up to the radius
+		 diffX2 *= radius2;
+		 diffY2 *= radius2;
+	   }
+
+	   mouseX2 = centerX2 + diffX2 - 52.5 + 21;
+	   mouseY2 = centerY2 + diffY2 - 52.5 + 21;
+
+	});
+
+
+
+// cache the selector
+var follower = $("#follower");
+var follower2 = $("#follower2");
+var xp = 0, yp = 0;
+var xp2 = 0, yp2 = 0;
+var loop = setInterval(function(){
+    // change 12 to alter damping higher is slower
+    xp += (mouseX - xp) / 24;
+    yp += (mouseY - yp) / 24;
+    xp2 += (mouseX2 - xp2) / 24;
+    yp2 += (mouseY2 - yp2) / 24;
+    follower.css({left:xp, top:yp});
+    follower2.css({left:xp2, top:yp2});
+}, 30);
+
+</script>
