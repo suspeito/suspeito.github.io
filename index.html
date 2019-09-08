@@ -1,489 +1,725 @@
+<!DOCTYPE HTML>
+<HTML>
 <head>
-<meta charset="utf-8">
-<title>Suspeito</title>
-
-<link rel="shortcut icon" href="img/favicon.png"> 
+    
+    <!-- Suspeito webpage -->
+    <meta charset="utf-8">
+    <title>Suspeito</title>
+    <link href="img/favicon.png" rel="shortcut icon">
 	
-<!-- Load jQuery library -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<!-- Load jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
+    <script src="lightbox/lightbox.js"></script>
+    <link href="lightbox/lightbox.css" rel="stylesheet"/>
+    
+	<!-- ### ########## ### -->
+    <!-- ### Javascript ### -->
+    <!-- ### ########## ### -->
+    <script>
 
-<script src="lightbox/lightbox.js"></script>
-<link href="lightbox/lightbox.css" rel="stylesheet" />
 
-<script>
+		$(document).ready(function () {
+		    setTimeout(function(){
+      $(".container").show();
+    }, 1000);
+		    
+		    $("#hide").click(function () {
+		        $(".overlay").hide();
+		    });
 
-$(function() {
-
-
-	var randomColor = [
-"rgb(227, 227, 106)",
-"rgb(185,205,218)",
-"rgb(255, 172, 129)",
-"rgb(242, 246, 208)",
-"rgb(197, 239, 203)",
-"rgb(242, 243, 174)",
-"rgb(205, 232, 171)",
-"rgb(229, 159, 113)",
-"rgb(206, 215, 242)",
-]; 
-		
-		
-	function mixColors() {
-
-		var nrs = [0,1,2,3,4,5,6,7,8];
-		nrs.sort(function(a,b){
-			return Math.floor(Math.random()*8 - 1);
 		});
 
-		var color;
+		$(function () {
 
-		color =  randomColor[nrs[0]];
-		$("header").css("background-color", color);
-	
-		for (i = 1; i < 10; i++) { 
-			color = randomColor[nrs[i]];
-			$(".half:nth-child("+i+")").css(
-				"background-color", color
-			);
-			$(".overlay").css(
-				"background-color", color
-			);
-
-		}
-		
-	}
-	
-	mixColors();
-
-	var images = new Array();
-	for (var i = 0; i < 100; i++) {
-    	images.push("img/anim/" + i + ".png");
-	}
-	
-	var y = 1;
-
-	function changeImage() {
-		for (var i = 1; i < 9; i++) {
-	    document.getElementById('anim'+i).src = images[y*10*i+i];
-		}
-	    if (y < 1) {y += 1;} else {y = 0;}
-	}
-	
-	setInterval(function () {
-    	changeImage();mixColors()
-	}, 2000);
-
-});
-
-$(document).ready(function(){
-    $("#hide").click(function(){
-        $(".overlay").hide();
-    });
-});
-
-</script>
+		    var randomColor = [
+		        "rgb(227, 227, 106)",
+		        "rgb(185, 205, 218)",
+		        "rgb(255, 172, 129)",
+		        "rgb(242, 246, 208)",
+		        "rgb(197, 239, 203)",
+		        "rgb(242, 243, 174)",
+		        "rgb(205, 232, 171)",
+		        "rgb(229, 159, 113)",
+		        "rgb(206, 215, 242)"
+		    ];
 
 
+		    function shuffle(array) {
+		        var currentIndex = array.length,
+		            temporaryValue, randomIndex;
+
+		        while (0 !== currentIndex) {
+		            randomIndex = Math.floor(Math.random() * currentIndex);
+		            currentIndex -= 1;
+
+		            temporaryValue = array[currentIndex];
+		            array[currentIndex] = array[randomIndex];
+		            array[randomIndex] = temporaryValue;
+		        }
+
+		        return array;
+		    }
+
+		    function mixColors() {
+
+		        var nrs = Array.from(Array(9).keys());
+		        nrs = shuffle(nrs);
+
+		        var color = randomColor[nrs[0]];
+		        $("header").css("background-color", color);
+
+		        for (i = 1; i < 10; i++) {
+		            color = randomColor[nrs[i]];
+		            $(".half:nth-child(" + i + ")").css(
+		                "background-color", color
+		            );
+		            $(".overlay").css(
+		                "background-color", color
+		            );
+		            $("#follower").css(
+						"background-color", color
+					);
+		        }
+		    }
+
+		    mixColors();
+
+		    var images = new Array();
+		    for (var i = 0; i < 100; i++) {
+		        images.push("img/anim/" + i + ".png");
+		    }
+
+		    var y = 1;
+
+		    function changeImage() {
+		        for (var i = 1; i < 9; i++) {
+		            document.getElementById('anim' + i).src = images[y * 10 * i + i];
+		        }
+		        if (y < 1) {
+		            y += 1;
+		        } else {
+		            y = 0;
+		        }
+		    }
+
+		    setInterval(function () {
+		        changeImage();
+		        mixColors()
+		    }, 2000);
+
+		}); 
+
+	</script>
 
 
-
-
-	
+	<!-- ### ######### ### -->
+    <!-- ###    CSS    ### -->
+    <!-- ### ######### ### -->
 	<style>
-
 		* {
-			margin: 0; padding: 0;
+		    margin: 0;
+		    padding: 0;
 		}
-		html, body {
+
+		html,
+		body {
 		    width: 100%;
-			height: 100%;
-/*			margin: 0; 
+		    height: 100%;
+		    /*margin: 0;
 			padding: 0;
 			border: solid #000;
 			display:block;
 			box-sizing: border-box;
 			overflow:hidden;
-*/
+			*/
 		}
+
 		header {
-			height: calc( 100% / 9);
+		    height: calc( 100% / 9);
 		}
+
 		main {
-			height: calc( 100% / 9 * 8);
+		    height: calc( 100% / 9 * 8);
 		}
+
 		.half {
-			height: calc(100% / 8);
+		    height: calc(100% / 8);
 		}
-		img{
-			float: left;
-			height: 100%;
+
+		img {
+		    float: left;
+		    height: 100%;
 		}
-		
+
 		@font-face {
-		   font-family: myFirstFont;
-		   src: url(earwig-factory-rg.ttf);
+		    font-family: myFirstFont;
+		    src: url(earwig-factory-rg.ttf);
 		}
+
 		@font-face {
-		   font-family: mySecondFont;
-		   src: url(All-rights-reserved.ttf);
+		    font-family: mySecondFont;
+		    src: url(All-rights-reserved.ttf);
 		}
+
 		@font-face {
-		   font-family: myThirdFont;
-			/*src: url(1942.ttf);*/
-			/*src: url(veteran-typewriter.ttf);*/
-			src: url(SpecialElite.ttf);
+		    font-family: myThirdFont;
+		    /*src: url(1942.ttf);*/
+		    /*src: url(veteran-typewriter.ttf);*/
+		    src: url(SpecialElite.ttf);
 		}
 
 		p {
-			/*font-family: 'Lato', sans-serif;*/
-font-family: 'Helvetica', 'Open Sans', sans-serif;
-/*font-family: myThirdFont;*/
-			text-decoration: none;
-			/*font-size: 20px;*/
-			font-size: 20px;
-			/*letter-spacing: -3px;*/
-			margin-right: 2%;
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
-			height: 100%;
-			/*color: Tomato;*/
-			color: #000;
+		    /*font-family: 'Lato', sans-serif;*/
+		    font-family: 'Helvetica', 'Open Sans', sans-serif;
+		    /*font-family: myThirdFont;*/
+		    text-decoration: none;
+		    /*font-size: 20px;*/
+		    font-size: 20px;
+		    /*letter-spacing: -3px;*/
+		    margin-right: 2%;
+		    display: flex;
+		    align-items: center;
+		    justify-content: flex-end;
+		    height: 100%;
+		    /*color: Tomato;*/
+		    color: #000;
 		}
 
 		span {
-			/*font-size: 12px;*/
-font-family: 'Helvetica', 'Open Sans', sans-serif;
-/*font-family: myThirdFont;*/
-			font-size: 12px;
-			letter-spacing: 0px;
-			margin-right: 30px;
+		    /*font-size: 12px;*/
+		    font-family: 'Helvetica', 'Open Sans', sans-serif;
+		    /*font-family: myThirdFont;*/
+		    font-size: 12px;
+		    letter-spacing: 0px;
+		    margin-right: 30px;
 		}
-		
+
 		h2 {
-			font-family: 'Lato', sans-serif;
-			/*font-family: mySecondFont2;*/
-			text-decoration: none;
-			font-size: 9px;
-			color: #bbb;
+		    font-family: 'Lato', sans-serif;
+		    /*font-family: mySecondFont2;*/
+		    text-decoration: none;
+		    font-size: 9px;
+		    color: #bbb;
 		}
-		
+
 		.half img {
-		   margin-left: 5%;
+		    margin-left: 5%;
 		}
+
 		header img {
-		   margin-left: 5%;
+		    margin-left: 5%;
 		}
+
 		a:link {
-			text-decoration: none;
-			color: #000;
+		    text-decoration: none;
+		    color: #000;
 		}
 
 		.alignleft {
-			float: left;
-			margin-left: 1%;
-			margin-top:2px;
+		    float: left;
+		    margin-left: 1%;
+		    margin-top: 2px;
 		}
+
 		.alignright {
-			float: right;
-			margin-right: 1%;
-			margin-top:2px;
+		    float: right;
+		    margin-right: 1%;
+		    margin-top: 2px;
 		}
-		
+
 		#hide:hover {
-			cursor:pointer;
+		    cursor: pointer;
 		}
-		
-		.overlay{
-			opacity:1;
 
-			background: rgb(242, 243, 174);
-
-			position:fixed;
-			width: calc(100% - 0px);
-			height: calc(100% - 0px);
-			top:0px;
-			left:0px;
-			z-index:1000;
+		.overlay {
+		    opacity: 1;
+		    background: rgb(242, 243, 174);
+		    position: fixed;
+		    width: calc(100% - 0px);
+		    height: calc(100% - 0px);
+		    top: 0px;
+		    left: 0px;
+		    z-index: 1000;
 		}
-		
-		
-		
-.centered {
-    position: absolute;
-    top: 85%;
-    width: 100%;
-	text-align: center;
-    font-family: 'Lato', sans-serif;
-	text-decoration: none;
-	font-size: 12px;
-}
 
-		
+		.centered {
+		    position: absolute;
+		    top: 85%;
+		    width: 100%;
+		    text-align: center;
+		    font-family: 'Lato', sans-serif;
+		    text-decoration: none;
+		    font-size: 12px;
+		}
+
+		#follower {
+			position: relative;
+			background-color: white;
+			width: 105px;
+			height: 105px;
+			border-radius: 105px;
+		}
+
+		#follower2 {
+			position: relative;
+			background-color: black;
+			width: 21px;
+			height: 21px;
+			border-radius: 21px;
+		}
+
+		.container {
+			width: 150px;
+			height: 150px;
+			border-radius: 150px;
+			position: absolute;
+			margin-top: 30vh;
+			left: calc(50% - 75px);
+			overflow: hidden;
+			border: 1px solid #000000;
+			background-color: black;
+		}
+
 		@media only screen and (max-device-width: 800px) {
-			html, body {
-				border-width: 0px;
-			}
-			.overlay{
-				width: calc(100% - 0px);
-				height: calc(100% - 0px);
-				top:0px;
-				left:0px;
-			}
+		    html,
+		    body {
+		        border-width: 0px;
+		    }
+		    .overlay {
+		        width: calc(100% - 0px);
+		        height: calc(100% - 0px);
+		        top: 0px;
+		        left: 0px;
+		    }
 		    p {
-        		font-size: 5vw;
-  				vertical-align: middle;
+		        font-size: 5vw;
+		        vertical-align: middle;
 		    }
 		    span {
-		    	display: none;
+		        display: none;
 		    }
 		    h2 {
-		    	display: none;
+		        display: none;
 		    }
-.centered {
-    top: 80%;
-    font-size: 40px;
-}
-
-.centered img {
-    min-width: 50px;
-    min-height: 50px;
-}
+		    .centered {
+		        top: 80%;
+		        font-size: 40px;
+		    }
+		    .centered img {
+		        min-width: 50px;
+		        min-height: 50px;
+		    }
+		    #follower {
+				display: none;
+			}
+			#follower2 {
+				display: none;
+			}
+			.container {
+				display: none;
+			}
 		}
-	</style>
 
+	</style>
 </head>
+
+<!-- ### ########## ### -->
+<!-- ###    HTML    ### -->
+<!-- ### ########## ### -->
 
 <body>
 
-	<div class="overlay" id="hide">
-		<img style="height: 150px;width: 150px;margin-left: calc(50% - 75px);margin-top: 30vh;" src="img/SUSPEITO3.gif">
-		<div class="centered">
-<a href="mailto:colectivo.suspeito@gmail.com">
-	<img src="img/mail.png" style="height: 15px;width: 15px;margin-left: calc(50% - 37.5px)">
-</a>
-<a href="https://www.facebook.com/colectivo.suspeito/" target="_blank">
-	<img src="img/facebook.png" style="height: 15px;width: 15px;margin-left:15px">
-</a>
-<a href="https://www.instagram.com/colectivo.suspeito/" target="_blank">
-	<img src="img/instagram.png" style="height: 15px;width: 15px;margin-left: 15px"">
-</a>
-<br><br>
-Poke the logo to enter.
-<br>
-<i>Website under development.</i></div>
-	</div>
+    <!-- ### Front page ### -->
+    <div class="overlay" id="hide">
+        <img style="height: 150px;width: 150px;margin-left: calc(50% - 75px);margin-top: 30vh;" src="img/SUSPEITO3.gif">
 
-	<header>
+		<!-- ### Moving eye ### -->
+        <div class="container">
+			<div id="follower">
+				<div id="follower2"></div>
+			</div>
+		</div>
+        
+        <div class="centered">
+            <a href="mailto:colectivo.suspeito@gmail.com">
+            <img src="img/mail.png" style="height: 15px;width: 15px;margin-left: calc(50% - 37.5px)">
+            </a>
+            <a href="https://www.facebook.com/colectivo.suspeito/" target="_blank">
+            <img src="img/facebook.png" style="height: 15px;width: 15px;margin-left:15px">
+            </a>
+            <a href="https://www.instagram.com/colectivo.suspeito/" target="_blank">
+            <img src="img/instagram.png" style="height: 15px;width: 15px;margin-left: 15px">
+            </a>
+            <br><br>
+            Poke the logo to enter.
+            <br>
+            <i>Website under development.</i>
+        </div>
+    </div>
 
-    	<a href="img/suspeitobanner.gif" rel="lightbox[about]"  Visible="false" data-title="
-Suspeito is an artistic collective formed by the designer and engineer João Dias-Oliveira and by the architects Nuno Mota and Rossana Ribeiro. Beginning with early collaborations in 2016, it was only in 2018 that the collective identity was defined.
-&lt;br /&gt;
-The multidisciplinary group has the ambition of expanding itself on the limits of art, architecture and design, exploring creative ways to involve society to take a deeper look at our surroundings.
-&lt;br /&gt;
-Its creative process is defined by a concerned research for concepts, phenomena or theories that can be materialised to motivate reactions, seeking not only to represent but to accentuate the poetic dimensions of many elements that take part in the world we know, theorise and idealise.
-">
-			<img src="img/anim/SUSPEITOO.png" title="Poke it!">
-			<p>Suspeito</p>
-		</a>
-		<a href="img/about/us6.jpg" rel="lightbox[about]"  Visible="false" title="
-The interventions of Suspeito arise mainly on the form of installation and scenography, imbued with an often performative load. Its restless and curious personality, wants to question itself constantly on new topics, not to just one predefined method neither the same working strategies.
-&lt;br /&gt;
-The approach to creation, through continuous investigation of themes, seek inspiration in humanities and social sciences, in natural phenomena and in more abstract theories.
-&lt;br /&gt;
-The execution is morphologically and technically diversified, involving an experimentalism that necessarily generates an implicit risk, to which Suspeito does not surrender.
-&lt;br /&gt;
-The group intends to assume itself as an artistic practice that works the relations of interdependence between three parts: art piece, receiver and space, which may focus more on one or another depending on each work or concept. By varying the used method - either by admiration, interaction or immersion - the ultimate objective is to create relevant sensorial experiences.
-"></a>
-    	
+    <!-- ### Top bar ### -->
+    <header>
+        <a href="img/suspeitobanner.gif" rel="lightbox[about]"  Visible="false" data-title="
+            Suspeito is an artistic collective formed by the designer and engineer João Dias-Oliveira and by the architects Nuno Mota and Rossana Ribeiro. Beginning with early collaborations in 2016, it was only in 2018 that the collective identity was defined.
+            &lt;br /&gt;
+            The multidisciplinary group has the ambition of expanding itself on the limits of art, architecture and design, exploring creative ways to involve society to take a deeper look at our surroundings.
+            &lt;br /&gt;
+            Its creative process is defined by a concerned research for concepts, phenomena or theories that can be materialised to motivate reactions, seeking not only to represent but to accentuate the poetic dimensions of many elements that take part in the world we know, theorise and idealise.
+            ">
+            <img src="img/anim/SUSPEITOO.png" title="Poke it!">
+            <p>Suspeito</p>
+        </a>
+        <a href="img/about/us6.jpg" rel="lightbox[about]"  Visible="false" title="
+            The interventions of Suspeito arise mainly on the form of installation and scenography, imbued with an often performative load. Its restless and curious personality, wants to question itself constantly on new topics, not to just one predefined method neither the same working strategies.
+            &lt;br /&gt;
+            The approach to creation, through continuous investigation of themes, seek inspiration in humanities and social sciences, in natural phenomena and in more abstract theories.
+            &lt;br /&gt;
+            The execution is morphologically and technically diversified, involving an experimentalism that necessarily generates an implicit risk, to which Suspeito does not surrender.
+            &lt;br /&gt;
+            The group intends to assume itself as an artistic practice that works the relations of interdependence between three parts: art piece, receiver and space, which may focus more on one or another depending on each work or concept. By varying the used method - either by admiration, interaction or immersion - the ultimate objective is to create relevant sensorial experiences.
+            "></a>
     </header>
-    
+
+    <!-- ### Projects ### -->
     <main>
-    
-    
+
+    	<!-- ### Project 1 ### -->
         <section class="half">
-			<a href="img/suspeitobanner.gif" rel="lightbox[apice]"  Visible="false" data-title="
-Ápice represents an instant perpetuated in an infinite time. Materialized in a (dis)charge of energy, memory or emotion, it develops until its resolution, being simultaneously beginning and end. A tiny fragment of the order of the universe, where everything is transformed.
-&lt;br /&gt;
-&lt;br /&gt;
-Project developed for the event Trilhos Culturais in Caldas de São Jorge.
-&lt;br /&gt;
-We thank support on logistics and construction to José Martins, José Luís, Jorge Silva, Jorge Gomes, Paulo Gouveia, Maria Irene Ribeiro, Elísio Mota, Hélder Cunha, Vítor Santos, João Peranda, Pedro Cavaco Leitão and Alfredo Ceia.
-">
-				<img id="anim8" src="img/anim/8.png" title="Leave your fingerprint here to open Ápice.">
-				<p><span>&mdash; Journey of a light particle for the event Trilhos Culturais in 2018. &mdash;</span>Ápice</p>
-			</a>
-<a href="img/apice/1.jpg" rel="lightbox[apice]"  Visible="false" title="Genesis. &copy Hélder Cunha"></a>
-<a href="img/apice/2.png" rel="lightbox[apice]"  Visible="false" title="Genesis."></a>
-<a href="img/apice/3.jpg" rel="lightbox[apice]"  Visible="false" title="Linear journey. &copy Hélder Cunha"></a>
-<a href="img/apice/4.png" rel="lightbox[apice]"  Visible="false" title="Linear journey."></a>
-<a href="img/apice/5.jpg" rel="lightbox[apice]"  Visible="false" title="Eye."></a>
-<a href="img/apice/6.jpg" rel="lightbox[apice]"  Visible="false" title="Linear journey."></a>
-<a href="img/apice/7.jpg" rel="lightbox[apice]"  Visible="false" title="Line."></a>
-<a href="img/apice/8.jpg" rel="lightbox[apice]"  Visible="false" title="Fragmentation."></a>
-<a href="img/apice/9.jpg" rel="lightbox[apice]"  Visible="false" title="Fragmentation. &copy Hélder Cunha"></a>
-<a href="img/apice/10.png" rel="lightbox[apice]"  Visible="false" title="Explosion. Left photo, &copy Hélder Cunha"></a>
-<a href="img/apice/11.jpg" rel="lightbox[apice]"  Visible="false" title="Debris. &copy Hélder Cunha"></a>
-<a href="img/apice/12.jpg" rel="lightbox[apice]"  Visible="false" title="Debris."></a>    
-<a href="img/apice/13.jpg" rel="lightbox[apice]"  Visible="false" title="Fragmentation to explosion."></a>    
-<a href="img/apice/14.png" rel="lightbox[apice]"  Visible="false" title="General view at night."></a>    
-<a href="img/apice/15.jpg" rel="lightbox[apice]"  Visible="false" title="Explosion on the cascate. &copy Hélder Cunha"></a>    
-<a href="img/apice/16.jpg" rel="lightbox[apice]"  Visible="false" title="Explosion at dawn. &copy Hélder Cunha"></a>
-<a href="img/apice/17.png" rel="lightbox[apice]"  Visible="false" title="Installation during the day."></a>
+            <a href="img/suspeitobanner.gif" rel="lightbox[EO]"  Visible="false" data-title="
+                A project aiming to merge two distinct creative fields – architecture+design and performing arts - into the creation of several pieces that define, through a mechanical and scenic artefact, a place and physical condition for the viewer in relation with the other spectators.
+                &lt;br /&gt;
+                In the same way there is, in each piece, an instructive proposal that guides the way in which the situation will be experienced, considering the user simultaneously the visitor and the performative body of the work. It articulates the conception and design of various objects to the dramaturgy of a performance based on the creation of three mechanical artefacts inspired by notions of unstable movement aiming to motivate the reflection on balance, relations, forces, weights, dependencies, presupposing to establish action-reaction dynamics between at least two people.
+                &lt;br /&gt;
+                &lt;br /&gt;
+                Presentations&lt;br /&gt;
+                (Un)Balanced: A Salto 2019 (Elvas), (Un)Balanced MEXE 2019 (Porto)
+                &lt;br /&gt;
+                &lt;br /&gt;
+                Project in development in collaboration with Diogo Alvim (musician and composer), Lígia Soares (choreographer and playwright) and Rita Vilhena (performer, dancer and choreographer).
+                ">
+                <img id="anim6" src="img/anim/6.png"  title="Leave your fingerprint here to open Each Other.">
+                <p><span>&mdash; Scenic project to share interactions. Project of 2017-2019. &mdash;</span>Each Other</p>
+            </a>
+            <a href="img/EO/a.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept."></a>
+            <a href="img/EO/b.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept."></a>
+            
+            <a href="img/EO/1.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
+            <a href="img/EO/2.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
+            <a href="img/EO/3.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
+            <a href="img/EO/4.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
+            <!--<a href="img/EO/5.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>-->
+            <a href="img/EO/6.png" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
+            <a href="img/EO/7.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
+            <a href="img/EO/8.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
+            <!--<a href="img/EO/9.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>-->
+            <a href="img/EO/10.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
+            <a href="img/EO/11.png" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
+            <a href="img/EO/12.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
+
+            <a href="img/EO/13.jpg" rel="lightbox[EO]"  Visible="false" title="Turning Backs: (In development)."></a>
+            <a href="img/EO/14.jpg" rel="lightbox[EO]"  Visible="false" title="Turning Backs: (In development)."></a>
+
+            <a href="img/EO/15.jpg" rel="lightbox[EO]"  Visible="false" title="Waving Ball: Presentation MEXE 2019."></a>
+            <a href="img/EO/16.jpg" rel="lightbox[EO]"  Visible="false" title="Waving Ball: Presentation MEXE 2019."></a>
+            <a href="img/EO/17.jpg" rel="lightbox[EO]"  Visible="false" title="Waving Ball: Presentation MEXE 2019."></a>
+            <a href="img/EO/18.jpg" rel="lightbox[EO]"  Visible="false" title="Waving Ball: Presentation MEXE 2019."></a>
+
+            <a href="img/EO/a.jpg" rel="lightbox[EO]"  Visible="false" title="Using a prototype."></a>	
         </section>
 
-    
-        
+        <!-- ### Project 2 ### -->
         <section class="half">
-			<a href="img/suspeitobanner.gif" rel="lightbox[manifesto]"  Visible="false" data-title="
-Does that which are unable to see really exist? Without light, there is no perception of matter. It can be nothing, it can be anything. Here, Light quietly manifests its existence. Interestingly, it does so through the reverse phenomenon that it alone is able to produce: Shadow.
-&lt;br /&gt;
-&lt;br /&gt;
-For Alumia event celebrating 20th anniversary of the Historic Centre of Porto as a UNESCO World Heritage site and National Day of Historic Centres. The event was organised and sponsored by Porto Lazer, and logistics for artists were supported by Opium.
-			">
-				<img id="anim2" src="img/anim/2.png" title="Leave your fingerprint here to open Manifesto.">
-				<p><span>&mdash; Narrative of a Light for the Alumia project in 2017. &mdash;</span>Manifesto da Luz</p>
-			</a>
-			<a href="img/manifesto/a.jpg" rel="lightbox[manifesto]"  Visible="false" title="Promotion."></a>
-			<a href="img/manifesto/a1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Narrative."></a>
-			<a href="img/manifesto/manifesto/night.JPG" rel="lightbox[manifesto]"  Visible="false" title="Detail at night"></a>
-			<a href="img/manifesto/pres/1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-			<a href="img/manifesto/pres/2.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-			<a href="img/manifesto/pres/4.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-			<a href="img/manifesto/pres/5.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-			<a href="img/manifesto/pres/6.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-			<a href="img/manifesto/pres/7.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-			<a href="img/manifesto/d.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
-			<a href="img/manifesto/b.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
-			<a href="img/manifesto/e.png" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
-			<a href="img/manifesto/manifesto/1.JPG" rel="lightbox[manifesto]"  Visible="false" title="Installation during the day."></a>
-			<a href="img/manifesto/manifesto/6_1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation during the day."></a>
-			<a href="img/manifesto/manifesto/4.JPG" rel="lightbox[manifesto]"  Visible="false" title="Installation during the day."></a>
-						     
+            <a data-title="
+                (More information soon.)
+                &lt;br /&gt;
+                FORMA INFORME explores the meaning of form as the defining element of something.
+                &lt;br /&gt;
+                &lt;br /&gt;
+                &#9679; Project developed for the 2019 edition of Trilhos Culturais in Caldas de São Jorge.
+                &lt;br /&gt;
+                &#9679; Logistic and Technical Support: President José Martins extended to all collaborators, and Elísio Mota.
+                &lt;br /&gt;
+                &#9679; Photographers: Luís Eusébio and Hélder Cunha.
+                " href="img/suspeitobanner.gif" rel="lightbox[formainforme]" visible="false">
+                <img id="anim3" src="img/anim/3.png" title="Leave your fingerprint here to open Manifesto.">
+                <p>
+                    <span>
+                    — Perception of Form for Trilhos Culturais 2019. —
+                    </span>
+                    Forma Informe
+                </p>
+                </img>
+            </a>
+            <a href="img/formainforme/1ll.png" rel="lightbox[formainforme]" title="Active circle. &copy Luís Eusébio" visible="false"></a>
+            <a href="img/formainforme/2ll.png" rel="lightbox[formainforme]" title="Active circle. &copy Luís Eusébio" visible="false"></a>
+            <a href="img/formainforme/3h.jpg" rel="lightbox[formainforme]" title="Active hexagon. &copy Hélder Cunha" visible="false"></a>
+            <a href="img/formainforme/4hl.png" rel="lightbox[formainforme]" title="Active pentagon. &copy Hélder Cunha (left), Luís Eusébio (right)" visible="false"></a>
+            <a href="img/formainforme/5h.jpg" rel="lightbox[formainforme]" title="Active square. &copy Hélder Cunha" visible="false"></a>
+            <a href="img/formainforme/6lh.png" rel="lightbox[formainforme]" title="Active triagle and line. &copy Luís Eusébio (left), Hélder Cunha (right)" visible="false"></a>
+            <a href="img/formainforme/7ll.png" rel="lightbox[formainforme]" title="Passive line and triangle. &copy Luís Eusébio" visible="false"></a>
+            <a href="img/formainforme/8ll.png" rel="lightbox[formainforme]" title="Passive square and pentagon. &copy Luís Eusébio" visible="false"></a>
+            <a href="img/formainforme/9ll.png" rel="lightbox[formainforme]" title="Passive hexagon and circle. &copy Luís Eusébio" visible="false"></a>
+            <a href="img/formainforme/10h.jpg" rel="lightbox[formainforme]" title="Circle during the day. &copy Hélder Cunha" visible="false"></a>
+            <a href="img/formainforme/11.png" rel="lightbox[formainforme]" title="Passive line and circle during the day." visible="false"></a>
         </section>
 
-
-        
-    
+        <!-- ### Project 3 ### -->
         <section class="half">
-			<a href="img/suspeitobanner.gif" rel="lightbox[unbalanced]"  Visible="false" data-title="
-(Un)Balanced is an interactive installation, built with wood structure, in which two swings are suspended, connected by a circuit of strings that work together, shifting in vertical oscillatory motion according to the weight and force imposed by the users. There is a subversion of the typical swing that uses a pendulum movement to front and rear with individual function, for this proposal it acquires an up and down action that is dependent on the binomial relationship. 
-&lt;br /&gt;
-The object has three definitions, 1) sculptural, with a minimalist elegance, 2) dynamic, providing fun, and 3) reflective of the relationship with the other. aims to be an analogy of human, social and political relations and as well a demonstration that balance only depends on the harmonious relationship between the parts.
-&lt;br /&gt;
-&lt;br /&gt;
-Developed in collaboration with Patrick Hubmann (designer) for the event “Happy Together 2016” organised by Mala Voadora for Forum of the Future. It was also presented in Porto Innovation Hub and event Second Chance.
-">
-				<img id="anim1" src="img/anim/1.png" title="Leave your fingerprint here to open (Un)Balanced.">
-				<p><span>&mdash; Swing measuring action/reaction for Mala Voadora in 2016. &mdash;</span>(Un)Balanced</p> 
-			</a>
-			<a href="img/unb/10seg.gif" rel="lightbox[unbalanced]"  Visible="false" title="Animated illustration."></a>
-			<a href="img/unb/unb1.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Side view."></a>
-			<a href="img/unb/unb2.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Detail #1."></a>
-			<a href="img/unb/unb3.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Detail #2."></a>
-			<a href="img/unb/unb4.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Detail #3."></a>
-			<a href="img/unb/unb5.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Performance #1."></a>
-			<a href="img/unb/unb6.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Performance #1."></a>
-			<a href="img/unb/unb7.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #1."></a>
-			<a href="img/unb/unb8.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #2."></a>
-			<a href="img/unb/unb9.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #3."></a>
-			<a href="img/unb/unb10.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #4."></a>
-			<a href="img/unb/unb11.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #5."></a>
-			<a href="img/unb/unb12.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #6."></a>
-			<a href="img/unb/unb-c1.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Construction #1."></a>
-			<a href="img/unb/unb-c2.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Construction #2."></a>
-			<a href="img/unb/unb-c3.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Construction #3."></a>
+            <a data-title="
+                &quot;[Moradavaga] were invited to conduct a participatory workshop on the scope of the Creative Europe supported LUCity project in the city of Bari, Italy. The goal was to co-design, together with the participants, a temporary installation that revolved around light and that could act as a visual landmark for the entrance lobby of Officina Degli Esordi, a multifunctional venue in the multicultural neighbourhood of Libertà. After a first moment of reflection about the briefing and the local context Moradavaga teamed-up with friend, designer and engineer João Dias-Oliveira, and defined a restrict set of materials to explore and work with: emergency blankets, steel cables, plastic tubes, recicled cardboard and RGB lights. After a very intensive brainstorming and experimentation two days period the group, composed by professionals and students from the art, cinema, design, engineering and architecture fields, defined a narrative and a design concept to be built on the following two days. &quot;Faro&quot;, Italian for lighthouse, plays on several metaphors and emulates in its conical shape a light beam that intends to ”iluminate” the urban surroundings while it makes reference to the Mediterranean Sea’s water reflections and transparencies, the sound of its waves and ripple, the human dramas that take place in its waters and the protection that a safe harbour provides as well as more mundane daily life features as the hanging clothes drying over the city’s streets that all serve to highlight the role of this space as a cultural and social center for neighbours of all walks of life.&quot;
+                &lt;br /&gt;
+                <i>Written by www.moradavaga.com</i>
+                &lt;br /&gt;
+                &lt;br /&gt;
+                &#9679; Workshop supervised by Pedro Cavaco Leitão (Moradavaga) and João Dias-Oliveira (Suspeito) for the LUCity project, in Officina Degli Esordi, Bari, Italy.
+                &lt;br /&gt;
+                &#9679; Participants: Alessandro Fusco, Alessia Macrì, Antonio Paradiso, Artemis Papageorgiou, Bartolomeo Pavone, Claudio Nuzzo, Francesca Lorusso, Marco Masciopinto, Marina Leuzzi, Rossella Bongiorno, Saverio Barile, Stefania D’Eri, Vito Zonno
+                &lt;br /&gt;
+                &#9679; Organization: Marica Girardi/LUCity
+                &lt;br /&gt;
+                &#9679; Logistic and Technical Support: Bass Culture, La Scuola Open Source
+                &lt;br /&gt;
+                &#9679; Supported by: Creative Europe
+                &lt;br /&gt;
+                &#9679; Thanks to: Marica, Lucilla, Alessandro & Alessandro, Silvia, Maurizio and Fabio
+                " href="img/suspeitobanner.gif" rel="lightbox[faro]" visible="false">
+                <img id="anim7" src="img/anim/7.png" title="Leave your fingerprint here to open Ápice.">
+                <p>
+                    <span>
+                    — Workshop by Moradavaga with Light and Form for LUCity in 2019. —
+                    </span>
+                    Faro
+                </p>
+                </img>
+            </a>
+            <a href="img/faro/faro_00a_1600_c.jpg" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_02_1600_c.jpg" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_05_1600_c.png" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_06_1600_c.jpg" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_07_1600_c.jpg" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_08_1600_c.jpg" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_09_1600_c.jpg" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_11_1600_c.jpg" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_15_1600_c.png" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_16_1600_c.png" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_20_1600_c.png" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_23_1600_c.png" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_30_1600_c.jpg" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
+            <a href="img/faro/faro_29_1600_c.jpg" rel="lightbox[faro]" title="&copy Moradavaga" visible="false"></a>
         </section>
 
-
+        <!-- ### Project 4 ### -->
         <section class="half">
-        	<a href="img/suspeitobanner.gif" rel="lightbox[sweet]"  Visible="false" data-title="
-As an allusion to carousels, it is intended to take people on a journey. The intervention is an appropriation of a bandstand, while users consequently takes advantage of that empty space.
-&lt;br /&gt;
-Interpreted as a lounge, it supports itself on the surrounding landscape, namely, the river and the green spaces.
-&lt;br /&gt;
-It seeks to be a stopping point, a place of rest, of fruition, of a challenge, creating a new dynamizing pole within the circuit of the event.
-&lt;br /&gt;
-&lt;br /&gt;
-Developed by suspects Nuno Mota and Rossana Ribeiro for the event Festival Doce.
-">
-				<img id="anim4" src="img/anim/4.png"  title="Leave your fingerprint here to open Sweet Ride.">
-				<p><span>&mdash; Urban cradle for Festival Doce in 2016. &mdash;</span>Sweet Ride</p>
-			</a>
-			<a href="img/sweet/a.jpg" rel="lightbox[sweet]"  Visible="false" title="At night."></a>
-			<a href="img/sweet/b.png" rel="lightbox[sweet]"  Visible="false" title="At night."></a>
-			<a href="img/sweet/c.png" rel="lightbox[sweet]"  Visible="false" title="At night."></a>
-			<a href="img/sweet/d.png" rel="lightbox[sweet]"  Visible="false" title="During the day."></a>
-			<a href="img/sweet/e.jpg" rel="lightbox[sweet]"  Visible="false" title="During the day."></a>
-        </section>
-        
-        <section class="half">
-			<a href="img/suspeitobanner.gif" rel="lightbox[cotton]"  Visible="false" data-title="
-Shaped as a typical cloud of a warm evening, Cotton Candy portrays a magical universe. In the form of an unusual, almost surreal levitating object, it creates a striking image. It is also a meeting place in the city center.
-&lt;br /&gt;
-&lt;br /&gt;
-Developed by suspects Nuno Mota and Rossana Ribeiro for the 6th edition of noc noc.
-">
-				<img id="anim3" src="img/anim/3.png"  title="Leave your fingerprint here to open Cotton Candy.">
-				<p><span>&mdash; Magic cloud for Guimarães noc noc in 2016. &mdash;</span>Cotton Candy</p>
-			</a>
-			<a href="img/cotton/a.jpg" rel="lightbox[cotton]"  Visible="false" title="Detail."></a>
-			<a href="img/cotton/b.jpg" rel="lightbox[cotton]"  Visible="false" title="Detail."></a>
-			<a href="img/cotton/c.png" rel="lightbox[cotton]"  Visible="false" title="At night."></a>
-			<a href="img/cotton/d.jpg" rel="lightbox[cotton]"  Visible="false" title="During the day."></a>     
-        </section>
-        
-        
-
-		<section class="half">
-			<a href="img/suspeitobanner.gif" rel="lightbox[EO]"  Visible="false" data-title="
-A project aiming to merge two distinct creative fields – architecture+design and performing arts - into the creation of several pieces that define, through a mechanical and scenic artefact, a place and physical condition for the viewer in relation with the other spectators.
-&lt;br /&gt;
-In the same way there is, in each piece, an instructive proposal that guides the way in which the situation will be experienced, considering the user simultaneously the visitor and the performative body of the work. It articulates the conception and design of various objects to the dramaturgy of a performance based on the creation of three mechanical artefacts inspired by notions of unstable movement aiming to motivate the reflection on balance, relations, forces, weights, dependencies, presupposing to establish action-reaction dynamics between at least two people.
-&lt;br /&gt;
-&lt;br /&gt;
-Project in development in collaboration with Diogo Alvim (musician and composer), Lígia Soares (choreographer and playwright) and Rita Vilhena (performer, dancer and choreographer).
-">
-				<img id="anim6" src="img/anim/6.png"  title="Leave your fingerprint here to open Each Other.">
-				<p><span>&mdash; Scenic project to share interactions. Project of 2018. &mdash;</span>Each Other</p>
-			</a>
-			<a href="img/EO/120.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept."></a>
-			<a href="img/EO/ea2a-pagar.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept."></a>
-			<a href="img/EO/a.jpg" rel="lightbox[EO]"  Visible="false" title="Using a prototype."></a>	
-		</section>
-		
-        <section class="half">
-	        <a href="img/suspeitobanner.gif" rel="lightbox[prox]"  Visible="false" data-title="
-It is an interactive installation that proposes an observation focused on how space is occupied and appropriated by humans.
-its morphology is composed by a set of twenty swings, displayed by an orthogonal grid with gaps distanced in a way that promote potential development of conflictual interactions. Every swing is suspended by five beams connected to two reflecting walls made of a scaffolding structure.
-&lt;br /&gt;
-&lt;br /&gt;
-Originally developed for the festival SOHO in Ottakring.
-">
-				<img id="anim5" src="img/anim/5.png"  title="Leave your fingerprint here to open Proxemics.">
-				<p><span>&mdash; Concept to test density. Project of 2017. &mdash;</span>Proxemics</p>
-			</a>
-			<a href="img/proxemics/a.jpg" rel="lightbox[prox]"  Visible="false" title="Promotion of concept."></a>
-			<a href="img/proxemics/b.jpg" rel="lightbox[prox]"  Visible="false" title="Promotion of concept."></a>	
-			<a href="img/proxemics/c.jpg" rel="lightbox[prox]"  Visible="false" title="Dossier with concept."></a>	
+            <a href="img/suspeitobanner.gif" rel="lightbox[apice]"  Visible="false" data-title="
+                Ápice represents an instant perpetuated in an infinite time. Materialized in a (dis)charge of energy, memory or emotion, it develops until its resolution, being simultaneously beginning and end. A tiny fragment of the order of the universe, where everything is transformed.
+                &lt;br /&gt;
+                &lt;br /&gt;
+                &#9679; Project developed for the event Trilhos Culturais in Caldas de São Jorge.
+                &lt;br /&gt;
+                &#9679; We thank support on logistics and construction to José Martins, José Luís, Jorge Silva, Jorge Gomes, Paulo Gouveia, Maria Irene Ribeiro, Elísio Mota, Hélder Cunha, Vítor Santos, João Peranda, Pedro Cavaco Leitão and Alfredo Ceia.
+                ">
+                <img id="anim8" src="img/anim/8.png" title="Leave your fingerprint here to open Ápice.">
+                <p><span>&mdash; Journey of a light particle for Trilhos Culturais 2018. &mdash;</span>Ápice</p>
+            </a>
+            <a href="img/apice/1.jpg" rel="lightbox[apice]"  Visible="false" title="Genesis. &copy Hélder Cunha"></a>
+            <a href="img/apice/2.png" rel="lightbox[apice]"  Visible="false" title="Genesis."></a>
+            <a href="img/apice/3.jpg" rel="lightbox[apice]"  Visible="false" title="Linear journey. &copy Hélder Cunha"></a>
+            <a href="img/apice/4.png" rel="lightbox[apice]"  Visible="false" title="Linear journey."></a>
+            <a href="img/apice/5.jpg" rel="lightbox[apice]"  Visible="false" title="Eye."></a>
+            <a href="img/apice/6.jpg" rel="lightbox[apice]"  Visible="false" title="Linear journey."></a>
+            <a href="img/apice/7.jpg" rel="lightbox[apice]"  Visible="false" title="Line."></a>
+            <a href="img/apice/8.jpg" rel="lightbox[apice]"  Visible="false" title="Fragmentation."></a>
+            <a href="img/apice/9.jpg" rel="lightbox[apice]"  Visible="false" title="Fragmentation. &copy Hélder Cunha"></a>
+            <a href="img/apice/10.png" rel="lightbox[apice]"  Visible="false" title="Explosion. Left photo, &copy Hélder Cunha"></a>
+            <a href="img/apice/11.jpg" rel="lightbox[apice]"  Visible="false" title="Debris. &copy Hélder Cunha"></a>
+            <a href="img/apice/12.jpg" rel="lightbox[apice]"  Visible="false" title="Debris."></a>    
+            <a href="img/apice/13.jpg" rel="lightbox[apice]"  Visible="false" title="Fragmentation to explosion."></a>    
+            <a href="img/apice/14.png" rel="lightbox[apice]"  Visible="false" title="General view at night."></a>    
+            <a href="img/apice/15.jpg" rel="lightbox[apice]"  Visible="false" title="Explosion on the cascate. &copy Hélder Cunha"></a>    
+            <a href="img/apice/16.jpg" rel="lightbox[apice]"  Visible="false" title="Explosion at dawn. &copy Hélder Cunha"></a>
+            <a href="img/apice/17.png" rel="lightbox[apice]"  Visible="false" title="Installation during the day."></a>
         </section>
 
+        <!-- ### Project 5 ### -->
+        <section class="half">
+            <a href="img/suspeitobanner.gif" rel="lightbox[manifesto]"  Visible="false" data-title="
+                Does that which are unable to see really exist? Without light, there is no perception of matter. It can be nothing, it can be anything. Here, Light quietly manifests its existence. Interestingly, it does so through the reverse phenomenon that it alone is able to produce: Shadow.
+                &lt;br /&gt;
+                &lt;br /&gt;
+                For Alumia event celebrating 20th anniversary of the Historic Centre of Porto as a UNESCO World Heritage site and National Day of Historic Centres. The event was organised and sponsored by Porto Lazer, and logistics for artists were supported by Opium.
+                ">
+                <img id="anim2" src="img/anim/2.png" title="Leave your fingerprint here to open Manifesto.">
+                <p><span>&mdash; Narrative of a Light for the Alumia project in 2017. &mdash;</span>Manifesto da Luz</p>
+            </a>
+            <a href="img/manifesto/a.jpg" rel="lightbox[manifesto]"  Visible="false" title="Promotion."></a>
+            <a href="img/manifesto/a1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Narrative."></a>
+            <a href="img/manifesto/manifesto/night.JPG" rel="lightbox[manifesto]"  Visible="false" title="Detail at night"></a>
+            <a href="img/manifesto/pres/1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
+            <a href="img/manifesto/pres/2.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
+            <a href="img/manifesto/pres/4.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
+            <a href="img/manifesto/pres/5.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
+            <a href="img/manifesto/pres/6.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
+            <a href="img/manifesto/pres/7.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
+            <a href="img/manifesto/d.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
+            <a href="img/manifesto/b.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
+            <a href="img/manifesto/e.png" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
+            <a href="img/manifesto/manifesto/1.JPG" rel="lightbox[manifesto]"  Visible="false" title="Installation during the day."></a>
+            <a href="img/manifesto/manifesto/6_1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation during the day."></a>
+            <a href="img/manifesto/manifesto/4.JPG" rel="lightbox[manifesto]"  Visible="false" title="Installation during the day."></a>
+        </section>
 
-		<section class="half">
-			<a href="img/suspeitobanner.gif" rel="lightbox[deep]"  Visible="false" data-title="
-Technology is imprisoning our reality inside a digital world. And light is kept manipulated by us to fulfill our demands. This installation breaks the theme into two particular contexts: human communication and nature calling. Human communication is addressed mainly through the provocation of morse code via light signals, defying society with an outdated and subverted technological medium. The content within the context, on the other hand, will force ideas about life and nature, such as our respect for the planet, our desire to put a name and force equations to adapt to everything inside this little cosmos, and finally our abusive disguise of innovation and growth with ideas of progressivism. It is time for us to feel the nature and characteristics of what we conceive and create (the medium) by virtue of the changes that result from it (the message).
-&lt;br /&gt;
-&lt;br /&gt;
-Originally developed for the Amsterdam Light Festival.
-">
-				<img id="anim7" src="img/anim/7.png"  title="Leave your fingerprint here to open Deep Breath.">
-				<p><span>&mdash; Birth of light and its meaning. Concept of 2018. &mdash;</span>Deep Breath</p>
-			</a>
-			<a href="img/deep/light.jpg" rel="lightbox[deep]"  Visible="false" title="Promotion of concept."></a>
-			<a href="img/deep/amsterdam.jpg" rel="lightbox[deep]"  Visible="false" title="Implantation."></a>
-			<a href="img/deep/expl.jpg" rel="lightbox[deep]"  Visible="false" title="Execution."></a>	
-		</section>
+        <!-- ### Project 6 ### -->
+        <section class="half">
+            <a href="img/suspeitobanner.gif" rel="lightbox[unbalanced]"  Visible="false" data-title="
+                (Un)Balanced is an interactive installation, built with wood structure, in which two swings are suspended, connected by a circuit of strings that work together, shifting in vertical oscillatory motion according to the weight and force imposed by the users. There is a subversion of the typical swing that uses a pendulum movement to front and rear with individual function, for this proposal it acquires an up and down action that is dependent on the binomial relationship. 
+                &lt;br /&gt;
+                The object has three definitions, 1) sculptural, with a minimalist elegance, 2) dynamic, providing fun, and 3) reflective of the relationship with the other. aims to be an analogy of human, social and political relations and as well a demonstration that balance only depends on the harmonious relationship between the parts.
+                &lt;br /&gt;
+                &lt;br /&gt;
+                Developed in collaboration with Patrick Hubmann (designer) for the event “Happy Together 2016” organised by Mala Voadora for Forum of the Future. It was also presented in Porto Innovation Hub and event Second Chance, both in 2017.
+                ">
+                <img id="anim1" src="img/anim/1.png" title="Leave your fingerprint here to open (Un)Balanced.">
+                <p><span>&mdash; Swing measuring action/reaction for Mala Voadora in 2016. &mdash;</span>(Un)Balanced</p>
+            </a>
+            <a href="img/unb/10seg.gif" rel="lightbox[unbalanced]"  Visible="false" title="Animated illustration."></a>
+            <a href="img/unb/unb1.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Side view."></a>
+            <a href="img/unb/unb2.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Detail #1."></a>
+            <a href="img/unb/unb3.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Detail #2."></a>
+            <a href="img/unb/unb4.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Detail #3."></a>
+            <a href="img/unb/unb5.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Performance #1."></a>
+            <a href="img/unb/unb6.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Performance #1."></a>
+            <a href="img/unb/unb7.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #1."></a>
+            <a href="img/unb/unb8.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #2."></a>
+            <a href="img/unb/unb9.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #3."></a>
+            <a href="img/unb/unb10.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #4."></a>
+            <a href="img/unb/unb11.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #5."></a>
+            <a href="img/unb/unb12.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #6."></a>
+            <a href="img/unb/unb-c1.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Construction #1."></a>
+            <a href="img/unb/unb-c2.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Construction #2."></a>
+            <a href="img/unb/unb-c3.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Construction #3."></a>
+        </section>
 
+        <!-- ### Project 7 ### -->
+        <section class="half">
+            <a href="img/suspeitobanner.gif" rel="lightbox[sweet]"  Visible="false" data-title="
+                As an allusion to carousels, it is intended to take people on a journey. The intervention is an appropriation of a bandstand, while users consequently takes advantage of that empty space.
+                &lt;br /&gt;
+                Interpreted as a lounge, it supports itself on the surrounding landscape, namely, the river and the green spaces.
+                &lt;br /&gt;
+                It seeks to be a stopping point, a place of rest, of fruition, of a challenge, creating a new dynamizing pole within the circuit of the event.
+                &lt;br /&gt;
+                &lt;br /&gt;
+                Developed by suspects Nuno Mota and Rossana Ribeiro for the event Festival Doce.
+                ">
+                <img id="anim4" src="img/anim/4.png"  title="Leave your fingerprint here to open Sweet Ride.">
+                <p><span>&mdash; Urban cradle for Festival Doce in 2016. &mdash;</span>Sweet Ride</p>
+            </a>
+            <a href="img/sweet/a.jpg" rel="lightbox[sweet]"  Visible="false" title="At night."></a>
+            <a href="img/sweet/b.png" rel="lightbox[sweet]"  Visible="false" title="At night."></a>
+            <a href="img/sweet/c.png" rel="lightbox[sweet]"  Visible="false" title="At night."></a>
+            <a href="img/sweet/d.png" rel="lightbox[sweet]"  Visible="false" title="During the day."></a>
+            <a href="img/sweet/e.jpg" rel="lightbox[sweet]"  Visible="false" title="During the day."></a>
+        </section>
+
+        <!-- ### Project 8 ### -->
+        <section class="half">
+            <a href="img/suspeitobanner.gif" rel="lightbox[prox]"  Visible="false" data-title="
+                It is an interactive installation that proposes an observation focused on how space is occupied and appropriated by humans.
+                its morphology is composed by a set of twenty swings, displayed by an orthogonal grid with gaps distanced in a way that promote potential development of conflictual interactions. Every swing is suspended by five beams connected to two reflecting walls made of a scaffolding structure.
+                &lt;br /&gt;
+                &lt;br /&gt;
+                Originally developed for the festival SOHO in Ottakring.
+                ">
+                <img id="anim5" src="img/anim/5.png"  title="Leave your fingerprint here to open Proxemics.">
+                <p><span>&mdash; Concept to test density. Project of 2017. &mdash;</span>Proxemics</p>
+            </a>
+            <a href="img/proxemics/a.jpg" rel="lightbox[prox]"  Visible="false" title="Promotion of concept."></a>
+            <a href="img/proxemics/b.jpg" rel="lightbox[prox]"  Visible="false" title="Promotion of concept."></a>	
+            <a href="img/proxemics/c.jpg" rel="lightbox[prox]"  Visible="false" title="Dossier with concept."></a>	
+        </section>
     </main>
 
+	<!-- ### ########## ### -->
+    <!-- ### moving eye ### -->
+    <!-- ### ########## ### -->
+
+	<script>
+
+		var mouseX = 0,
+			mouseY = 0,
+			limitX = 150,
+			limitY = 150;
+		
+		var mouseX2 = 0,
+			mouseY2 = 0,
+			limitX2 = 150,
+			limitY2 = 150;
+
+		var centerX = limitX / 2,
+			centerY = limitY / 2;
+		var centerX2 = limitX2 / 2,
+			centerY2 = limitY2 / 2;
+		var radius = centerX - 60;
+		var radius2 = centerX2 - 45;
+
+		$(window).mousemove(function (e) {
+
+			var wmax = window.innerWidth;
+			var hmax = window.innerHeight;
+
+			var diffX = (e.pageX * limitX) / wmax - centerX;
+			var diffY = (e.pageY * limitY) / hmax - centerY;
+			var diffX2 = (e.pageX * limitX2) / wmax - centerX2;
+			var diffY2 = (e.pageY * limitY2) / hmax - centerY2;
+
+			var r = Math.sqrt(diffX * diffX + diffY * diffY);
+			var r2 = Math.sqrt(diffX2 * diffX2 + diffY2 * diffY2);
+
+			if (r > radius) {
+				diffX /= r;
+				diffY /= r;
+				diffX *= radius;
+				diffY *= radius;
+			}
+
+			mouseX = centerX + diffX - 52.5;
+			mouseY = centerY + diffY - 52.5;
+
+			if (r2 > radius2) {
+				diffX2 /= r2;
+				diffY2 /= r2;
+				diffX2 *= radius2;
+				diffY2 *= radius2;
+			}
+
+			mouseX2 = centerX2 + diffX2 - 52.5 + 21;
+			mouseY2 = centerY2 + diffY2 - 52.5 + 21;
+
+		});
+
+		var follower = $("#follower");
+		var follower2 = $("#follower2");
+		var xp = 0,
+			yp = 0;
+		var xp2 = 0,
+			yp2 = 0;
+		var loop = setInterval(function () {
+			// change 12 to alter damping higher is slower
+			xp += (mouseX - xp) / 24;
+			yp += (mouseY - yp) / 24;
+			xp2 += (mouseX2 - xp2) / 24;
+			yp2 += (mouseY2 - yp2) / 24;
+			follower.css({
+				left: xp,
+				top: yp
+			});
+			follower2.css({
+				left: xp2,
+				top: yp2
+			});
+		}, 30);
+
+	</script>
+
 </body>
+</HTML>
