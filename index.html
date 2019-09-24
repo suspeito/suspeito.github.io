@@ -279,6 +279,22 @@
 			background-color: black;
 		}
 
+		#mail {
+			height: 15px;
+			width: 15px;
+			margin-left: calc(50% - 37.5px)
+		}
+		#facebook {
+			height: 15px;
+			width: 15px;
+			margin-left:15px;
+		}
+		#instagram {
+			height: 15px;
+			width: 15px;
+			margin-left: 15px;
+		}
+
 		@media only screen and (max-device-width: 800px) {
 		    html,
 		    body {
@@ -304,10 +320,21 @@
 		        top: 80%;
 		        font-size: 40px;
 		    }
-		    .centered img {
-		        min-width: 50px;
-		        min-height: 50px;
-		    }
+			#mail {
+				height: 60px;
+				width: 60px;
+				margin-left: calc(50% - 140px);
+			}
+			#facebook {
+				height: 60px;
+				width: 60px;
+				margin-left:50px;
+			}
+			#instagram {
+				height: 60px;
+				width: 60px;
+				margin-left: 50px;
+			}
 		    #follower {
 				visibility: hidden;
 			}
@@ -341,13 +368,13 @@
         
         <div class="centered">
             <a href="mailto:colectivo.suspeito@gmail.com">
-            	<img src="img/mail.png" style="height: 15px;width: 15px;margin-left: calc(50% - 37.5px)">
+            	<img id="mail" src="img/mail.png">
             </a>
             <a href="https://www.facebook.com/colectivo.suspeito/" target="_blank">
-            	<img src="img/facebook.png" style="height: 15px;width: 15px;margin-left:15px">
+            	<img id="facebook" src="img/facebook.png">
             </a>
             <a href="https://www.instagram.com/colectivo.suspeito/" target="_blank">
-            	<img src="img/instagram.png" style="height: 15px;width: 15px;margin-left: 15px">
+            	<img id="instagram" src="img/instagram.png">
             </a>
             <br><br>
             Poke the logo to enter.
