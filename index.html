@@ -257,6 +257,8 @@
 			width: 105px;
 			height: 105px;
 			border-radius: 105px;
+			left: 30px;
+			top: 30px;
 		}
 
 		#follower2 {
@@ -265,6 +267,8 @@
 			width: 21px;
 			height: 21px;
 			border-radius: 21px;
+			left: 55px;
+			top: 55px;
 		}
 
 		.container {
@@ -670,13 +674,13 @@
 
 	<script>
 
-		var mouseX = 0,
-			mouseY = 0,
+		var mouseX = 30,
+			mouseY = 30,
 			limitX = 150,
 			limitY = 150;
 		
-		var mouseX2 = 0,
-			mouseY2 = 0,
+		var mouseX2 = 55,
+			mouseY2 = 55,
 			limitX2 = 150,
 			limitY2 = 150;
 
@@ -724,10 +728,10 @@
 
 		var follower = $("#follower");
 		var follower2 = $("#follower2");
-		var xp = 0,
-			yp = 0;
-		var xp2 = 0,
-			yp2 = 0;
+		var xp = 30,
+			yp = 30;
+		var xp2 = 55,
+			yp2 = 55;
 		var loop = setInterval(function () {
 			// change 12 to alter damping higher is slower
 			xp += (mouseX - xp) / 24;
