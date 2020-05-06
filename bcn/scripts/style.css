@@ -31,6 +31,7 @@ video {
 }
 
 h1 {
+  font-style: normal;
   color: #FFFF66;
   font-weight: 900;
   text-align: center;
@@ -38,6 +39,7 @@ h1 {
 }
 
 p {
+  font-style: normal;
   color: darkgray;
   font-weight: 500;
   text-align: center;
@@ -67,4 +69,27 @@ p {
   line-height: 20px;
   font-size: 14px;
   color: #565656;
+}
+
+.centeredLoading {
+  position: absolute;
+  font-style: normal;
+  bottom: 15px;
+  text-align: center;
+  left: 20%;
+  width: 60%;
+  font-size: 10px;
+  color: #565656;
+}
+
+.centeredReady {
+  position: absolute;
+  font-style: normal;
+  bottom: 15px;
+  text-align: center;
+  left: 20%;
+  width: 60%;
+  font-size: 10px;
+  color: darkgray;
+  display: none;
 }

@@ -1,11 +1,14 @@
-var myVid = document.getElementById("loadTest");
+var loadingVideoTest = document.getElementById("controlVideo");
 var loaded = false;
-myVid.onloadeddata = function() {
-	console.log("Browser has loaded the current frame");
-    loaded = true;
-}
 
 $(document).ready(function() {
+    loadingVideoTest.onloadeddata = function() {
+		console.log("Video ready.");
+		$('#loading').fadeOut('fast');
+		$('#ready').fadeIn('slow');
+		loaded = true;
+	}
+
     $("#hide").click(function() {
         if (loaded == true) {$(".overlay").hide();}
     });
