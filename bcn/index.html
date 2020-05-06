@@ -36,40 +36,42 @@
 
     <!-- Videos -->
     <video class="mouseoverNonStop" poster="dark.jpg" src="videos/C0089.mov" playsinline disableRemotePlayback></video>
-    <!-- começa com mouseover start, pára apenas ao fim dos 20 segundos -->
     <video class="mouseoverStopIfOut" poster="dark.jpg" src="videos/C0143.mov" loop playsinline disableRemotePlayback></video>
-    <!-- começa com mouseover, pára quando se tira o rato. loop se se mantiver o rato -->
     <video class="clickStartPause" poster="dark.jpg" src="videos/C0049.mov" loop playsinline disableRemotePlayback></video>
-    <!-- click para start/pause. loop se não for pausado -->
     <video class="clickStartPause" poster="dark.jpg" src="videos/C0072.mov" playsinline disableRemotePlayback></video>
-    <!-- click para start/pause. não faz loop. tem de se carregar para começar novamente -->
     </br>
     <video class="restartOnMouseOver" poster="dark.jpg" src="videos/C0114.mov" loop playsinline disableRemotePlayback></video>
-    <!-- click para start/pause. mouseover faz restart. -->
     <video class="rewindOnMouseOver" poster="dark.jpg" src="videos/C0180.mov" loop playsinline disableRemotePlayback></video>
-    <!-- mouseout começa. mouseover vídeo anda para trás -->
     <video class="quickerOnMouseOver" poster="dark.jpg" src="videos/C0080.mov" loop playsinline disableRemotePlayback></video>
-    <!-- click para start/pause. mouseover põe o vídeo mais rápido -->
     <video class="mouseoverNonStop" poster="dark.jpg" src="videos/C0105.mov" loop playsinline disableRemotePlayback></video>
-    <!-- mouseover start. non-stop + loop -->
     <br>
     <video class="muteVideo" poster="dark.jpg" src="videos/C0153.mov" loop playsinline disableRemotePlayback></video>
-    <!-- arranca com mouseover. click mute/unmute. loop  -->
     <video class="autoplayClick" poster="dark.jpg" src="videos/C0186.mov" playsinline disableRemotePlayback></video>
-    <!-- linked video #1, click começar os dois. click para pausar. se ambos estiverem pausados, arrancar novamente em conjunto -->
     <video class="autoplayClick" poster="dark.jpg" src="videos/C0031.mov" playsinline disableRemotePlayback></video>
-    <!-- linked video #2, click começar os dois. click para pausar. se ambos estiverem pausados, arrancar novamente em conjunto -->
     <video class="soundOnlyMouseOver" id="controlVideo" poster="dark.jpg" src="videos/C0192.mov" loop playsinline disableRemotePlayback></video>
-    <!-- som apenas com rato em cima -->
     <br>
     <video class="soundPlay" poster="dark.jpg" src="videos/C0100.mov" loop playsinline disableRemotePlayback></video>
-    <!-- click: play, click novamente: sem som, click novamente: pause -->
     <video class="autoplayHover" poster="dark.jpg" src="videos/C0045.mov" loop playsinline disableRemotePlayback></video>
-    <!-- linked video #1, comportamento meio dinâmico -->
     <video class="autoplayHover" poster="dark.jpg" src="videos/C0171.mov" loop playsinline disableRemotePlayback></video>
-    <!-- linked video #2, comportamento meio dinâmico -->
     <video class="slowerOnMouseOver" poster="dark.jpg" src="videos/C0151.mov" playsinline disableRemotePlayback></video>
-    <!-- click para start/pause. mouseover põe o vídeo mais lento -->
+
+    <!-- info -->
+    <!-- mouseoverNonStop           começa com mouseover start, pára apenas ao fim dos 20 segundos -->
+    <!-- mouseoverStopIfOut loop    começa com mouseover, pára quando se tira o rato. loop se se mantiver o rato -->
+    <!-- clickStartPause    loop    click para start/pause. loop se não for pausado -->
+    <!-- clickStartPause            click para start/pause. não faz loop. tem de se carregar para começar novamente -->
+    <!-- restartOnMouseOver loop    click para start/pause. mouseover faz restart. -->
+    <!-- rewindOnMouseOver  loop    mouseout começa. mouseover vídeo anda para trás -->
+    <!-- quickerOnMouseOver loop    click para start/pause. mouseover põe o vídeo mais rápido -->
+    <!-- mouseoverNonStop   loop    mouseover start. non-stop + loop -->
+    <!-- muteVideo          loop    arranca com mouseover. click mute/unmute. loop  -->
+    <!-- autoplayClick              linked video #1, click começar os dois. click para pausar. se ambos pausados, arrancam em conjunto -->
+    <!-- autoplayClick              linked video #2, click começar os dois. click para pausar. se ambos pausados, arrancam em conjunto -->
+    <!-- soundOnlyMouseOver loop    som apenas com rato em cima -->
+    <!-- soundPlay          loop    click: play, click novamente: sem som, click novamente: pause -->
+    <!-- autoplayHover      loop    linked video #1, comportamento meio dinâmico -->
+    <!-- autoplayHover      loop    linked video #2, comportamento meio dinâmico -->
+    <!-- slowerOnMouseOver          click para start/pause. mouseover põe o vídeo mais lento -->
 
     <!-- Scripts -->
     <script src="./scripts/hide.js" type="text/javascript"></script>
