@@ -1,3 +1,4 @@
+/*
 var ONLYONETIME_EXECUTE = null;
 window.addEventListener('load', function(){ // on page load
 
@@ -16,8 +17,34 @@ window.addEventListener('load', function(){ // on page load
   }, false)
 
 }, false)
+*/
 
+// ############################################################
+//                  START MUTE STOP
+// ############################################################
+const videosStartMuteStop = document.querySelectorAll("video.startMuteStop")
+videosStartMuteStop.forEach(video => {
+  video.addEventListener("click", function () {
+    if (this.paused) {
+      this.play();
+    } else if (!this.paused && !this.muted) {
+      this.muted=true;
+    } else if (!this.paused && this.muted) {
+      this.pause();
+      this.muted=false;
+    }
+  })
+  /*
+  video.addEventListener("touchstart", function () {
+    this.play()
+  })
+  video.addEventListener("touchend", function () {
+    this.pause()
+  })
+  */
+})
 
+/*
 // ############################################################
 //                  mouseoverStopIfOut
 // ############################################################
@@ -113,29 +140,6 @@ videosMute.forEach(video => {
   })
   video.addEventListener("click", function () {
     this.muted?this.muted=false:this.muted=true;
-  })
-})
-
-// ############################################################
-//                  START MUTE STOP
-// ############################################################
-const videosStartMuteStop = document.querySelectorAll("video.startMuteStop")
-videosStartMuteStop.forEach(video => {
-  video.addEventListener("click", function () {
-    if (this.paused) {
-      this.play();
-    } else if (!this.paused && !this.muted) {
-      this.muted=true;
-    } else if (!this.paused && this.muted) {
-      this.pause();
-      this.muted=false;
-    }
-  })
-  video.addEventListener("touchstart", function () {
-    this.play()
-  })
-  video.addEventListener("touchend", function () {
-    this.pause()
   })
 })
 
