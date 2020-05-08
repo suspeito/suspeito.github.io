@@ -23,7 +23,8 @@ br {
 
 video {
   width: 25vw;
-  height: 25vh;
+  height: 25vh; /* Fallback para não-suporte a Custom Properties */
+  height: calc(var(--vh, 1vh) * 25);
   object-fit: cover;
   overflow: hidden;
   /*box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);*/
@@ -99,6 +100,9 @@ p {
 
 
 @media only screen and (max-device-width: 800px) {
+  body {
+    height: 100%;
+  }
   h1 {
     font-size: 8vw;
     line-height: 7vw;

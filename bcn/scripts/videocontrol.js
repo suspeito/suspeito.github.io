@@ -10,17 +10,6 @@ window.addEventListener('load', function(){ // on page load
         video.play();
       })
 
-
-      video.play();
-
-      //if you want to prepare more than one video/audios use this trick :
-      video2.play();
-      video2.pause();
-      // now video2 is buffering and you can play it programmability later
-      // My personal testing was maximum 6 video/audio for android
-      // and maybe 3 max for iOS using single click or touch.
-      // Every next click also can prepare more audios/videos.
-
       ONLYONETIME_EXECUTE = 0;
     }
 
@@ -28,8 +17,6 @@ window.addEventListener('load', function(){ // on page load
 
 }, false)
 
-
-// It is very usually that user touch screen  ...
 
 // ############################################################
 //                  mouseoverStopIfOut
@@ -143,6 +130,12 @@ videosStartMuteStop.forEach(video => {
       this.pause();
       this.muted=false;
     }
+  })
+  video.addEventListener("touchstart", function () {
+    this.play()
+  })
+  video.addEventListener("touchend", function () {
+    this.pause()
   })
 })
 
