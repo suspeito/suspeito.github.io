@@ -130,6 +130,23 @@ videosMute.forEach(video => {
 })
 
 // ############################################################
+//                  START MUTE STOP
+// ############################################################
+const videosStartMuteStop = document.querySelectorAll("video.startMuteStop")
+videosStartMuteStop.forEach(video => {
+  video.addEventListener("click", function () {
+    if (this.paused) {
+      this.play();
+    } else if (!this.paused && !this.muted) {
+      this.muted=true;
+    } else if (!this.paused && this.muted) {
+      this.pause();
+      this.muted=false;
+    }
+  })
+})
+
+// ############################################################
 //                  SOUND PLAY
 // ############################################################
 const videosSoundPlay = document.querySelectorAll("video.soundPlay")
