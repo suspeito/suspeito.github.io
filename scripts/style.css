@@ -170,7 +170,13 @@ a:link {
 #mail {
 	height: 15px;
 	width: 15px;
-	margin-left: calc(50% - 37.5px)
+	margin-left: calc(50% - 52.5px) /* (with*n_icons+margin*n_intervals)/2 */
+}
+
+#phone {
+	height: 15px;
+	width: 15px;
+	margin-left: 15px;
 }
 
 #facebook {
