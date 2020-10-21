@@ -243,7 +243,12 @@ a:link {
 	#mail {
 		height: 60px;
 		width: 60px;
-		margin-left: calc(50% - 140px);
+		margin-left: calc(50% - 195px); /* (with*n_icons+margin*n_intervals)/2 */
+	}
+	#phone {
+		height: 60px;
+		width: 60px;
+		margin-left: 50px;
 	}
 	#facebook {
 		height: 60px;
