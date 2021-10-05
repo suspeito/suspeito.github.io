@@ -20,9 +20,11 @@ $(function() {
         "rgb(242, 243, 174)",
         "rgb(205, 232, 171)",
         "rgb(229, 159, 113)",
-        "rgb(206, 215, 242)"
+        "rgb(206, 215, 242)",
+        "rgb(207, 190, 200)",
+        "rgb(142, 189, 220)",
+        "rgb(161, 175, 157)"
     ];
-
 
     function shuffle(array) {
         var currentIndex = array.length,
@@ -42,7 +44,7 @@ $(function() {
 
     function mixColors() {
 
-        var nrs = Array.from(Array(9).keys());
+        var nrs = Array.from(Array(12).keys());
         nrs = shuffle(nrs);
 
         var color = randomColor[nrs[0]];
@@ -53,7 +55,7 @@ $(function() {
             "transition": "background-color 500ms linear"
         });
 
-        for (i = 1; i < 10; i++) {
+        for (i = 1; i < 12; i++) {
             color = randomColor[nrs[i]];
             $(".half:nth-child(" + i + ")").css({
                 "background-color": color,
@@ -79,21 +81,18 @@ $(function() {
     mixColors();
 
     var images = new Array();
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 21; i++) {
         images.push("img/anim/" + i + ".png");
     }
 
     var y = 1;
 
     function changeImage() {
-        for (var i = 1; i < 9; i++) {
-            document.getElementById('anim' + i).src = images[y * 10 * i + i];
+        for (var i = 1; i < 11; i++) {
+            document.getElementById('anim' + i).src = images[2 * i - 1 + y];
         }
-        if (y < 1) {
-            y += 1;
-        } else {
-            y = 0;
-        }
+        if (y == 1) { y = 0; }
+        else { y = 1; }
     }
 
     setInterval(function() {

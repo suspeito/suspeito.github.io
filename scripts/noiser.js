@@ -1,83 +1,60 @@
-const noise = () => {
-    let canvas, ctx;
+/*jslint browser*/
+/*https://www.sitepoint.com/community/t/how-would-i-fix-these-jslint-errors/309077/4*/
+function noise() {
+    "use strict";
+    const canvas = document.getElementById("noise");
+    const ctx = canvas.getContext("2d");
+    const wWidth = window.innerWidth;
+    const wHeight = window.innerHeight;
 
-    let wWidth, wHeight;
-
-    let noiseData = [];
-    let frame = 0;
-
-    let loopTimeout;
-
-    // Create Noise
-    const createNoise = () => {
+    function createNoise() {
         const idata = ctx.createImageData(wWidth, wHeight);
         const buffer32 = new Uint32Array(idata.data.buffer);
-        const len = buffer32.length;
-
-        for (let i = 0; i < len; i++) {
+        buffer32.forEach(function (ignore, i, buffer) {
             if (Math.random() < 0.5) {
-                buffer32[i] = 0xff000000;
+                buffer[i] = 0xff000000;
             }
-        }
+        });
+        return idata;
+    }
 
-        noiseData.push(idata);
-    };
+    const noiseData = new Array(10).fill(0).map(createNoise);
+    let frame = 0;
+    let loopTimeout;
 
-    // Play Noise
-    const paintNoise = () => {
-        if (frame === 9) {
-            frame = 0;
-        } else {
-            frame++;
-        }
-
+    function paintNoise() {
+        frame = (frame + 1) % noiseData.length;
         ctx.putImageData(noiseData[frame], 0, 0);
-    };
+    }
 
-    // Loop
-    const loop = () => {
+    function loop() {
+        const frameLoop = () => window.requestAnimationFrame(loop);
+        loopTimeout = window.setTimeout(frameLoop, (1000 / 25));
         paintNoise(frame);
+    }
 
-        loopTimeout = window.setTimeout(() => {
-            window.requestAnimationFrame(loop);
-        }, (1000 / 25));
-    };
-
-    // Setup
-    const setup = () => {
-        wWidth = window.innerWidth;
-        wHeight = window.innerHeight;
-
+    function setup() {
         canvas.width = wWidth;
         canvas.height = wHeight;
-
-        for (let i = 0; i < 10; i++) {
-            createNoise();
-        }
-
         loop();
-    };
+    }
 
-    // Reset
-    let resizeThrottle;
-    const reset = () => {
-        window.addEventListener('resize', () => {
+    function reset() {
+        let resizeThrottle;
+        function resizeHandler() {
             window.clearTimeout(resizeThrottle);
-
-            resizeThrottle = window.setTimeout(() => {
+            resizeThrottle = window.setTimeout(function () {
                 window.clearTimeout(loopTimeout);
                 setup();
             }, 200);
-        }, false);
-    };
+        }
+        window.addEventListener("resize", resizeHandler, false);
+    }
 
-    // Init
-    const init = (() => {
-        canvas = document.getElementById('noise');
-        ctx = canvas.getContext('2d');
-
+    function init() {
+        reset();
         setup();
-    })();
-};
-
+    }
+    init();
+}
 noise();

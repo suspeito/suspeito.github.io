@@ -18,15 +18,15 @@ body {
 }
 
 header {
-	height: calc( 100% / 9);
+	height: calc( 100% / 11);
 }
 
 main {
-	height: calc( 100% / 9 * 8);
+	height: calc( 100% / 11 * 10);
 }
 
 .half {
-	height: calc(100% / 8);
+	height: calc(100% / 10);
 }
 
 img {
