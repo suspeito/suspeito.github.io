@@ -225,4 +225,12 @@ font-family: 'Helvetica', 'Open Sans', sans-serif;
 	.lb-data .lb-number {
 		font-size: 20px;
 	}
+
+  .lb-nav a.lb-next {
+    opacity: 1;
+  }
+
+  .lb-nav a.lb-prev {
+    opacity: 1;
+  }
 }
