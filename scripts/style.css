@@ -333,8 +333,26 @@ a:link {
 	max-height: 100vh;
 }
 
+.project-banner {
+	margin-bottom: 30px;
+	text-align: center;
+	width: 100%;
+	display: block;
+}
+
+.banner-image {
+	max-width: 100%;
+	height: auto;
+	max-height: 300px;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 .project-header {
 	margin-bottom: 40px;
+	width: 100%;
+	display: block;
 }
 
 .project-header h1 {
@@ -382,23 +400,13 @@ a:link {
 	overflow: hidden;
 	border-radius: 8px;
 	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-item:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+	margin-bottom: 20px;
 }
 
 .gallery-item img {
 	width: 100%;
 	height: auto;
 	display: block;
-	transition: transform 0.3s ease;
-}
-
-.gallery-item:hover img {
-	transform: scale(1.05);
 }
 
 /* Responsive Design */
