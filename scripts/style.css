@@ -387,6 +387,11 @@ a:link {
 	color: #000;
 	margin-bottom: 20px;
 	line-height: 1.6;
+	white-space: pre-line;
+}
+
+.project-description p strong {
+	font-weight: bold;
 }
 
 .project-images {
