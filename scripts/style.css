@@ -18,15 +18,15 @@ body {
 }
 
 header {
-	height: calc( 100% / 11);
+	height: calc( 100% / 12);
 }
 
 main {
-	height: calc( 100% / 11 * 10);
+	height: calc( 100% / 12 * 11);
 }
 
 .half {
-	height: calc(100% / 10);
+	height: calc(100% / 11);
 }
 
 img {
@@ -222,7 +222,7 @@ a:link {
 }
 
 .project-list .half {
-	height: calc(100% / 10);
+	height: calc(100% / 11);
 	transition: background-color 500ms linear;
 }
 
@@ -531,7 +531,7 @@ a:link {
 	
 	/* Mobile Project List Layout */
 	.project-list p {
-		font-size: 5vw;
+		font-size: 4.5vw;
 		vertical-align: middle;
 	}
 	
