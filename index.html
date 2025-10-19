@@ -74,6 +74,19 @@
         <!-- ### Project List View ### -->
         <div id="project-list" class="project-list">
 
+        <!-- ### New Project ### -->
+        <section class="half">
+        	<a href="#" onclick="showProject('cassandra'); return false;">
+                <img id="anim11" src="img/anim/21.png" title="Leave your fingerprint here to open Cassandra.">
+                <p>
+                    <span>
+                    — Scenography for BCN in 2025. —
+                    </span>
+                    Cassandra
+                </p>
+            </a>
+        </section>
+
         <!-- ### Project 3 ### -->
         <section class="half">
         	<a href="#" onclick="showProject('alba'); return false;">
@@ -233,6 +246,29 @@
     <script type="text/javascript">
         // Project data structure
         const projects = {
+            'cassandra': {
+                title: 'Cassandra',
+                subtitle: '— Scenography for BCN in 2025. —',
+                description: `This is a placeholder for your new project. You can replace this description with your project details, including information about the concept, process, collaborators, and any other relevant details.<br/><br/>
+                Add your project description here, including any credits, technical details, or background information you'd like to share with visitors.<br/><br/>
+                <strong>Project Type:</strong> [Add project type]<br/>
+                <strong>Year:</strong> [Add year]<br/>
+                <strong>Collaborators:</strong> [Add collaborators]<br/>
+                <strong>Description:</strong> [Add detailed description]`,
+                images: [
+                    { src: 'img/cassandra/cassandrabanner.jpg', title: 'Cassandra Banner' },
+                    { src: 'img/cassandra/cassandra3_10_103.jpg', title: 'Cassandra #1' },
+                    { src: 'img/cassandra/cassandra3_10_129.jpg', title: 'Cassandra #2' },
+                    { src: 'img/cassandra/cassandra3_10_130.jpg', title: 'Cassandra #3' },
+                    { src: 'img/cassandra/cassandra3_10_131.jpg', title: 'Cassandra #4' },
+                    { src: 'img/cassandra/cassandra3_10_132.jpg', title: 'Cassandra #5' },
+                    { src: 'img/cassandra/cassandra3_10_134.jpg', title: 'Cassandra #6' },
+                    { src: 'img/cassandra/cassandra3_10_135.jpg', title: 'Cassandra #7' },
+                    { src: 'img/cassandra/cassandra3_10_136.jpg', title: 'Cassandra #8' },
+                    { src: 'img/cassandra/cassandra3_10_157.jpg', title: 'Cassandra #9' },
+                    { src: 'img/cassandra/cassandra3_10_158.jpg', title: 'Cassandra #10' },
+                ]
+            },
             'alba': {
                 title: 'Alba',
                 subtitle: '— Scenography for BCN in 2023. —',
@@ -525,17 +561,8 @@
             images: [
                 { src: 'img/suspeitobanner.gif', title: 'Suspeito Banner' },
                 { src: 'img/about/us6.jpg', title: 'About Us' },
-                { src: 'img/about/us.jpg', title: 'About Us' },
-                { src: 'img/about/us copy.jpg', title: 'About Us' },
-                { src: 'img/about/us copy 2.jpg', title: 'About Us' },
-                { src: 'img/about/us2.jpg', title: 'About Us' },
-                { src: 'img/about/us3.jpg', title: 'About Us' },
-                { src: 'img/about/us5.jpg', title: 'About Us' },
-                { src: 'img/about/us6-.jpg', title: 'About Us' },
-                { src: 'img/about/us7.jpg', title: 'About Us' },
-                { src: 'img/about/joao.jpg', title: 'João Dias-Oliveira' },
-                { src: 'img/about/nuno.jpg', title: 'Nuno Mota' },
-                { src: 'img/about/rossana.jpg', title: 'Rossana Ribeiro' }
+
+                
             ]
         };
 
