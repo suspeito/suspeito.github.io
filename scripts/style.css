@@ -338,13 +338,15 @@ a:link {
 	text-align: center;
 	width: 100%;
 	display: block;
+	clear: both;
 }
 
 .banner-image {
 	max-width: 100%;
+	width: auto;
 	height: auto;
 	max-height: 300px;
-	object-fit: cover;
+	object-fit: contain;
 	border-radius: 8px;
 	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -353,6 +355,7 @@ a:link {
 	margin-bottom: 40px;
 	width: 100%;
 	display: block;
+	clear: both;
 }
 
 .project-header h1 {
@@ -374,6 +377,8 @@ a:link {
 .project-description {
 	margin-bottom: 40px;
 	line-height: 1.6;
+	width: 100%;
+	display: block;
 }
 
 .project-description p {
@@ -386,6 +391,7 @@ a:link {
 
 .project-images {
 	width: 100%;
+	display: block;
 }
 
 .project-gallery {
