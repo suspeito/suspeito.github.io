@@ -420,6 +420,14 @@ a:link {
 	display: block;
 }
 
+.gallery-item iframe {
+	width: 100%;
+	height: 300px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	border: none;
+}
+
 /* Responsive Design */
 @media only screen and (max-device-width: 800px) {
 	html,

@@ -331,7 +331,7 @@
                 Photographer: Sofia Augusto.`,
                 images: [
                     { src: 'img/ainda/aindabanner.jpg', title: 'Ainda Banner' },
-                    { src: 'img/ainda/aindavideobanner.jpg', title: 'Watch video here: https://vimeo.com/692253505/' },
+                    { src: 'https://vimeo.com/692253505/', title: 'Ainda', type: 'video' },
                     { src: 'img/ainda/ainda.jpg', title: 'During the day.' },
                     { src: 'img/ainda/DSCF0064.jpg', title: 'At dawn.' },
                     { src: 'img/ainda/DSCF0159.jpg', title: 'During the night #1.' },
@@ -703,13 +703,29 @@
                 const imgContainer = document.createElement('div');
                 imgContainer.className = 'gallery-item';
                 
-                const img = document.createElement('img');
-                img.src = image.src;
-                img.alt = image.title;
-                img.title = image.title;
-                img.loading = 'lazy';
+                if (image.type === 'video' && image.src.includes('vimeo.com')) {
+                    // Create Vimeo embed
+                    const iframe = document.createElement('iframe');
+                    iframe.src = image.src.replace('vimeo.com/', 'player.vimeo.com/video/');
+                    iframe.width = '100%';
+                    iframe.height = '300';
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+                    iframe.allowFullscreen = true;
+                    iframe.title = image.title;
+                    
+                    imgContainer.appendChild(iframe);
+                } else {
+                    // Create regular image
+                    const img = document.createElement('img');
+                    img.src = image.src;
+                    img.alt = image.title;
+                    img.title = image.title;
+                    img.loading = 'lazy';
+                    
+                    imgContainer.appendChild(img);
+                }
                 
-                imgContainer.appendChild(img);
                 gallery.appendChild(imgContainer);
             });
 
@@ -776,13 +792,29 @@
                 const imgContainer = document.createElement('div');
                 imgContainer.className = 'gallery-item';
                 
-                const img = document.createElement('img');
-                img.src = image.src;
-                img.alt = image.title;
-                img.title = image.title;
-                img.loading = 'lazy';
+                if (image.type === 'video' && image.src.includes('vimeo.com')) {
+                    // Create Vimeo embed
+                    const iframe = document.createElement('iframe');
+                    iframe.src = image.src.replace('vimeo.com/', 'player.vimeo.com/video/');
+                    iframe.width = '100%';
+                    iframe.height = '300';
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+                    iframe.allowFullscreen = true;
+                    iframe.title = image.title;
+                    
+                    imgContainer.appendChild(iframe);
+                } else {
+                    // Create regular image
+                    const img = document.createElement('img');
+                    img.src = image.src;
+                    img.alt = image.title;
+                    img.title = image.title;
+                    img.loading = 'lazy';
+                    
+                    imgContainer.appendChild(img);
+                }
                 
-                imgContainer.appendChild(img);
                 gallery.appendChild(imgContainer);
             });
 
