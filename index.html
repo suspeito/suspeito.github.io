@@ -9,8 +9,6 @@
 
     <!-- Load jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
-    <script src="scripts/lightbox/lightbox.js"></script>
-    <link href="scripts/lightbox/lightbox.css" rel="stylesheet"/>
 
     <!-- ###  #########  ### -->
     <!-- ###   scripts   ### -->
@@ -65,58 +63,10 @@
 
     <!-- ### Top bar ### -->
     <header>
-        <a href="img/suspeitobanner.gif" rel="lightbox[about]"  Visible="false" data-title="
-            Suspeito is an artistic collective formed by the designer and engineer João Dias-Oliveira and by the architects Nuno Mota and Rossana Ribeiro. Beginning with early collaborations in 2016, it was only in 2018 that the collective identity was defined.
-            &lt;br /&gt;
-            The multidisciplinary group has the ambition of expanding itself on the limits of art, architecture and design, exploring creative ways to involve society to take a deeper look at our surroundings.
-            &lt;br /&gt;
-            Its creative process is defined by a concerned research for concepts, phenomena or theories that can be materialised to motivate reactions, seeking not only to represent but to accentuate the poetic dimensions of many elements that take part in the world we know, theorise and idealise.
-            &lt;br /&gt;
-            &lt;br /&gt;
-            email: colectivo.suspeito@gmail.com&lt;br /&gt;
-            phone: +351 938711215&lt;br /&gt;
-            fb/ig: colectivo.suspeito&lt;br /&gt;
-            ">
+        <a href="#" onclick="showAbout(); return false;">
             <img src="img/anim/SUSPEITO.png" title="Poke it!">
             <p>Suspeito</p>
         </a>
-        <a href="img/about/us6.jpg" rel="lightbox[about]"  Visible="false" title="
-            The interventions of Suspeito arise mainly on the form of installation and scenography, imbued with an often performative load. Its restless and curious personality, wants to question itself constantly on new topics, not to just one predefined method neither the same working strategies.
-            &lt;br /&gt;
-            The approach to creation, through continuous investigation of themes, seek inspiration in humanities and social sciences, in natural phenomena and in more abstract theories.
-            &lt;br /&gt;
-            The execution is morphologically and technically diversified, involving an experimentalism that necessarily generates an implicit risk, to which Suspeito does not surrender.
-            &lt;br /&gt;
-            The group intends to assume itself as an artistic practice that works the relations of interdependence between three parts: art piece, receiver and space, which may focus more on one or another depending on each work or concept. By varying the used method - either by admiration, interaction or immersion - the ultimate objective is to create relevant sensorial experiences.
-            "></a>
-        <a href="img/suspeitobanner.gif" rel="lightbox[about]"  Visible="false" title="
-            2025 OUT | Cassandra with BCN, Milheirós de Poiares.&lt;br /&gt;
-            2025 JUL | Each Other: (Un)Balanced, Festival Portas do Sol, Covilhã.&lt;br /&gt;
-            2024 SEP | Ultrassom with Maria R. Soares and Ricardo Nogueira Fernandes, 2º Encontro Artes Performativas, Santa Maria da Feira.&lt;br /&gt;
-            2023 OUT | ALBA with BCN, EuroParque.&lt;br /&gt;
-            2023 OUT | ALBA with BCN, Teatro Municipal da Guarda.&lt;br /&gt;
-			2022 NOV | Experiência 01 with Ricardo Nogueira Fernandes, RE=INICIAR, Santa Maria da Feira.&lt;br /&gt;
-			2022 MAR | Compasso Incerto with Rita Pinheiro, Teatro Aveirense, Aveiro.&lt;br /&gt;
-			2021 SET | Ainda with Ricardo Nogueira Fernandes, Trilhos Culturais, Caldas S. Jorge.&lt;br /&gt;
-			2021 SET | Each Other: (Un)Balanced, Teatro Aveirense, Aveiro.&lt;br /&gt;
-			2021 MAI | 2020: a domestic space odissey, a topos, Venice, Italy.&lt;br /&gt;
-			2021 MAI | Satélite, Azevedo (promoted by PELE), Oporto.&lt;br /&gt;
-			2020 OCT | Prana, Criatech, Aveiro.&lt;br /&gt;
-			2020 SEP | Compasso Incerto, Lisboa Soa, Lisbon.&lt;br /&gt;
-			2020 JUL | 2020: Odisseia no espaço doméstico, (RE=)INICIAÇÃO, Online.&lt;br /&gt;
-			2019 OCT | Forma Informe with Ricardo Nogueira Fernandes, Gravitações, Oporto.&lt;br /&gt;
-			2019 SEP | Each Other: (Un)Balanced, Mexe, Oporto.&lt;br /&gt;
-			2019 AUG | Each Other: (Un)Balanced with voice of Lígia Soares, Festival A Salto, Elvas.&lt;br /&gt;
-			2019 JUL | Trilhos Culturais, Caldas S. Jorge.&lt;br /&gt;
-			2019 MAR | Faro, LUCity workshop with Moradavaga, Bari, Italy.&lt;br /&gt;
-			2018 JUL | Ápice, Trilhos Culturais, Caldas S. Jorge.&lt;br /&gt;
-			2018 APR | (Un)Balanced, Second Chance, Oporto.&lt;br /&gt;
-			2017 JAN | Light Manifesto, Alumia, Oporto.&lt;br /&gt;
-			2016 DEC | (Un)Balanced, Porto Innovation Hub, Oporto.&lt;br /&gt;
-			2016 NOV | (Un)Balanced with Patrick Hubman, Forum of the Future and Mala Voadora, Oporto.&lt;br /&gt;
-			2016 OCT | Cotton Candy, Festival noc noc, Guimarães.&lt;br /&gt;
-			2016 JUN | Sweet Ride, Festival Doce, Caldas de S. Jorge.
-            "></a>
     </header>
 
     <!-- ### Projects ### -->
@@ -216,13 +166,35 @@
 
         </div>
 
+        <!-- ### About Page View ### -->
+        <div id="about-page" class="project-detail" style="display: none;">
+            <!-- Left Navigation Column -->
+            <div class="project-nav" onclick="showProjectList(); return false;">
+                <div class="undo-button">↶</div>
+            </div>
+            
+            <!-- Main Content Area -->
+            <div class="project-content">
+                <div class="project-header">
+                    <h1>Suspeito</h1>
+                    <div class="project-subtitle">— Artistic Collective —</div>
+                </div>
+                
+                <div class="project-description">
+                    <div id="about-text"></div>
+                </div>
+                
+                <div class="project-images">
+                    <div id="about-gallery"></div>
+                </div>
+            </div>
+        </div>
+
         <!-- ### Project Detail View ### -->
         <div id="project-detail" class="project-detail" style="display: none;">
             <!-- Left Navigation Column -->
-            <div class="project-nav">
-                <a href="#" onclick="showProjectList(); return false;" class="nav-link">
-                    <span class="nav-text">main page</span>
-                </a>
+            <div class="project-nav" onclick="showProjectList(); return false;">
+                <div class="undo-button">↶</div>
             </div>
             
             <!-- Main Content Area -->
@@ -503,14 +475,211 @@
             }
         };
 
+        // About page data
+        const aboutData = {
+            description: `Suspeito is an artistic collective formed by the designer and engineer João Dias-Oliveira and by the architects Nuno Mota and Rossana Ribeiro. Beginning with early collaborations in 2016, it was only in 2018 that the collective identity was defined.<br/><br/>
+            The multidisciplinary group has the ambition of expanding itself on the limits of art, architecture and design, exploring creative ways to involve society to take a deeper look at our surroundings.<br/><br/>
+            Its creative process is defined by a concerned research for concepts, phenomena or theories that can be materialised to motivate reactions, seeking not only to represent but to accentuate the poetic dimensions of many elements that take part in the world we know, theorise and idealise.<br/><br/>
+            <strong>Contact:</strong><br/>
+            email: colectivo.suspeito@gmail.com<br/>
+            phone: +351 938711215<br/>
+            fb/ig: colectivo.suspeito<br/><br/>
+            <strong>About the Collective:</strong><br/>
+            The interventions of Suspeito arise mainly on the form of installation and scenography, imbued with an often performative load. Its restless and curious personality, wants to question itself constantly on new topics, not to just one predefined method neither the same working strategies.<br/><br/>
+            The approach to creation, through continuous investigation of themes, seek inspiration in humanities and social sciences, in natural phenomena and in more abstract theories.<br/><br/>
+            The execution is morphologically and technically diversified, involving an experimentalism that necessarily generates an implicit risk, to which Suspeito does not surrender.<br/><br/>
+            The group intends to assume itself as an artistic practice that works the relations of interdependence between three parts: art piece, receiver and space, which may focus more on one or another depending on each work or concept. By varying the used method - either by admiration, interaction or immersion - the ultimate objective is to create relevant sensorial experiences.<br/><br/>
+            <strong>Timeline:</strong><br/>
+            2025 OUT | Cassandra with BCN, Milheirós de Poiares.<br/>
+            2025 JUL | Each Other: (Un)Balanced, Festival Portas do Sol, Covilhã.<br/>
+            2024 SEP | Ultrassom with Maria R. Soares and Ricardo Nogueira Fernandes, 2º Encontro Artes Performativas, Santa Maria da Feira.<br/>
+            2023 OUT | ALBA with BCN, EuroParque.<br/>
+            2023 OUT | ALBA with BCN, Teatro Municipal da Guarda.<br/>
+            2022 NOV | Experiência 01 with Ricardo Nogueira Fernandes, RE=INICIAR, Santa Maria da Feira.<br/>
+            2022 MAR | Compasso Incerto with Rita Pinheiro, Teatro Aveirense, Aveiro.<br/>
+            2021 SET | Ainda with Ricardo Nogueira Fernandes, Trilhos Culturais, Caldas S. Jorge.<br/>
+            2021 SET | Each Other: (Un)Balanced, Teatro Aveirense, Aveiro.<br/>
+            2021 MAI | 2020: a domestic space odissey, a topos, Venice, Italy.<br/>
+            2021 MAI | Satélite, Azevedo (promoted by PELE), Oporto.<br/>
+            2020 OCT | Prana, Criatech, Aveiro.<br/>
+            2020 SEP | Compasso Incerto, Lisboa Soa, Lisbon.<br/>
+            2020 JUL | 2020: Odisseia no espaço doméstico, (RE=)INICIAÇÃO, Online.<br/>
+            2019 OCT | Forma Informe with Ricardo Nogueira Fernandes, Gravitações, Oporto.<br/>
+            2019 SEP | Each Other: (Un)Balanced, Mexe, Oporto.<br/>
+            2019 AUG | Each Other: (Un)Balanced with voice of Lígia Soares, Festival A Salto, Elvas.<br/>
+            2019 JUL | Trilhos Culturais, Caldas S. Jorge.<br/>
+            2019 MAR | Faro, LUCity workshop with Moradavaga, Bari, Italy.<br/>
+            2018 JUL | Ápice, Trilhos Culturais, Caldas S. Jorge.<br/>
+            2018 APR | (Un)Balanced, Second Chance, Oporto.<br/>
+            2017 JAN | Light Manifesto, Alumia, Oporto.<br/>
+            2016 DEC | (Un)Balanced, Porto Innovation Hub, Oporto.<br/>
+            2016 NOV | (Un)Balanced with Patrick Hubman, Forum of the Future and Mala Voadora, Oporto.<br/>
+            2016 OCT | Cotton Candy, Festival noc noc, Guimarães.<br/>
+            2016 JUN | Sweet Ride, Festival Doce, Caldas de S. Jorge.`,
+            images: [
+                { src: 'img/suspeitobanner.gif', title: 'Suspeito Banner' },
+                { src: 'img/about/us6.jpg', title: 'About Us' },
+                { src: 'img/about/us.jpg', title: 'About Us' },
+                { src: 'img/about/us copy.jpg', title: 'About Us' },
+                { src: 'img/about/us copy 2.jpg', title: 'About Us' },
+                { src: 'img/about/us2.jpg', title: 'About Us' },
+                { src: 'img/about/us3.jpg', title: 'About Us' },
+                { src: 'img/about/us5.jpg', title: 'About Us' },
+                { src: 'img/about/us6-.jpg', title: 'About Us' },
+                { src: 'img/about/us7.jpg', title: 'About Us' },
+                { src: 'img/about/joao.jpg', title: 'João Dias-Oliveira' },
+                { src: 'img/about/nuno.jpg', title: 'Nuno Mota' },
+                { src: 'img/about/rossana.jpg', title: 'Rossana Ribeiro' }
+            ]
+        };
+
+        // Color system integration
+        const randomColors = [
+            "rgb(227, 227, 106)",
+            "rgb(185, 205, 218)",
+            "rgb(255, 172, 129)",
+            "rgb(242, 246, 208)",
+            "rgb(197, 239, 203)",
+            "rgb(242, 243, 174)",
+            "rgb(205, 232, 171)",
+            "rgb(229, 159, 113)",
+            "rgb(206, 215, 242)",
+            "rgb(207, 190, 200)",
+            "rgb(142, 189, 220)",
+            "rgb(161, 175, 157)"
+        ];
+
+        function getRandomColor() {
+            return randomColors[Math.floor(Math.random() * randomColors.length)];
+        }
+
+        function applyColorToNav() {
+            const nav = document.querySelector('.project-nav');
+            if (nav) {
+                const color = getRandomColor();
+                nav.style.backgroundColor = color;
+                nav.style.transition = 'background-color 500ms linear';
+            }
+        }
+
+        // Store the current color changing state
+        let currentColorIndex = 0;
+        let shuffledColors = [];
+
+        function initializeColors() {
+            // Create a shuffled array of colors like the main page
+            shuffledColors = [...randomColors];
+            for (let i = shuffledColors.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledColors[i], shuffledColors[j]] = [shuffledColors[j], shuffledColors[i]];
+            }
+            currentColorIndex = 0;
+        }
+
+        function getNextNavColor() {
+            if (shuffledColors.length === 0) {
+                initializeColors();
+            }
+            const color = shuffledColors[currentColorIndex];
+            currentColorIndex = (currentColorIndex + 1) % shuffledColors.length;
+            return color;
+        }
+
+        function applySequentialColorToNav() {
+            // Find the visible navigation element
+            const aboutPage = document.getElementById('about-page');
+            const projectDetail = document.getElementById('project-detail');
+            let nav = null;
+            
+            if (aboutPage && aboutPage.style.display === 'flex') {
+                nav = aboutPage.querySelector('.project-nav');
+            } else if (projectDetail && projectDetail.style.display === 'flex') {
+                nav = projectDetail.querySelector('.project-nav');
+            }
+            
+            if (nav) {
+                const color = getNextNavColor();
+                nav.style.setProperty('background-color', color, 'important');
+                nav.style.transition = 'background-color 500ms linear';
+            }
+        }
+
         // Navigation functions
+        function showAbout() {
+            // Hide header, project list and show about page
+            document.querySelector('header').style.display = 'none';
+            document.getElementById('project-list').style.display = 'none';
+            document.getElementById('project-detail').style.display = 'none';
+            document.getElementById('about-page').style.display = 'flex';
+
+            // Get the current color from the header (Suspeito line)
+            const headerColor = window.getComputedStyle(document.querySelector('header')).backgroundColor;
+            const content = document.querySelector('#about-page .project-content');
+            if (content) {
+                content.style.backgroundColor = headerColor;
+            }
+
+            // Initialize and apply color to navigation
+            initializeColors();
+            applySequentialColorToNav();
+
+            // Update about content
+            document.getElementById('about-text').innerHTML = aboutData.description;
+
+            // Update about gallery
+            const gallery = document.getElementById('about-gallery');
+            gallery.innerHTML = '';
+            
+            aboutData.images.forEach((image, index) => {
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'gallery-item';
+                
+                const img = document.createElement('img');
+                img.src = image.src;
+                img.alt = image.title;
+                img.title = image.title;
+                img.loading = 'lazy';
+                
+                imgContainer.appendChild(img);
+                gallery.appendChild(imgContainer);
+            });
+
+            // Update URL without page reload
+            history.pushState({ page: 'about' }, '', '#about');
+        }
+
         function showProject(projectId) {
             const project = projects[projectId];
             if (!project) return;
 
-            // Hide project list and show project detail
+            // Hide header, project list and about page, show project detail
+            document.querySelector('header').style.display = 'none';
             document.getElementById('project-list').style.display = 'none';
+            document.getElementById('about-page').style.display = 'none';
             document.getElementById('project-detail').style.display = 'flex';
+
+            // Find the clicked project line and get its color
+            const projectLinks = document.querySelectorAll('#project-list a[onclick*="showProject"]');
+            let clickedColor = 'rgb(242, 243, 174)'; // fallback color
+            
+            projectLinks.forEach(link => {
+                if (link.getAttribute('onclick').includes(`'${projectId}'`)) {
+                    const projectSection = link.closest('.half');
+                    if (projectSection) {
+                        clickedColor = window.getComputedStyle(projectSection).backgroundColor;
+                    }
+                }
+            });
+
+            // Set background color for content area to match clicked line
+            const content = document.querySelector('#project-detail .project-content');
+            if (content) {
+                content.style.backgroundColor = clickedColor;
+            }
+
+            // Initialize and apply color to navigation (same as about page)
+            initializeColors();
+            applySequentialColorToNav();
 
             // Update project content
             document.getElementById('project-title').textContent = project.title;
@@ -540,9 +709,11 @@
         }
 
         function showProjectList() {
-            // Show project list and hide project detail
+            // Show header, project list and hide other views
+            document.querySelector('header').style.display = 'block';
             document.getElementById('project-list').style.display = 'block';
             document.getElementById('project-detail').style.display = 'none';
+            document.getElementById('about-page').style.display = 'none';
 
             // Update URL
             history.pushState({}, '', window.location.pathname);
@@ -552,6 +723,8 @@
         window.addEventListener('popstate', function(event) {
             if (event.state && event.state.project) {
                 showProject(event.state.project);
+            } else if (event.state && event.state.page === 'about') {
+                showAbout();
             } else {
                 showProjectList();
             }
@@ -560,10 +733,24 @@
         // Handle initial page load with hash
         window.addEventListener('load', function() {
             const hash = window.location.hash.substring(1);
-            if (hash && projects[hash]) {
+            if (hash === 'about') {
+                showAbout();
+            } else if (hash && projects[hash]) {
                 showProject(hash);
             }
         });
+
+        // Color changing interval for navigation column only
+        setInterval(function() {
+            // Only change color if we're on a detail page (not main page)
+            const projectDetail = document.getElementById('project-detail');
+            const aboutPage = document.getElementById('about-page');
+            if (projectDetail && projectDetail.style.display === 'flex') {
+                applySequentialColorToNav();
+            } else if (aboutPage && aboutPage.style.display === 'flex') {
+                applySequentialColorToNav();
+            }
+        }, 2000);
     </script>
 
 </body>
