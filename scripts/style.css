@@ -400,31 +400,33 @@ a:link {
 }
 
 .project-gallery {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 20px;
+	display: block;
 	margin-top: 20px;
+	text-align: left;
 }
 
 .gallery-item {
 	position: relative;
 	overflow: hidden;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 	margin-bottom: 20px;
+	display: block;
+	width: auto;
 }
 
 .gallery-item img {
-	width: 100%;
+	max-width: 100%;
+	width: auto;
 	height: auto;
+	max-height: 80vh;
+	object-fit: contain;
 	display: block;
+	margin: 0;
+	float: none;
 }
 
 .gallery-item iframe {
 	width: 100%;
 	height: 300px;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 	border: none;
 }
 
@@ -528,8 +530,11 @@ a:link {
 	}
 	
 	.project-gallery {
-		grid-template-columns: 1fr;
-		gap: 15px;
+		display: block;
+	}
+	
+	.gallery-item img {
+		max-height: 70vh;
 	}
 	
 	.project-description p {
