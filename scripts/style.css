@@ -353,6 +353,8 @@ a:link {
 
 .project-header {
 	margin-bottom: 40px;
+	margin-left: auto;
+	margin-right: auto;
 	width: 100%;
 	max-width: 135vh;
 	display: block;
@@ -377,6 +379,8 @@ a:link {
 
 .project-description {
 	margin-bottom: 40px;
+	margin-left: auto;
+	margin-right: auto;
 	line-height: 1.6;
 	width: 100%;
 	max-width: 135vh;
@@ -418,6 +422,9 @@ a:link {
 
 .project-images {
 	width: 100%;
+	max-width: 135vh;
+	margin-left: auto;
+	margin-right: auto;
 	display: block;
 }
 
@@ -540,10 +547,13 @@ a:link {
 	
 	.project-content {
 		margin-left: 0;
+		margin-right: 0;
 		padding: 20px;
 	}
 	
 	.project-header {
+		margin-left: auto;
+		margin-right: auto;
 		max-width: 105vh;
 	}
 	
@@ -555,6 +565,12 @@ a:link {
 		font-size: 24px;
 	}
 	
+	.project-images {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 105vh;
+	}
+	
 	.project-gallery {
 		display: block;
 	}
@@ -564,6 +580,8 @@ a:link {
 	}
 	
 	.project-description {
+		margin-left: auto;
+		margin-right: auto;
 		max-width: 105vh;
 	}
 	
