@@ -354,6 +354,7 @@ a:link {
 .project-header {
 	margin-bottom: 40px;
 	width: 100%;
+	max-width: 120vh;
 	display: block;
 	clear: both;
 }
@@ -378,6 +379,7 @@ a:link {
 	margin-bottom: 40px;
 	line-height: 1.6;
 	width: 100%;
+	max-width: 120vh;
 	display: block;
 }
 
@@ -541,6 +543,10 @@ a:link {
 		padding: 20px;
 	}
 	
+	.project-header {
+		max-width: 105vh;
+	}
+	
 	.project-header h1 {
 		font-size: 80px;
 	}
@@ -555,6 +561,10 @@ a:link {
 	
 	.gallery-item img {
 		max-height: 70vh;
+	}
+	
+	.project-description {
+		max-width: 105vh;
 	}
 	
 	.project-description p {
