@@ -420,6 +420,94 @@ a:link {
 	font-weight: bold;
 }
 
+/* Timeline hover effects */
+.timeline-item {
+	position: relative;
+	display: inline;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+	text-decoration: none;
+}
+
+.timeline-item:hover::after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	height: 40vh;          /* 20% of viewport height */
+	aspect-ratio: 3 / 2;   /* Keeps 600x400 (3:2) proportion */
+	width: auto;           /* Auto width based on height */
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	pointer-events: none;
+	opacity: 1;
+}
+
+/* Project-specific banner images */
+.timeline-item.ainda:hover::after {
+	background-image: url('../img/timeline/ainda.jpg') !important;
+}
+
+.timeline-item.alba:hover::after {
+	background-image: url('../img/alba/albabanner.jpg') !important;
+}
+
+.timeline-item.azevedo:hover::after {
+	background-image: url('../img/azevedo/azevedobanner.jpg') !important;
+}
+
+.timeline-item.cassandra:hover::after {
+	background-image: url('../img/cassandra/cassandrabanner.jpg') !important;
+}
+
+.timeline-item.compass:hover::after {
+	background-image: url('../img/compass/compassbanner.JPG') !important;
+}
+
+.timeline-item.eachother:hover::after {
+	background-image: url('../img/EO/eobanner.jpg') !important;
+}
+
+.timeline-item.formainforme:hover::after {
+	background-image: url('../img/formainforme/formabanner.png') !important;
+}
+
+.timeline-item.manifesto:hover::after {
+	background-image: url('../img/manifesto/manifestobanner.jpg') !important;
+}
+
+.timeline-item.prana:hover::after {
+	background-image: url('../img/prana/pranabanner.jpg') !important;
+}
+
+.timeline-item.unbalanced:hover::after {
+	background-image: url('../img/unb/unbbanner.jpg') !important;
+}
+
+.timeline-item.apice:hover::after {
+	background-image: url('../img/apice/poster.jpg') !important;
+}
+
+.timeline-item.sweet:hover::after {
+	background-image: url('../img/timeline/sweet.jpg') !important;
+}
+
+@keyframes fadeInHover {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 .project-images {
 	width: 100%;
 	max-width: 135vh;
