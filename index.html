@@ -552,9 +552,9 @@
             <strong>Contact:</strong>
             email: colectivo.suspeito@gmail.com
             phone: +351 938711215
-            fb/ig: colectivo.suspeito<br/>
+            fb/ig: colectivo.suspeito
 
-            <strong>About the Collective:</strong><br/>
+            <strong>About the Collective:</strong>
             The interventions of Suspeito arise mainly on the form of installation and scenography, imbued with an often performative load. Its restless and curious personality, wants to question itself constantly on new topics, not to just one predefined method neither the same working strategies.
             The approach to creation, through continuous investigation of themes, seek inspiration in humanities and social sciences, in natural phenomena and in more abstract theories.
             The execution is morphologically and technically diversified, involving an experimentalism that necessarily generates an implicit risk, to which Suspeito does not surrender.
@@ -683,8 +683,12 @@
             initializeColors();
             applySequentialColorToNav();
 
-            // Update about content
-            document.getElementById('about-text').innerHTML = aboutData.description;
+            // Update about content with line break formatting
+            let formattedAboutDescription = aboutData.description
+                .replace(/\n\n/g, '<br/><br/>')  // Double line breaks to paragraph breaks
+                .replace(/\n/g, '<br/>');        // Single line breaks to line breaks
+            
+            document.getElementById('about-text').innerHTML = formattedAboutDescription;
 
             // Update about gallery (include all images now)
             const gallery = document.getElementById('about-gallery');
