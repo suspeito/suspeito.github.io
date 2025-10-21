@@ -587,4 +587,11 @@ a:link {
 	.project-list span {
 		display: none;
 	}
+	
+	/* Mobile undo button */
+	.undo-button {
+		font-size: 48px;
+		width: 60px;
+		height: 60px;
+	}
 }
