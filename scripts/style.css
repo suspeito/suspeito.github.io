@@ -354,7 +354,7 @@ a:link {
 .project-header {
 	margin-bottom: 40px;
 	width: 100%;
-	max-width: 120vh;
+	max-width: 135vh;
 	display: block;
 	clear: both;
 }
@@ -379,7 +379,7 @@ a:link {
 	margin-bottom: 40px;
 	line-height: 1.6;
 	width: 100%;
-	max-width: 120vh;
+	max-width: 135vh;
 	display: block;
 }
 
@@ -439,7 +439,7 @@ a:link {
 	max-width: 100%;
 	width: auto;
 	height: auto;
-	max-height: 80vh;
+	max-height: 90vh;
 	object-fit: contain;
 	display: block;
 	margin: 0;
