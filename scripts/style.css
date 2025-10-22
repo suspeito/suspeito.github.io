@@ -98,6 +98,24 @@ a:link {
 	color: #000;
 }
 
+/* Hide browser status bar text on hover */
+a {
+	text-decoration: none !important;
+}
+
+a:hover {
+	text-decoration: none !important;
+}
+
+/* Prevent browser from showing file paths in status bar */
+.project-list a {
+	pointer-events: auto;
+}
+
+.project-list a:hover {
+	cursor: pointer;
+}
+
 .alignleft {
 	float: left;
 	margin-left: 1%;
