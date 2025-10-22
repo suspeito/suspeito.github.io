@@ -321,30 +321,18 @@ a:hover {
 }
 
 .undo-button {
-	font-size: 32px;
-	font-weight: 300;
-	color: #000;
-	text-decoration: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 45px;
-	height: 45px;
-	border-radius: 0;
-	background-color: transparent;
-	border: none;
-	outline: none;
+	width: 32px;
+	height: 32px;
+	display: block;
+	margin: 0 auto;
 	transition: all 0.3s ease;
-	text-shadow: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+	cursor: pointer;
+	opacity: 0.8;
 }
 
 .undo-button:hover {
-	background-color: transparent;
+	opacity: 1;
 	transform: scale(1.1);
-	color: #000;
 }
 
 .project-content {
@@ -733,16 +721,10 @@ a:hover {
 	
 	/* Mobile undo button */
 	.undo-button {
-		font-size: 32px;
-		width: 45px;
-		height: 45px;
-		border-radius: 0;
-		background-color: transparent;
-		border: none;
-		outline: none;
-		color: #000;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
+		width: 32px;
+		height: 32px;
+		display: block;
+		margin: 0 auto;
+		opacity: 0.8;
 	}
 }
