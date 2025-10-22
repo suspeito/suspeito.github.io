@@ -323,17 +323,22 @@ a:hover {
 .undo-button {
 	font-size: 32px;
 	font-weight: 300;
-	color: #333;
+	color: #000;
 	text-decoration: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 45px;
 	height: 45px;
-	border-radius: 50%;
+	border-radius: 0;
 	background-color: transparent;
+	border: none;
+	outline: none;
 	transition: all 0.3s ease;
 	text-shadow: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 .undo-button:hover {
@@ -728,8 +733,16 @@ a:hover {
 	
 	/* Mobile undo button */
 	.undo-button {
-		font-size: 48px;
-		width: 60px;
-		height: 60px;
+		font-size: 32px;
+		width: 45px;
+		height: 45px;
+		border-radius: 0;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		color: #000;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
 	}
 }
