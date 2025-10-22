@@ -578,7 +578,7 @@ a:hover {
 		left: 0px;
 	}
 	p {
-		font-size: 5vw;
+		font-size: 6vw;
 		vertical-align: middle;
 	}
 	span {
@@ -637,7 +637,7 @@ a:hover {
 		width: 100%;
 		height: auto;
 		position: relative;
-		padding: 15px;
+		padding: 22px;
 		border-right: none;
 		border-bottom: none;
 		flex-direction: row;
@@ -701,18 +701,18 @@ a:hover {
 	}
 	
 	.project-description p {
-		font-size: 24px;
+		font-size: 32px;
 		line-height: 1.6;
 	}
 	
 	/* Mobile styles for about and project text content */
 	#about-text, #project-text {
-		font-size: 24px !important;
+		font-size: 32px !important;
 		line-height: 1.6 !important;
 	}
 	
 	#about-text p, #project-text p {
-		font-size: 24px !important;
+		font-size: 32px !important;
 		line-height: 1.6 !important;
 		margin-bottom: 20px !important;
 	}
@@ -723,7 +723,7 @@ a:hover {
 	
 	/* Mobile Project List Layout */
 	.project-list p {
-		font-size: 4.5vw;
+		font-size: 6vw;
 		vertical-align: middle;
 	}
 	
@@ -733,8 +733,8 @@ a:hover {
 	
 	/* Mobile undo button */
 	.undo-button {
-		width: 32px;
-		height: 32px;
+		width: 48px;
+		height: 48px;
 		display: block;
 		margin: 0 auto;
 		opacity: 0.8;
