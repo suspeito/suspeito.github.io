@@ -306,7 +306,7 @@
                 <strong>Logistic and Technical Support:</strong> President José Martins extended to all collaborators.
                 <strong>Photographer:</strong> Sofia Augusto.`,
                 images: [
-                    { src: 'https://vimeo.com/692253505/', title: 'Ainda', type: 'video' },
+                    { src: 'https://youtu.be/660SRS1iBS0?si=u8oEmsU6OOl8eKFp', title: 'Ainda', type: 'video' },
                     { src: 'img/ainda/ainda.jpg', title: 'During the day.' },
                     { src: 'img/ainda/DSCF0064.jpg', title: 'At dawn.' },
                     { src: 'img/ainda/DSCF0159.jpg', title: 'During the night #1.' },
@@ -691,12 +691,10 @@
                 const imgContainer = document.createElement('div');
                 imgContainer.className = 'gallery-item';
                 
-                if (image.type === 'video' && image.src.includes('vimeo.com')) {
-                    // Create Vimeo embed
+                if (image.type === 'video' && image.src.includes('youtu.be')) {
+                    // Create YouTube embed
                     const iframe = document.createElement('iframe');
-                    iframe.src = image.src.replace('vimeo.com/', 'player.vimeo.com/video/');
-                    iframe.width = '100%';
-                    iframe.height = '300';
+                    iframe.src = image.src.replace('youtu.be/', 'www.youtube.com/embed/');
                     iframe.frameBorder = '0';
                     iframe.allow = 'autoplay; fullscreen; picture-in-picture';
                     iframe.allowFullscreen = true;
@@ -773,12 +771,10 @@
                 const imgContainer = document.createElement('div');
                 imgContainer.className = 'gallery-item';
                 
-                if (image.type === 'video' && image.src.includes('vimeo.com')) {
-                    // Create Vimeo embed
+                if (image.type === 'video' && image.src.includes('youtu.be')) {
+                    // Create YouTube embed
                     const iframe = document.createElement('iframe');
-                    iframe.src = image.src.replace('vimeo.com/', 'player.vimeo.com/video/');
-                    iframe.width = '100%';
-                    iframe.height = '300';
+                    iframe.src = image.src.replace('youtu.be/', 'www.youtube.com/embed/');
                     iframe.frameBorder = '0';
                     iframe.allow = 'autoplay; fullscreen; picture-in-picture';
                     iframe.allowFullscreen = true;
