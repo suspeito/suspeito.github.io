@@ -578,7 +578,7 @@ a:hover {
 		left: 0px;
 	}
 	p {
-		font-size: 6vw;
+		font-size: 5vw;
 		vertical-align: middle;
 	}
 	span {
@@ -723,7 +723,7 @@ a:hover {
 	
 	/* Mobile Project List Layout */
 	.project-list p {
-		font-size: 6vw;
+		font-size: 4.5vw;
 		vertical-align: middle;
 	}
 	
