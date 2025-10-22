@@ -453,44 +453,48 @@ a:link {
 	background-image: url('../img/timeline/ainda.jpg') !important;
 }
 
-.timeline-item.alba:hover::after {
-	background-image: url('../img/alba/albabanner.jpg') !important;
+.timeline-item.albaGuarda:hover::after {
+	background-image: url('../img/timeline/alba-guarda.jpg') !important;
 }
 
 .timeline-item.azevedo:hover::after {
-	background-image: url('../img/azevedo/azevedobanner.jpg') !important;
-}
-
-.timeline-item.cassandra:hover::after {
-	background-image: url('../img/cassandra/cassandrabanner.jpg') !important;
+	background-image: url('../img/timeline/azevedo.jpg') !important;
 }
 
 .timeline-item.compass:hover::after {
-	background-image: url('../img/compass/compassbanner.JPG') !important;
+	background-image: url('../img/timeline/compass-lisboasoa.jpg') !important;
 }
 
-.timeline-item.eachother:hover::after {
-	background-image: url('../img/EO/eobanner.jpg') !important;
+.timeline-item.eachotherMexe:hover::after {
+	background-image: url('../img/timeline/unbalanced-mexe.jpg') !important;
+}
+
+.timeline-item.eachotherElvas:hover::after {
+	background-image: url('../img/timeline/unbalanced-elvas.jpg') !important;
+}
+
+.timeline-item.cotton:hover::after {
+	background-image: url('../img/timeline/cotton.jpg') !important;
 }
 
 .timeline-item.formainforme:hover::after {
-	background-image: url('../img/formainforme/formabanner.png') !important;
+	background-image: url('../img/timeline/formainforme.jpg') !important;
 }
 
 .timeline-item.manifesto:hover::after {
-	background-image: url('../img/manifesto/manifestobanner.jpg') !important;
+	background-image: url('../img/timeline/manifesto.jpg') !important;
 }
 
 .timeline-item.prana:hover::after {
-	background-image: url('../img/prana/pranabanner.jpg') !important;
+	background-image: url('../img/timeline/prana.jpeg') !important;
 }
 
 .timeline-item.unbalanced:hover::after {
-	background-image: url('../img/unb/unbbanner.jpg') !important;
+	background-image: url('../img/timeline/unbalanced.jpg') !important;
 }
 
 .timeline-item.apice:hover::after {
-	background-image: url('../img/apice/poster.jpg') !important;
+	background-image: url('../img/timeline/apice.jpg') !important;
 }
 
 .timeline-item.sweet:hover::after {
