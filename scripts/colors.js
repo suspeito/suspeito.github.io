@@ -81,14 +81,14 @@ $(function() {
     mixColors();
 
     var images = new Array();
-    for (var i = 0; i < 21; i++) {
+    for (var i = 0; i < 23; i++) {
         images.push("img/anim/" + i + ".png");
     }
 
     var y = 1;
 
     function changeImage() {
-        for (var i = 1; i < 11; i++) {
+        for (var i = 1; i < 12; i++) {
             document.getElementById('anim' + i).src = images[2 * i - 1 + y];
         }
         if (y == 1) { y = 0; }

@@ -9,8 +9,6 @@
 
     <!-- Load jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
-    <script src="scripts/lightbox/lightbox.js"></script>
-    <link href="scripts/lightbox/lightbox.css" rel="stylesheet"/>
 
     <!-- ###  #########  ### -->
     <!-- ###   scripts   ### -->
@@ -65,534 +63,159 @@
 
     <!-- ### Top bar ### -->
     <header>
-        <a href="img/suspeitobanner.gif" rel="lightbox[about]"  Visible="false" data-title="
-            Suspeito is an artistic collective formed by the designer and engineer João Dias-Oliveira and by the architects Nuno Mota and Rossana Ribeiro. Beginning with early collaborations in 2016, it was only in 2018 that the collective identity was defined.
-            &lt;br /&gt;
-            The multidisciplinary group has the ambition of expanding itself on the limits of art, architecture and design, exploring creative ways to involve society to take a deeper look at our surroundings.
-            &lt;br /&gt;
-            Its creative process is defined by a concerned research for concepts, phenomena or theories that can be materialised to motivate reactions, seeking not only to represent but to accentuate the poetic dimensions of many elements that take part in the world we know, theorise and idealise.
-            &lt;br /&gt;
-            &lt;br /&gt;
-            email: colectivo.suspeito@gmail.com&lt;br /&gt;
-            phone: +351 938711215&lt;br /&gt;
-            fb/ig: colectivo.suspeito&lt;br /&gt;
-            ">
+        <a onclick="showAbout(); return false;">
             <img src="img/anim/SUSPEITO.png" title="Poke it!">
             <p>Suspeito</p>
         </a>
-        <a href="img/about/us6.jpg" rel="lightbox[about]"  Visible="false" title="
-            The interventions of Suspeito arise mainly on the form of installation and scenography, imbued with an often performative load. Its restless and curious personality, wants to question itself constantly on new topics, not to just one predefined method neither the same working strategies.
-            &lt;br /&gt;
-            The approach to creation, through continuous investigation of themes, seek inspiration in humanities and social sciences, in natural phenomena and in more abstract theories.
-            &lt;br /&gt;
-            The execution is morphologically and technically diversified, involving an experimentalism that necessarily generates an implicit risk, to which Suspeito does not surrender.
-            &lt;br /&gt;
-            The group intends to assume itself as an artistic practice that works the relations of interdependence between three parts: art piece, receiver and space, which may focus more on one or another depending on each work or concept. By varying the used method - either by admiration, interaction or immersion - the ultimate objective is to create relevant sensorial experiences.
-            "></a>
-        <a href="img/suspeitobanner.gif" rel="lightbox[about]"  Visible="false" title="
-            2025 OUT | Cassandra with BCN, Milheirós de Poiares.&lt;br /&gt;
-            2025 JUL | Each Other: (Un)Balanced, Festival Portas do Sol, Covilhã.&lt;br /&gt;
-            2024 SEP | Ultrassom with Maria R. Soares and Ricardo Nogueira Fernandes, 2º Encontro Artes Performativas, Santa Maria da Feira.&lt;br /&gt;
-            2023 OUT | ALBA with BCN, EuroParque.&lt;br /&gt;
-            2023 OUT | ALBA with BCN, Teatro Municipal da Guarda.&lt;br /&gt;
-			2022 NOV | Experiência 01 with Ricardo Nogueira Fernandes, RE=INICIAR, Santa Maria da Feira.&lt;br /&gt;
-			2022 MAR | Compasso Incerto with Rita Pinheiro, Teatro Aveirense, Aveiro.&lt;br /&gt;
-			2021 SET | Ainda with Ricardo Nogueira Fernandes, Trilhos Culturais, Caldas S. Jorge.&lt;br /&gt;
-			2021 SET | Each Other: (Un)Balanced, Teatro Aveirense, Aveiro.&lt;br /&gt;
-			2021 MAI | 2020: a domestic space odissey, a topos, Venice, Italy.&lt;br /&gt;
-			2021 MAI | Satélite, Azevedo (promoted by PELE), Oporto.&lt;br /&gt;
-			2020 OCT | Prana, Criatech, Aveiro.&lt;br /&gt;
-			2020 SEP | Compasso Incerto, Lisboa Soa, Lisbon.&lt;br /&gt;
-			2020 JUL | 2020: Odisseia no espaço doméstico, (RE=)INICIAÇÃO, Online.&lt;br /&gt;
-			2019 OCT | Forma Informe with Ricardo Nogueira Fernandes, Gravitações, Oporto.&lt;br /&gt;
-			2019 SEP | Each Other: (Un)Balanced, Mexe, Oporto.&lt;br /&gt;
-			2019 AUG | Each Other: (Un)Balanced with voice of Lígia Soares, Festival A Salto, Elvas.&lt;br /&gt;
-			2019 JUL | Trilhos Culturais, Caldas S. Jorge.&lt;br /&gt;
-			2019 MAR | Faro, LUCity workshop with Moradavaga, Bari, Italy.&lt;br /&gt;
-			2018 JUL | Ápice, Trilhos Culturais, Caldas S. Jorge.&lt;br /&gt;
-			2018 APR | (Un)Balanced, Second Chance, Oporto.&lt;br /&gt;
-			2017 JAN | Light Manifesto, Alumia, Oporto.&lt;br /&gt;
-			2016 DEC | (Un)Balanced, Porto Innovation Hub, Oporto.&lt;br /&gt;
-			2016 NOV | (Un)Balanced with Patrick Hubman, Forum of the Future and Mala Voadora, Oporto.&lt;br /&gt;
-			2016 OCT | Cotton Candy, Festival noc noc, Guimarães.&lt;br /&gt;
-			2016 JUN | Sweet Ride, Festival Doce, Caldas de S. Jorge.
-            "></a>
     </header>
 
     <!-- ### Projects ### -->
     <main>
+        <!-- ### Project List View ### -->
+        <div id="project-list" class="project-list">
 
-<!--
-The RE = initiation project, launched by Ballet Contemporâneo do Norte, brings together 16 artists at a time of exceptional and global urgency, when the pandemic Covid19 hit Portugal hard and there was a mandatory quarantine between March and May 2020.
-So, we decided to open 16 windows that connect our collective's houses to the rest of the world.
-Working with visual effects that explore the potential of light – a recurrent research by the collective – we recorded audio and images from objects and products of everyday domestic life.
-The project consists of a digital interface that enhances the activation of senses beyond audio and visual – embracing touch, smell and a fourth dimension through the sensation of movement – in a close relationship with the mediator that connects the user to the experience.
-It is up to the viewer to decide which window or windows to open and activate, creating an enormous possibility of sound and visual relations between the 16 clips.
-In addition to a relationship between the viewer's body and the technological device, it is also a relationship between that body and the creators' domestic space and equipment, in a game of sensations and spatial relationships in which the user commands the journey in this sharing of a place as intimate as it is distant.
--->
-
-	<!-- ### Project A0 ### -->
-	<!-- ### FOR LATER
+        <!-- ### New Project ### -->
         <section class="half">
-        	<a href="img/experiencia/aindabanner.jpg" rel="lightbox[exp01]"  Visible="false" data-title="
-        		(More pictures soon!)
-        		&lt;br /&gt;
-        		&lt;br /&gt;
-				A circular portal-mirror, 3 meters in diameter, suspended among the existing vegetation, above a practically immobile water mirror. Crossing this plane, which reflects its surroundings, is a 5 meter long line of light. The suspended, crystallized mirror, whose image is only changing depending on the observer's point of view, while the liquid mirror is constantly misshapen at the whim of the river's current. Water, glass and light, three elements whose geometries and relative positions reverberate - to oneself and to the surroundings - infinitely. The light is in sync with an artificial soundscape, added to the natural sound of the place: a track composed by the artist Ricardo Nogueira Fernandes, entitled 'Circle'.
-				&lt;br /&gt;
-                &lt;br /&gt;
-                Project presented in the 2021 edition of Trilhos Culturais in Caldas de São Jorge.
-                &lt;br /&gt;
-                Logistic and Technical Support: President José Martins extended to all collaborators.
-                &lt;br /&gt;
-                Photographer: Sofia Augusto.
-                ">
-                <img id="anim6" src="img/anim/11.png"  title="Leave your fingerprint here to open Prana.">
-                <p><span>&mdash; Light experience for BCN in 2022. &mdash;</span>Experiência 01</p>
+        	<a onclick="showProject('cassandra'); return false;">
+                <img id="anim11" src="img/anim/21.png">
+                <p><span>&mdash; Scenography for a dance show. &mdash;</span>Cassandra</p>
             </a>
-            <a href="img/experiencia/ainda.jpg" rel="lightbox[exp01]"  Visible="false" title="During the day."></a>
         </section>
-    ### -->
 
         <!-- ### Project 3 ### -->
         <section class="half">
-        	<a data-title="
-                &quot;Alba&quot; is a multidisciplinary performance that blends contemporary dance, classical music, and literature, bringing together two institutions from Santa Maria da Feira — Ballet Contemporâneo do Norte and the Portuguese Philharmonic Orchestra.
-                &lt;br /&gt;
-                Created in 2023, between the 50th anniversaries of New Portuguese Letters (1972) and the April Revolution (1974), the project explores the word freedom through a poetic, philosophical, and political lens. Inspired by the phrase “Freedom is the persistence of the laughter of those who can bear it without a grimace”, the piece questions the nature of the freedom we hold today, how it was achieved, and the challenges of maintaining it.
-                &lt;br /&gt;
-                Treating freedom as a work-in-progress, the performance connects themes of resistance, revolution, participation, and citizenship. The title Alba refers to a Provençal poetic form describing dawn after a lovers' encounter, and symbolically evokes that transitional hour before sunrise — a space of imagination, magic, and liberation. The piece proposes a union of bodies — musicians and dancers — capable of announcing the dawn of April and echoing the emancipatory voice found in New Portuguese Letters.
-                &lt;br /&gt;
-                &lt;br /&gt;
-                Direction: Susana Otero
-                &lt;br /&gt;
-                Choreography and Performance: Carminda Soares, Filipa Duarte, Maria R. Soares, Margarida Monteny and Susana Otero
-                &lt;br /&gt;
-                Costumes: Jordann Santos
-                &lt;br /&gt;
-                Scenography: Colectivo Suspeito
-                &lt;br /&gt;
-                Lighting Design: Pedro Abreu
-                &lt;br /&gt;
-                Make-up and Hair: Maria Fontes and Patrícia Lima
-                &lt;br /&gt;
-                Supporting Texts: Rogério Nuno Costa
-                &lt;br /&gt;
-                Musical Composition: Nuno Guedes de Campos
-                &lt;br /&gt;
-                Musical Direction: Osvaldo Ferreira and André Lousada
-                &lt;br /&gt;
-                Thanks to: Portuguese Philharmonic Orchestra, CIRAC, Teatro Municipal da Guarda and Europarque
-                " href="img/alba/albabanner.jpg" rel="lightbox[alba]" visible="false">
-                <img id="anim7" src="img/anim/13.png" title="Leave your fingerprint here to open Alba.">
-                <p>
-                    <span>
-                    — Scenography for BCN in 2023. —
-                    </span>
-                    Alba
-                </p>
-                </img>
+		<a onclick="showProject('alba'); return false;">
+                <img id="anim7" src="img/anim/13.png">
+                <p><span>&mdash; Scenography for dance and classical music. &mdash;</span>Alba</p>
             </a>
-            <a href="img/alba/1-DSC_4957.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/1-DSC_5000.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/1-DSC_5254.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/1-DSC_5308.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/1-DSC_5321.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/1-DSC_5359.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/1-DSC_5418.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/2-DSC_5030.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/2-DSC_5265.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/2-DSC_5289.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/3-DSC_4867.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/3-DSC_4893.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
-            <a href="img/alba/3-DSC_4906.jpg" rel="lightbox[alba]" title="&copy Alexandre Costa" visible="false"></a>
         </section>
 
 	<!-- ### Project A1 ### -->
         <section class="half">
-        	<a href="img/ainda/aindabanner.jpg" rel="lightbox[ainda]"  Visible="false" data-title="
-
-				A circular portal-mirror, 3 meters in diameter, suspended among the existing vegetation, above a practically immobile water mirror. Crossing this plane, which reflects its surroundings, is a 5 meter long line of light. The suspended, crystallized mirror, whose image is only changing depending on the observer's point of view, while the liquid mirror is constantly misshapen at the whim of the river's current. Water, glass and light, three elements whose geometries and relative positions reverberate - to oneself and to the surroundings - infinitely. The light is in sync with an artificial soundscape, added to the natural sound of the place: a track composed by the artist Ricardo Nogueira Fernandes, entitled 'Circle'.
-				&lt;br /&gt;
-                &lt;br /&gt;
-                Project presented in the 2021 edition of Trilhos Culturais in Caldas de São Jorge.
-                &lt;br /&gt;
-                Logistic and Technical Support: President José Martins extended to all collaborators.
-                &lt;br /&gt;
-                Photographer: Sofia Augusto.
-                ">
-                <img id="anim10" src="img/anim/19.png"  title="Leave your fingerprint here to open Prana.">
-                <p><span>&mdash; Reflections of light for Trilhos Culturais in 2021. &mdash;</span>Ainda</p>
+		<a onclick="showProject('ainda'); return false;">
+                <img id="anim10" src="img/anim/19.png">
+                <p><span>&mdash; Reflections of light and sound. &mdash;</span>Ainda</p>
             </a>
-            <a href="img/ainda/aindavideobanner.jpg" rel="lightbox[ainda]"  Visible="false" title="
-            	Watch video here: https://vimeo.com/692253505/
-                &lt;br /&gt;
-                &lt;br /&gt;
-            "></a>
-			<a href="img/ainda/ainda.jpg" rel="lightbox[ainda]"  Visible="false" title="During the day."></a>
-            <a href="img/ainda/DSCF0064.jpg" rel="lightbox[ainda]"  Visible="false" title="At dawn."></a>
-            <a href="img/ainda/DSCF0159.jpg" rel="lightbox[ainda]"  Visible="false" title="During the night #1."></a>
-            <a href="img/ainda/DSCF0182.jpg" rel="lightbox[ainda]"  Visible="false" title="During the night #1."></a>
-            <a href="img/ainda/DSCF0080_IMG-20210919-smaller.png" rel="lightbox[ainda]"  Visible="false" title="Reflections on water."></a>
-            <a href="img/ainda/DSCF0098.jpg" rel="lightbox[ainda]"  Visible="false" title="Details #1."></a>
-            <a href="img/ainda/DSCF0188.jpg" rel="lightbox[ainda]"  Visible="false" title="Details #2."></a>
         </section>
 
 	<!-- ### Project A2 ### -->
         <section class="half">
-        	<a href="img/azevedo/azevedobanner.jpg" rel="lightbox[azevedo]"  Visible="false" data-title="
-				
-				The project Azevedo by PELE is a regenerative artistic creation program that proposes to establish a dialogue between the territory of Azevedo (Porto), resident communities (human and more-than-human) and national and international creators. It awakens processes of collective creation and community participation, promoting the activation of common spaces through artistic intervention.
-				&lt;br /&gt;
-				Colectivo Suspeito took part in the process of conceptualise and build a collection of pieces aimed to create an organic, changeable nomadic structure. A collective body capable of manifesting itself through its unity, but also through the autonomy of its parts. With those objectives 3 sets made of steel and wood were proposed to work together or individually as a kitchen, workshop bench and also a multifunctional device capable of unfold to different configurations and uses.
-				&lt;br /&gt;
-                &lt;br /&gt;
-                Devices created and build for Azevedo project of PELE, Porto.
-                &lt;br /&gt;
-                Thanks for the great support of Fernando Almeida (conceptual, technical and building) and Carina Moutinho (logistics), to Lovers & Lollypops and Gorvell for opening their facilities to us, in particular the workshop space, and also to ArtWorks for the technical support building the multifunctional device.
-                ">
-                <img id="anim9" src="img/anim/17.png"  title="Leave your fingerprint here to open Prana.">
-                <p><span>&mdash; Movable devices for Pele in 2021. &mdash;</span>Azevedo</p>
+		<a onclick="showProject('azevedo'); return false;">
+                <img id="anim9" src="img/anim/17.png">
+                <p><span>&mdash; Movable devices for a community project. &mdash;</span>Azevedo</p>
             </a>
-            
-            <a href="img/azevedo/0.jpg" rel="lightbox[azevedo]"  Visible="false" title="General view of movable devices."></a>
-            <a href="img/azevedo/1.png" rel="lightbox[azevedo]"  Visible="false" title="Kitchen #1."></a>
-            <a href="img/azevedo/2.png" rel="lightbox[azevedo]"  Visible="false" title="Kitchen #2."></a>
-            <a href="img/azevedo/3.png" rel="lightbox[azevedo]"  Visible="false" title="Kitchen #3."></a>
-            <a href="img/azevedo/4.png" rel="lightbox[azevedo]"  Visible="false" title="Kitchen #4."></a>
-            <a href="img/azevedo/5.png" rel="lightbox[azevedo]"  Visible="false" title="Working device #1."></a>
-            <a href="img/azevedo/6.png" rel="lightbox[azevedo]"  Visible="false" title="Working device #2."></a>
-            <a href="img/azevedo/7.png" rel="lightbox[azevedo]"  Visible="false" title="Multifunctional device #1."></a>
-            <a href="img/azevedo/8.png" rel="lightbox[azevedo]"  Visible="false" title="Multifunctional device #2."></a>
-            <a href="img/azevedo/9.png" rel="lightbox[azevedo]"  Visible="false" title="Devices #1."></a>
-            <a href="img/azevedo/10.png" rel="lightbox[azevedo]"  Visible="false" title="Devices #2."></a>
-            <a href="img/azevedo/11.png" rel="lightbox[azevedo]"  Visible="false" title="Opening #1."></a>
-            <a href="img/azevedo/12.png" rel="lightbox[azevedo]"  Visible="false" title="Opening #2."></a>
-
         </section>
 
 	<!-- ### Project A3 ### -->
         <section class="half">
-        	<a href="img/prana/pranabanner.jpg" rel="lightbox[prana]"  Visible="false" data-title="
-        		Prana is the energy that lives in each particle and interconnects them, no matter how different they are. It is the energy from which all other energies arise. A spiritual and philosophical concept, global and embracing, not only unique to Hinduism or Buddhism, it designates an omnipresent life force in the cosmos that allows everything to exist - from living things to inanimate objects.It is something we can breathe in the air, but it is also something much more intangible than that.
-        		&lt;br /&gt;
-				This installation intends to depict this notion of some kind of power which binds us, unites us as a single being and connects us with other beings and everything else around us. From micro to macro scale, it feeds life, making the world exists as we know it.
-				&lt;br /&gt;
-				The project consists of a light programmed to fluctuate its intensity at a slow and steady pace - an allusion to a type of breathing movement done with four distinct moments, as ancient Buddhist and Hindu practices recommend, marking a calm, gentle but paced rhythm and time. However, as visitors walk through space interacting with it and with each other, it is when Prana's energy awakens, intensifying its light but not changing its rhythm.
-				&lt;br /&gt;
-				Technically, it is a suspended white LED line (in a circle, square or straight line depending on the space) synched with a low-frequency audio that might also reverberate in the bones, stimulating various senses: vision, hearing and touch. The amount of movement caused by visitors around the space is registered by a set of sensors that activates the electronic system making the immersive experience intensity deeper or more shallow, depending on whether less or more movement is detected or on the density of people inside the room. More people closer to the installation meaning a more intense response, as it would be a higher concentration of energy flowing.
-				&lt;br /&gt;
-                &lt;br /&gt;
-                Project presented in the 2020 edition of Criatech in Museu da Santa Joana, Aveiro.
-                &lt;br /&gt;
-                Logistic and Technical Support: Carlos Veríssimo and both teams from Teatro Aveirense and Museu de Santa Joana.
-                ">
-                <img id="anim5" src="img/anim/9.png"  title="Leave your fingerprint here to open Prana.">
-                <p><span>&mdash; Living light for Criatech in 2020. &mdash;</span>Prana</p>
+		<a onclick="showProject('prana'); return false;">
+                <img id="anim5" src="img/anim/9.png">
+                <p><span>&mdash; Breathing light synced with the intensity of the space. &mdash;</span>Prana</p>
             </a>
-            
-            <a href="img/prana/1.jpg" rel="lightbox[prana]"  Visible="false" title="Empty room"></a>
-            <a href="img/prana/2.jpg" rel="lightbox[prana]"  Visible="false" title="One person."></a>
-            <a href="img/prana/3.jpg" rel="lightbox[prana]"  Visible="false" title="Multiple people inside."></a>
-            
         </section>
 
         <!-- ### Project A4 ### -->
         <section class="half">
-        	<a href="img/compass/compassbanner.JPG" rel="lightbox[compass]"  Visible="false" data-title="
-        		Uncertain Compass is an installation which works with the instability of the body, turned into a sound object by the activation of the audience that explores it. The balance and strength of each person will act as the tools that make both the experience and the sound composition unique, which will react only to the human body and its movement and rhythm.
-				&lt;br /&gt;
-				It is a reference to a floating object and to the planet's water, simultaneously threatened and a threat to our society, today.
-				&lt;br /&gt;
-				It is also a particularly intimate form of navigation, of a surrounding journey, mental and sensorial, without leaving the place.
-				&lt;br /&gt;
-				Compass being a tool for orientation and navigation in the planet, also refers to a tool for drawing circles and beat rhythm in music. In Portuguese, its original name also performs a sound pun, meaning “com passo”, literally translated as “with footstep” or using a more ambiguous expression “paced”, alluding to the small journey made within the circular unstable platform in the installation.
-				&lt;br /&gt;
-				The sounds were recorded with a contact microphone from objects using natural matter as wood, stone, clay or metal. The all resonate as white noises and allude to the four winds.
-				&lt;br /&gt;
-                &lt;br /&gt;
-                Project presented in the 2020 edition of Lisboa Soa music festival in Estufa Fria, Lisbon.
-                &lt;br /&gt;
-                Logistic and Technical Support: Carmo Medeiros and workers from Centro de Interpretação da Estufa Fria de Lisboa.
-                ">
-                <img id="anim4" src="img/anim/7.png"  title="Leave your fingerprint here to open Proxemics.">
-                <p><span>&mdash; Broken compass for Lisboa Soa in 2020. &mdash;</span>Compasso Incerto</p>
+		<a onclick="showProject('compass'); return false;">
+                <img id="anim4" src="img/anim/7.png">
+                <p><span>&mdash; Broken compass and a sound responsive. &mdash;</span>Compasso Incerto</p>
             </a>
-
-            <a href="img/compass/1.jpg" rel="lightbox[compass]"  Visible="false" title="Overview."></a>
-            <a href="img/compass/2.jpg" rel="lightbox[compass]"  Visible="false" title="Details #1."></a>
-            <a href="img/compass/3.jpg" rel="lightbox[compass]"  Visible="false" title="Details #2."></a>
-            <a href="img/compass/4.jpg" rel="lightbox[compass]"  Visible="false" title="Details #3."></a>
-            <a href="img/compass/5.jpg" rel="lightbox[compass]"  Visible="false" title="Details #4."></a>
-            <a href="img/compass/6.jpg" rel="lightbox[compass]"  Visible="false" title="Details #5."></a>
-            <a href="img/compass/7.png" rel="lightbox[compass]"  Visible="false" title="Active compass #1."></a>
-            <a href="img/compass/8.png" rel="lightbox[compass]"  Visible="false" title="Active compass #2."></a>
-            
         </section>
 
     	<!-- ### Project 1 ### -->
         <section class="half">
-        	<a href="img/EO/eobanner.jpg" rel="lightbox[EO]"  Visible="false" data-title="
-                Each Other is a project aiming to merge two distinct creative fields – architecture+design and performing arts - into the creation of several pieces that define, through a mechanical and scenic artefact, a place and physical condition for the viewer in relation with the other spectators.
-                &lt;br /&gt;
-                In the same way there is, in each piece, an instructive proposal that guides the way in which the situation will be experienced, considering the user simultaneously the visitor and the performative body of the work. It articulates the conception and design of various objects to the dramaturgy of a performance based on the creation of three mechanical artefacts inspired by notions of unstable movement aiming to motivate the reflection on balance, relations, forces, weights, dependencies, presupposing to establish action-reaction dynamics between at least two people.
-                &lt;br /&gt;
-                &lt;br /&gt;
-                Presentations&lt;br /&gt;
-                (Un)Balanced: A Salto 2019 (Elvas), (Un)Balanced MEXE 2019 (Porto), Teatro Aveirense (Aveiro)
-                &lt;br /&gt;
-                &lt;br /&gt;
-                Project in development in collaboration with Diogo Alvim (musician and composer), Lígia Soares (choreographer and playwright) and Rita Vilhena (performer, dancer and choreographer).
-             ">
-                <img id="anim6" src="img/anim/11.png"  title="Leave your fingerprint here to open Each Other.">
-                <p><span>&mdash; Scenic project to share interactions. Project in development since 2017. &mdash;</span>Each Other</p>
+		<a onclick="showProject('eachother'); return false;">
+                <img id="anim6" src="img/anim/11.png">
+                <p><span>&mdash; Scenic project to share interactions. &mdash;</span>Each Other</p>
             </a>
-
-            <a href="img/EO/a.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept.">
-            <a href="img/EO/b.jpg" rel="lightbox[EO]"  Visible="false" title="Promotion of concept."></a>
-            <a href="img/EO/1.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: Mexe 2019, Campanhã."></a>
-            <a href="img/EO/2.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: Mexe 2019, Campanhã."></a>
-            <a href="img/EO/3.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade."></a>
-            <a href="img/EO/4.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade."></a>
-            <a href="img/EO/5j.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade. &copy João Pedro Azevedo"></a>
-            <a href="img/EO/6j.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade. &copy João Pedro Azevedo"></a>
-            <a href="img/EO/7j.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade. &copy João Pedro Azevedo"></a>
-            <a href="img/EO/8j.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade. &copy João Pedro Azevedo"></a>
-            <a href="img/EO/9p.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: Mexe 2019, São Bento. &copy Pedro Cavaco Leitão"></a>
-            <a href="img/EO/10p.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: Mexe 2019, São Bento. &copy Pedro Cavaco Leitão"></a>
-            <a href="img/EO/11p.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: Mexe 2019, São Bento. &copy Pedro Cavaco Leitão"></a>
-            <a href="img/EO/12a.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
-            <a href="img/EO/12b.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
-            <a href="img/EO/13.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
-            <a href="img/EO/14.jpg" rel="lightbox[EO]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
-            <a href="img/EO/15.jpg" rel="lightbox[EO]"  Visible="false" title="Waving Ball: Presentation MEXE 2019."></a>
-            <a href="img/EO/16.png" rel="lightbox[EO]"  Visible="false" title="Waving Ball: Presentation MEXE 2019."></a>
-
-            <a href="img/suspeitobanner.gif" rel="lightbox[EO]"  Visible="false" data-title="
-             	'Eu, Tu e o Balanço que nos (Des)Equilibra!', by Bárbara Mateus, 21.09.2019, MEXE ZINE Dia#6
-				&lt;br /&gt;
-				&lt;br /&gt;
-				Um jogo de forças que nos convida à brincadeira, à exploração do objecto e à introspecção pelo poder da palavra. Assim é a proposta da instalação trazida pelo Colectivo Suspeito! - 'Each Other, (Un)Balanced' é uma estrutura de madeira que reinventa a construção de um baloiço, instalada no espaço público (na Estação de Comboios da Campanhã, no Metro da Trindade, na Estação de São Bento), onde se sentam as pessoas de passagem, sempre a dois, e num jogo de equilíbrios precários que desafia a relação entre ambos.
-				&lt;br /&gt;
-				É no silêncio que tudo começa, após nos sentarmos no baloiço e colocarmos os phones à espera de ouvir alguma indicação. Entre o silêncio e a palavra surge uma inquietude quase infantil que nos precipita ao movimento e à exploração do objecto, assim como a espera nos explora a nós. O silêncio por vezes pode ser tão constrangedor!!
-				Entre um sobe e desce, entre o meu peso e o teu, entre as nossas diferenças, tentamos encontrar um sentido! 
-				Quando a palavra surge, todo o nosso corpo fica suspenso no suspense da compreensão do que nos está a ser dito. Espontaneamente, o movimento pára equilibrando os baloiços, enquanto os pensamentos surgem desequilibrados pelas palavras. Toma-se uma dinâmica entre o exterior e o interior, entre o corpo e a mente. Enquanto o objecto nos convida à extroversão, a palavra convida-nos à introversão. 
-				&lt;br /&gt;
-				O texto provocador remete-nos à introspecção com base numa reflexão sobre a forma como nos relacionamos com os outros e connosco. De que maneira as nossas crenças e 'verdades' são um espelho dos nossos medos, dos nossos anseios, das nossas inseguranças que tentamos projectar no outro e que são igualmente, muitas vezes, projectadas em nós por outros tantos? De que maneira o poder que exercemos sobre o outro esconde o poder que não exercemos sobre nós? Poderá estar nessa sensação de falta de controle o impulso que nos leva a controlar as relações e, muitas vezes, ao abuso do poder como forma de mascarar uma verdadeira fragilidade e vulnerabilidade.
-				&lt;br /&gt;
-				Sempre à procura, sempre aos altos e baixos, assim muitas vezes somos nós por dentro tal como o baloiço o é por fora! 
-				E é nessa inércia, onde a palavra domina os pensamentos, que se torna insuportável aguentar o que nos é dito; numa fuga constrangedora, precipitamo-nos para a brincadeira do baloiço, entre o sobe e desce, entre o meu peso e o teu, na tentativa de não pensar mais.
-				&lt;br /&gt;
-				Eis que surge um terceiro elemento, o Público!
-				&lt;br /&gt;
-				Desde o início presente, desde o início ausente e alheio à realidade que se está a passar. O Público observa com curiosidade, sem quase entender, enquanto os dois 'actores' abandonam o baloiço na esperança de que o Público nada tenha entendido!
-				&lt;br /&gt;
-				O Público toma-se num género de voyeur, quase um alter ego que causa algum desconforto nos transeuntes-espectadores-tornados-actores. Tudo isto se passa dentro da nossa cabeça, como normalmente acontece. A dificuldade em nos expormos de forma mais profunda por vezes é altamente constrangedora, a dificuldade em parar para nos pensarmos pode ser deveras perturbadora. Acredito que - será uma boa notícia? - é que a maior parte das vezes a censura esta em nós e somos nós, exemplo disso e este Público que tanto Observa mas nada Absorve!
-				&lt;br /&gt;
-				Arrisco-me a dizer que este trabalho pode ser considerado como uma experiência artística num laboratório social: eu, o outro e a arte entre nós! Foi como me senti.
-				&lt;br /&gt;
-				Como dizia um grande mestre que ainda hoje guardo em mim: E a única verdade é aquilo que nós sentimos!                 
-             "></a>
         </section>
 
         <!-- ### Project 2 ### -->
         <section class="half">
-        	<a data-title="
-                Forma Informe questions the importance and meaning we attach to form as a defining element of something or someone. Why do we tend to define the world based on what we see when everything is much more than just the limits on which our eyes lie?
-                &lt;br /&gt;
-				The subjectivity of form as a concept is portrayed: something that our brain produces with the information captured by the eyes in order to synthesize and simplify our apprehension of reality. At the same time, it can complexify the world by changing according to the point of view from which we look, or the being and feeling of the beholder.
-				&lt;br /&gt;
-				What is its validity and why do we attach such significance to it? Why do we focus and limit ourselves to it when the thing we want to realize is so much bigger, more complex, more volatile than the way it appears to us?
-				&lt;br /&gt;
-				What matters to know in depth the object of our attention is to look at it beyond its form: in its matter, in its reasons for being but at the same time in its absurdity; in your order and in your chaos. The form itself does not say everything, but still we could say that the form does not matter?
-				&lt;br /&gt;
-				Something is always bigger and more complex than it appears.
-                &lt;br /&gt;
-                Forma Informe explores the meaning of form as the defining element of something.
-                &lt;br /&gt;
-                &lt;br /&gt;
-                Project developed for the 2019 edition of Trilhos Culturais in Caldas de São Jorge.
-                &lt;br /&gt;
-                Logistic and Technical Support: President José Martins extended to all collaborators, in particular to Elísio Mota.
-                &lt;br /&gt;
-                Photographers: Luís Eusébio and Hélder Cunha.
-                " href="img/formainforme/formabanner.png" rel="lightbox[formainforme]" visible="false">
-                <img id="anim3" src="img/anim/5.png" title="Leave your fingerprint here to open Manifesto.">
+		<a onclick="showProject('formainforme'); return false;">
+                <img id="anim3" src="img/anim/5.png">
                 <p>
                     <span>
-                    — Perception of Form for Trilhos Culturais 2019. —
+                    — Perception of Form of light. —
                     </span>
                     Forma Informe
                 </p>
-                </img>
             </a>
-			<a href="img/formainforme/1ll.png" rel="lightbox[formainforme]" title="Active circle. &copy Luís Eusébio" visible="false"></a>
-            <a href="img/formainforme/2ll.png" rel="lightbox[formainforme]" title="Active circle. &copy Luís Eusébio" visible="false"></a>
-            <a href="img/formainforme/3h.jpg" rel="lightbox[formainforme]" title="Active hexagon. &copy Hélder Cunha" visible="false"></a>
-            <a href="img/formainforme/4hl.png" rel="lightbox[formainforme]" title="Active pentagon. &copy Hélder Cunha (left), Luís Eusébio (right)" visible="false"></a>
-            <a href="img/formainforme/5h.jpg" rel="lightbox[formainforme]" title="Active square. &copy Hélder Cunha" visible="false"></a>
-            <a href="img/formainforme/6lh.png" rel="lightbox[formainforme]" title="Active triagle and line. &copy Luís Eusébio (left), Hélder Cunha (right)" visible="false"></a>
-            <a href="img/formainforme/7ll.png" rel="lightbox[formainforme]" title="Passive line and triangle. &copy Luís Eusébio" visible="false"></a>
-            <a href="img/formainforme/8ll.png" rel="lightbox[formainforme]" title="Passive square and pentagon. &copy Luís Eusébio" visible="false"></a>
-            <a href="img/formainforme/9ll.png" rel="lightbox[formainforme]" title="Passive hexagon and circle. &copy Luís Eusébio" visible="false"></a>
-            <a href="img/formainforme/10h.jpg" rel="lightbox[formainforme]" title="Circle during the day. &copy Hélder Cunha" visible="false"></a>
-            <a href="img/formainforme/11.png" rel="lightbox[formainforme]" title="Passive line and circle during the day." visible="false"></a>
         </section>
 
         <!-- ### Project 4 ### -->
         <section class="half">
-            
-        	<a href="img/apice/apicemanifesto.jpg" rel="lightbox[apice]"  Visible="false" data-title="
-                Ápice represents an instant perpetuated in an infinite time. Materialized in a (dis)charge of energy, memory or emotion, it develops until its resolution, being simultaneously beginning and end. A tiny fragment of the order of the universe, where everything is transformed.
-                &lt;br /&gt;
-                &lt;br /&gt;
-                Project developed for the event Trilhos Culturais in Caldas de São Jorge.
-                &lt;br /&gt;
-                We thank support on logistics and construction to José Martins, José Luís, Jorge Silva, Jorge Gomes, Paulo Gouveia, Maria Irene Ribeiro, Elísio Mota, Hélder Cunha, Vítor Santos, João Peranda, Pedro Cavaco Leitão and Alfredo Ceia.
-                ">
-                <img id="anim8" src="img/anim/15.png" title="Leave your fingerprint here to open Ápice.">
-                <p><span>&mdash; Journey of a light particle for Trilhos Culturais 2018. &mdash;</span>Ápice</p>
+		<a onclick="showProject('apice'); return false;">
+                <img id="anim8" src="img/anim/15.png">
+                <p><span>&mdash; Journey of a light particle in a space. &mdash;</span>Ápice</p>
             </a>
-            <a href="img/apice/1.jpg" rel="lightbox[apice]"  Visible="false" title="Genesis. &copy Hélder Cunha"></a>
-            <a href="img/apice/2.png" rel="lightbox[apice]"  Visible="false" title="Genesis."></a>
-            <a href="img/apice/3.jpg" rel="lightbox[apice]"  Visible="false" title="Linear journey. &copy Hélder Cunha"></a>
-            <a href="img/apice/4.png" rel="lightbox[apice]"  Visible="false" title="Linear journey."></a>
-            <a href="img/apice/5.jpg" rel="lightbox[apice]"  Visible="false" title="Eye."></a>
-            <a href="img/apice/6.jpg" rel="lightbox[apice]"  Visible="false" title="Linear journey."></a>
-            <a href="img/apice/7.jpg" rel="lightbox[apice]"  Visible="false" title="Line."></a>
-            <a href="img/apice/8.jpg" rel="lightbox[apice]"  Visible="false" title="Fragmentation."></a>
-            <a href="img/apice/9.jpg" rel="lightbox[apice]"  Visible="false" title="Fragmentation. &copy Hélder Cunha"></a>
-            <a href="img/apice/10.png" rel="lightbox[apice]"  Visible="false" title="Explosion. Left photo, &copy Hélder Cunha"></a>
-            <a href="img/apice/11.jpg" rel="lightbox[apice]"  Visible="false" title="Debris. &copy Hélder Cunha"></a>
-            <a href="img/apice/12.jpg" rel="lightbox[apice]"  Visible="false" title="Debris."></a>
-            <a href="img/apice/13.jpg" rel="lightbox[apice]"  Visible="false" title="Fragmentation to explosion."></a>
-            <a href="img/apice/14.png" rel="lightbox[apice]"  Visible="false" title="General view at night."></a>
-            <a href="img/apice/15.jpg" rel="lightbox[apice]"  Visible="false" title="Explosion on the cascate. &copy Hélder Cunha"></a>
-            <a href="img/apice/16.jpg" rel="lightbox[apice]"  Visible="false" title="Explosion at dawn. &copy Hélder Cunha"></a>
-            <a href="img/apice/17.png" rel="lightbox[apice]"  Visible="false" title="Installation during the day."></a>
         </section>
 
         <!-- ### Project 5 ### -->
         <section class="half">
-            <a href="img/manifesto/manifestobanner.jpg" rel="lightbox[manifesto]"  Visible="false" data-title="
-                Manifesto da Luz asks <i>Does that which are unable to see really exist?</i> Without light, there is no perception of matter. It can be nothing, it can be anything. Here, Light quietly manifests its existence. Interestingly, it does so through the reverse phenomenon that it alone is able to produce: Shadow.
-                &lt;br /&gt;
-                &lt;br /&gt;
-                For Alumia event celebrating 20th anniversary of the Historic Centre of Porto as a UNESCO World Heritage site and National Day of Historic Centres. The event was organised and sponsored by Porto Lazer, and logistics for artists were supported by Opium.
-                ">
-                <img id="anim2" src="img/anim/3.png" title="Leave your fingerprint here to open Manifesto.">
-                <p><span>&mdash; Narrative of a Light for the Alumia project in 2017. &mdash;</span>Manifesto da Luz</p>
+		<a onclick="showProject('manifesto'); return false;">
+                <img id="anim2" src="img/anim/3.png">
+                <p><span>&mdash; Narrative of a Light entity. &mdash;</span>Manifesto da Luz</p>
             </a>
-            <a href="img/manifesto/manifesto/night.JPG" rel="lightbox[manifesto]"  Visible="false" title="Detail at night"></a>
-            <a href="img/manifesto/pres/1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-            <a href="img/manifesto/pres/2.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-            <a href="img/manifesto/pres/4.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-            <a href="img/manifesto/pres/5.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-            <a href="img/manifesto/pres/6.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-            <a href="img/manifesto/pres/7.jpg" rel="lightbox[manifesto]"  Visible="false" title="Public presentation. &copy Porto Lazer"></a>
-            <a href="img/manifesto/d.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
-            <a href="img/manifesto/b.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
-            <a href="img/manifesto/e.png" rel="lightbox[manifesto]"  Visible="false" title="Installation at night."></a>
-            <a href="img/manifesto/manifesto/1.JPG" rel="lightbox[manifesto]"  Visible="false" title="Installation during the day."></a>
-            <a href="img/manifesto/manifesto/6_1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Installation during the day."></a>
-            <a href="img/manifesto/manifesto/4.JPG" rel="lightbox[manifesto]"  Visible="false" title="Installation during the day."></a>
-            <a href="img/manifesto/a.jpg" rel="lightbox[manifesto]"  Visible="false" title="Promotion."></a>
-            <a href="img/manifesto/a1.jpg" rel="lightbox[manifesto]"  Visible="false" title="Narrative."></a>
         </section>
 
         <!-- ### Project 6 ### -->
         <section class="half">
-            <a href="img/unb/unbbanner.jpg" rel="lightbox[unbalanced]"  Visible="false" data-title="
-                (Un)Balanced is an interactive installation, built with wood structure, in which two swings are suspended, connected by a circuit of strings that work together, shifting in vertical oscillatory motion according to the weight and force imposed by the users. There is a subversion of the typical swing that uses a pendulum movement to front and rear with individual function, for this proposal it acquires an up and down action that is dependent on the binomial relationship.
-                &lt;br /&gt;
-                The object has three definitions, 1) sculptural, with a minimalist elegance, 2) dynamic, providing fun, and 3) reflective of the relationship with the other. aims to be an analogy of human, social and political relations and as well a demonstration that balance only depends on the harmonious relationship between the parts.
-                &lt;br /&gt;
-                &lt;br /&gt;
-                Developed in collaboration with Patrick Hubmann (designer) for the event “Happy Together 2016” organised by Mala Voadora for Forum of the Future. It was also presented in Porto Innovation Hub and event Second Chance, both in 2017.
-                ">
-                <img id="anim1" src="img/anim/1.png" title="Leave your fingerprint here to open (Un)Balanced.">
-                <p><span>&mdash; Swing measuring action/reaction for Mala Voadora in 2016. &mdash;</span>(Un)Balanced</p>
+		<a onclick="showProject('unbalanced'); return false;">
+                <img id="anim1" src="img/anim/1.png">
+                <p><span>&mdash; Swing measuring action/reaction. &mdash;</span>(Un)Balanced</p>
             </a>
-            <a href="img/unb/unb1.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Side view."></a>
-            <a href="img/unb/unb2.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Detail #1."></a>
-            <a href="img/unb/unb3.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Detail #2."></a>
-            <a href="img/unb/unb4.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Detail #3."></a>
-            <a href="img/unb/unb5.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Performance #1."></a>
-            <a href="img/unb/unb6.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Performance #1."></a>
-            <a href="img/unb/unb7.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #1."></a>
-            <a href="img/unb/unb8.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #2."></a>
-            <a href="img/unb/unb9.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #3."></a>
-            <a href="img/unb/unb10.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #4."></a>
-            <a href="img/unb/unb11.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #5."></a>
-            <a href="img/unb/unb12.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Interaction #6."></a>
-            <a href="img/unb/10seg.gif" rel="lightbox[unbalanced]"  Visible="false" title="Animated illustration."></a>
-
-            <!-- abc -->
-        	<a href="img/EO/eobanner.jpg" rel="lightbox[unbalanced]"  Visible="false" data-title="
-                Each Other is a project aiming to merge two distinct creative fields – architecture+design and performing arts - into the creation of several pieces that define, through a mechanical and scenic artefact, a place and physical condition for the viewer in relation with the other spectators.
-                &lt;br /&gt;
-                In the same way there is, in each piece, an instructive proposal that guides the way in which the situation will be experienced, considering the user simultaneously the visitor and the performative body of the work. It articulates the conception and design of various objects to the dramaturgy of a performance based on the creation of three mechanical artefacts inspired by notions of unstable movement aiming to motivate the reflection on balance, relations, forces, weights, dependencies, presupposing to establish action-reaction dynamics between at least two people.
-                &lt;br /&gt;
-                &lt;br /&gt;
-                Presentations&lt;br /&gt;
-                (Un)Balanced: A Salto 2019 (Elvas), (Un)Balanced MEXE 2019 (Porto), Teatro Aveirense (Aveiro)
-                &lt;br /&gt;
-                &lt;br /&gt;
-                Project in development in collaboration with Diogo Alvim (musician and composer), Lígia Soares (choreographer and playwright) and Rita Vilhena (performer, dancer and choreographer).
-             ">
-            </a>
-
-			<!-- ### FOR LATER
-            <a href="img/EO/a.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Promotion of concept."></a>
-            <a href="img/EO/b.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Promotion of concept."></a>
-            <a href="img/EO/1.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: Mexe 2019, Campanhã."></a>
-            <a href="img/EO/2.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: Mexe 2019, Campanhã."></a>
-            <a href="img/EO/3.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade."></a>
-            <a href="img/EO/4.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade."></a>
-            <a href="img/EO/5j.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade. &copy João Pedro Azevedo"></a>
-            <a href="img/EO/6j.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade. &copy João Pedro Azevedo"></a>
-            <a href="img/EO/7j.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade. &copy João Pedro Azevedo"></a>
-            <a href="img/EO/8j.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: Mexe 2019, Trindade. &copy João Pedro Azevedo"></a>
-            <a href="img/EO/9p.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: Mexe 2019, São Bento. &copy Pedro Cavaco Leitão"></a>
-            <a href="img/EO/10p.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: Mexe 2019, São Bento. &copy Pedro Cavaco Leitão"></a>
-            <a href="img/EO/11p.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: Mexe 2019, São Bento. &copy Pedro Cavaco Leitão"></a>
-            <a href="img/EO/12a.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
-            <a href="img/EO/12b.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
-            <a href="img/EO/13.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
-            <a href="img/EO/14.jpg" rel="lightbox[unbalanced]"  Visible="false" title="(Un)Balanced: A Salto 2019."></a>
-            <a href="img/EO/15.jpg" rel="lightbox[unbalanced]"  Visible="false" title="Waving Ball: Presentation MEXE 2019."></a>
-            <a href="img/EO/16.png" rel="lightbox[unbalanced]"  Visible="false" title="Waving Ball: Presentation MEXE 2019."></a>
-			
-            <a href="img/suspeitobanner.gif" rel="lightbox[unbalanced]"  Visible="false" data-title="
-             	'Eu, Tu e o Balanço que nos (Des)Equilibra!', by Bárbara Mateus, 21.09.2019, MEXE ZINE Dia#6
-				&lt;br /&gt;
-				&lt;br /&gt;
-				Um jogo de forças que nos convida à brincadeira, à exploração do objecto e à introspecção pelo poder da palavra. Assim é a proposta da instalação trazida pelo Colectivo Suspeito! - 'Each Other, (Un)Balanced' é uma estrutura de madeira que reinventa a construção de um baloiço, instalada no espaço público (na Estação de Comboios da Campanhã, no Metro da Trindade, na Estação de São Bento), onde se sentam as pessoas de passagem, sempre a dois, e num jogo de equilíbrios precários que desafia a relação entre ambos.
-				&lt;br /&gt;
-				É no silêncio que tudo começa, após nos sentarmos no baloiço e colocarmos os phones à espera de ouvir alguma indicação. Entre o silêncio e a palavra surge uma inquietude quase infantil que nos precipita ao movimento e à exploração do objecto, assim como a espera nos explora a nós. O silêncio por vezes pode ser tão constrangedor!!
-				Entre um sobe e desce, entre o meu peso e o teu, entre as nossas diferenças, tentamos encontrar um sentido! 
-				Quando a palavra surge, todo o nosso corpo fica suspenso no suspense da compreensão do que nos está a ser dito. Espontaneamente, o movimento pára equilibrando os baloiços, enquanto os pensamentos surgem desequilibrados pelas palavras. Toma-se uma dinâmica entre o exterior e o interior, entre o corpo e a mente. Enquanto o objecto nos convida à extroversão, a palavra convida-nos à introversão. 
-				&lt;br /&gt;
-				O texto provocador remete-nos à introspecção com base numa reflexão sobre a forma como nos relacionamos com os outros e connosco. De que maneira as nossas crenças e 'verdades' são um espelho dos nossos medos, dos nossos anseios, das nossas inseguranças que tentamos projectar no outro e que são igualmente, muitas vezes, projectadas em nós por outros tantos? De que maneira o poder que exercemos sobre o outro esconde o poder que não exercemos sobre nós? Poderá estar nessa sensação de falta de controle o impulso que nos leva a controlar as relações e, muitas vezes, ao abuso do poder como forma de mascarar uma verdadeira fragilidade e vulnerabilidade.
-				&lt;br /&gt;
-				Sempre à procura, sempre aos altos e baixos, assim muitas vezes somos nós por dentro tal como o baloiço o é por fora! 
-				E é nessa inércia, onde a palavra domina os pensamentos, que se torna insuportável aguentar o que nos é dito; numa fuga constrangedora, precipitamo-nos para a brincadeira do baloiço, entre o sobe e desce, entre o meu peso e o teu, na tentativa de não pensar mais.
-				&lt;br /&gt;
-				Eis que surge um terceiro elemento, o Público!
-				&lt;br /&gt;
-				Desde o início presente, desde o início ausente e alheio à realidade que se está a passar. O Público observa com curiosidade, sem quase entender, enquanto os dois 'actores' abandonam o baloiço na esperança de que o Público nada tenha entendido!
-				&lt;br /&gt;
-				O Público toma-se num género de voyeur, quase um alter ego que causa algum desconforto nos transeuntes-espectadores-tornados-actores. Tudo isto se passa dentro da nossa cabeça, como normalmente acontece. A dificuldade em nos expormos de forma mais profunda por vezes é altamente constrangedora, a dificuldade em parar para nos pensarmos pode ser deveras perturbadora. Acredito que - será uma boa notícia? - é que a maior parte das vezes a censura esta em nós e somos nós, exemplo disso e este Público que tanto Observa mas nada Absorve!
-				&lt;br /&gt;
-				Arrisco-me a dizer que este trabalho pode ser considerado como uma experiência artística num laboratório social: eu, o outro e a arte entre nós! Foi como me senti.
-				&lt;br /&gt;
-				Como dizia um grande mestre que ainda hoje guardo em mim: E a única verdade é aquilo que nós sentimos!                 
-             "></a>
-             ### -->
         </section>
 
+        </div>
 
+        <!-- ### About Page View ### -->
+        <div id="about-page" class="project-detail" style="display: none;">
+            <!-- Left Navigation Column -->
+            <div class="project-nav" onclick="showProjectList(); return false;">
+                <div class="undo-button">↩</div>
+            </div>
+            
+            <!-- Main Content Area -->
+            <div class="project-content">
+                <div class="project-header">
+                    <h1>Suspeito</h1>
+                    <div class="project-subtitle">— Artistic Collective —</div>
+                </div>
+                
+                <div class="project-description">
+                    <div id="about-text"></div>
+                </div>
+                
+                <div class="project-images">
+                    <div id="about-gallery"></div>
+                </div>
+            </div>
+        </div>
 
+        <!-- ### Project Detail View ### -->
+        <div id="project-detail" class="project-detail" style="display: none;">
+            <!-- Left Navigation Column -->
+            <div class="project-nav" onclick="showProjectList(); return false;">
+                <div class="undo-button">↩</div>
+            </div>
+            
+            <!-- Main Content Area -->
+            <div class="project-content">
+                <div class="project-header">
+                    <h1 id="project-title"></h1>
+                    <div id="project-subtitle"></div>
+                </div>
+                
+                <div class="project-description">
+                    <div id="project-text"></div>
+                </div>
+                
+                <div class="project-images">
+                    <div id="project-gallery"></div>
+                </div>
+            </div>
+        </div>
 
     </main>
 
@@ -602,6 +225,628 @@ In addition to a relationship between the viewer's body and the technological de
     <script src="scripts/eye.js" type="text/javascript"></script>
     <script src="scripts/noiser.js" type="text/javascript"></script>
     <script src="scripts/loader.js" type="text/javascript"></script>
+
+    <!-- Project Navigation Script -->
+    <script type="text/javascript">
+        // Project data structure
+        const projects = {
+            'cassandra': {
+                title: 'Cassandra',
+                subtitle: '— Scenography for BCN in 2025. —',
+                description: `"Cassandra" explores the formal physicality of the warning—through the recovery of waste from the textile industry, blamed for representing one of the world's largest polluters, a consequence of globalization and the rise of accelerated consumption. It questions the theme of sustainability through the manipulation of invisible traces of the industrialized process of garment construction, considering the very morphological question of its existence. It uses the prophetic character of Cassandra—taken from Greek mythology—as its starting point. To sustain the spectral and objectual position of the costume, in a quest for its theatricality, an impossible scenario emerges to question the role of the costume designer in the production of the social gestus of an artistic production.
+
+                <strong>Concept:</strong> Jordann Santos
+                <strong>Artistic direction:</strong> Susana Otero
+                <strong>Interpretation and Choreography:</strong> Carolina Sendim, Dinis Quilavei, Filipa Duarte, Ivana Duarte, João Oliveira, Noé, Nuno Velosa e Susana Otero
+                <strong>Light Design:</strong> Pedro Abreu
+                <strong>Sound Design:</strong> Vasco Zentzua / Pedro Augusto
+                <strong>Scenography:</strong> Colectivo Suspeito
+                <strong>Costumes:</strong> Jordann Santos
+                <strong>Production:</strong> BCN e Liliana Claro
+                <strong>Photography:</strong> Miguel Refresco
+                <strong>Support and co-production:</strong> Câmara Municipal de Santa Maria da Feira e Cineteatro António Lamoso
+                
+                More pictures soon...`,
+                images: [
+                    // { src: 'img/cassandra/cassandra3_10_103.jpg', title: '© Miguel Refresco' },
+                    { src: 'img/cassandra/cassandra-temp.jpg', title: 'End of the show.' },
+                    //{ src: 'img/cassandra/cassandra3_10_129.jpg', title: '© Miguel Refresco' },
+                    //{ src: 'img/cassandra/cassandra3_10_130.jpg', title: '© Miguel Refresco' },
+                    //{ src: 'img/cassandra/cassandra3_10_131.jpg', title: '© Miguel Refresco' },
+                    //{ src: 'img/cassandra/cassandra3_10_132.jpg', title: '© Miguel Refresco' },
+                    //{ src: 'img/cassandra/cassandra3_10_134.jpg', title: '© Miguel Refresco' },
+                    //{ src: 'img/cassandra/cassandra3_10_135.jpg', title: '© Miguel Refresco' },
+                    //{ src: 'img/cassandra/cassandra3_10_136.jpg', title: '© Miguel Refresco' },
+                    //{ src: 'img/cassandra/cassandra3_10_157.jpg', title: '© Miguel Refresco' },
+                    //{ src: 'img/cassandra/cassandra3_10_158.jpg', title: '© Miguel Refresco' },
+                ]
+            },
+            'alba': {
+                title: 'Alba',
+                subtitle: '— Scenography for BCN in 2023. —',
+                description: `"Alba" is a multidisciplinary performance that blends contemporary dance, classical music, and literature, bringing together two institutions from Santa Maria da Feira — Ballet Contemporâneo do Norte and the Portuguese Philharmonic Orchestra.
+
+                Created in 2023, between the 50th anniversaries of New Portuguese Letters (1972) and the April Revolution (1974), the project explores the word freedom through a poetic, philosophical, and political lens. Inspired by the phrase "Freedom is the persistence of the laughter of those who can bear it without a grimace", the piece questions the nature of the freedom we hold today, how it was achieved, and the challenges of maintaining it.
+
+                Treating freedom as a work-in-progress, the performance connects themes of resistance, revolution, participation, and citizenship. The title Alba refers to a Provençal poetic form describing dawn after a lovers' encounter, and symbolically evokes that transitional hour before sunrise — a space of imagination, magic, and liberation. The piece proposes a union of bodies — musicians and dancers — capable of announcing the dawn of April and echoing the emancipatory voice found in New Portuguese Letters.
+
+                <strong>Direction:</strong> Susana Otero
+                <strong>Choreography and Performance:</strong> Carminda Soares, Filipa Duarte, Maria R. Soares, Margarida Monteny and Susana Otero
+                <strong>Costumes:</strong> Jordann Santos
+                <strong>Scenography:</strong> Colectivo Suspeito
+                <strong>Lighting Design:</strong> Pedro Abreu
+                <strong>Make-up and Hair:</strong> Maria Fontes and Patrícia Lima
+                <strong>Supporting Texts:</strong> Rogério Nuno Costa
+                <strong>Musical Composition:</strong> Nuno Guedes de Campos
+                <strong>Musical Direction:</strong> Osvaldo Ferreira and André Lousada
+                <strong>Thanks to:</strong> Portuguese Philharmonic Orchestra, CIRAC, Teatro Municipal da Guarda and Europarque`,
+                images: [
+                    { src: 'img/alba/1-DSC_4957.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/1-DSC_5000.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/1-DSC_5254.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/1-DSC_5308.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/1-DSC_5321.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/1-DSC_5359.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/1-DSC_5418.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/2-DSC_5030.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/2-DSC_5265.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/2-DSC_5289.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/3-DSC_4867.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/3-DSC_4893.jpg', title: '© Alexandre Costa' },
+                    { src: 'img/alba/3-DSC_4906.jpg', title: '© Alexandre Costa' }
+                ]
+            },
+            'ainda': {
+                title: 'Ainda',
+                subtitle: '— Reflections of light for Trilhos Culturais in 2021. —',
+                description: `A circular portal-mirror, 3 meters in diameter, suspended among the existing vegetation, above a practically immobile water mirror. Crossing this plane, which reflects its surroundings, is a 5 meter long line of light. The suspended, crystallized mirror, whose image is only changing depending on the observer's point of view, while the liquid mirror is constantly misshapen at the whim of the river's current. Water, glass and light, three elements whose geometries and relative positions reverberate - to oneself and to the surroundings - infinitely. The light is in sync with an artificial soundscape, added to the natural sound of the place: a track composed by the artist Ricardo Nogueira Fernandes, entitled 'Circle'.
+
+                Project presented in the 2021 edition of Trilhos Culturais in Caldas de São Jorge.
+
+                <strong>Logistic and Technical Support:</strong> President José Martins extended to all collaborators.
+                <strong>Photographer:</strong> Sofia Augusto.`,
+                images: [
+                    { src: 'https://vimeo.com/692253505/', title: 'Ainda', type: 'video' },
+                    { src: 'img/ainda/ainda.jpg', title: 'During the day.' },
+                    { src: 'img/ainda/DSCF0064.jpg', title: 'At dawn.' },
+                    { src: 'img/ainda/DSCF0159.jpg', title: 'During the night #1.' },
+                    { src: 'img/ainda/DSCF0182.jpg', title: 'During the night #2.' },
+                    { src: 'img/ainda/DSCF0080_IMG-20210919-smaller.png', title: 'Reflections on water.' },
+                    { src: 'img/ainda/DSCF0098.jpg', title: 'Details #1.' },
+                    { src: 'img/ainda/DSCF0188.jpg', title: 'Details #2.' }
+                ]
+            },
+            'azevedo': {
+                title: 'Azevedo',
+                subtitle: '— Movable devices for Pele in 2021. —',
+                description: `The project Azevedo by PELE is a regenerative artistic creation program that proposes to establish a dialogue between the territory of Azevedo (Porto), resident communities (human and more-than-human) and national and international creators. It awakens processes of collective creation and community participation, promoting the activation of common spaces through artistic intervention.
+
+                Colectivo Suspeito took part in the process of conceptualise and build a collection of pieces aimed to create an organic, changeable nomadic structure. A collective body capable of manifesting itself through its unity, but also through the autonomy of its parts. With those objectives 3 sets made of steel and wood were proposed to work together or individually as a kitchen, workshop bench and also a multifunctional device capable of unfold to different configurations and uses.
+
+                Devices created and build for Azevedo project of PELE, Porto.
+
+                Thanks for the great support of: Fernando Almeida (conceptual, technical and building) and Carina Moutinho (logistics), to Lovers & Lollypops and Gorvell for opening their facilities to us, in particular the workshop space, and also to ArtWorks for the technical support building the multifunctional device.`,
+                images: [
+                    { src: 'img/azevedo/0.jpg', title: 'General view of movable devices.' },
+                    { src: 'img/azevedo/1.png', title: 'Kitchen #1.' },
+                    { src: 'img/azevedo/2.png', title: 'Kitchen #2.' },
+                    { src: 'img/azevedo/3.png', title: 'Kitchen #3.' },
+                    { src: 'img/azevedo/4.png', title: 'Kitchen #4.' },
+                    { src: 'img/azevedo/5.png', title: 'Working device #1.' },
+                    { src: 'img/azevedo/6.png', title: 'Working device #2.' },
+                    { src: 'img/azevedo/7.png', title: 'Multifunctional device #1.' },
+                    { src: 'img/azevedo/8.png', title: 'Multifunctional device #2.' },
+                    { src: 'img/azevedo/9.png', title: 'Devices #1.' },
+                    { src: 'img/azevedo/10.png', title: 'Devices #2.' },
+                    { src: 'img/azevedo/11.png', title: 'Opening #1.' },
+                    { src: 'img/azevedo/12.png', title: 'Opening #2.' }
+                ]
+            },
+            'prana': {
+                title: 'Prana',
+                subtitle: '— Living light for Criatech in 2020. —',
+                description: `Prana is the energy that lives in each particle and interconnects them, no matter how different they are. It is the energy from which all other energies arise. A spiritual and philosophical concept, global and embracing, not only unique to Hinduism or Buddhism, it designates an omnipresent life force in the cosmos that allows everything to exist - from living things to inanimate objects. It is something we can breathe in the air, but it is also something much more intangible than that.
+
+                This installation intends to depict this notion of some kind of power which binds us, unites us as a single being and connects us with other beings and everything else around us. From micro to macro scale, it feeds life, making the world exists as we know it.
+
+                The project consists of a light programmed to fluctuate its intensity at a slow and steady pace - an allusion to a type of breathing movement done with four distinct moments, as ancient Buddhist and Hindu practices recommend, marking a calm, gentle but paced rhythm and time. However, as visitors walk through space interacting with it and with each other, it is when Prana's energy awakens, intensifying its light but not changing its rhythm.
+
+                Technically, it is a suspended white LED line (in a circle, square or straight line depending on the space) synched with a low-frequency audio that might also reverberate in the bones, stimulating various senses: vision, hearing and touch. The amount of movement caused by visitors around the space is registered by a set of sensors that activates the electronic system making the immersive experience intensity deeper or more shallow, depending on whether less or more movement is detected or on the density of people inside the room. More people closer to the installation meaning a more intense response, as it would be a higher concentration of energy flowing.
+
+                Project presented in the 2020 edition of Criatech in Museu da Santa Joana, Aveiro.
+
+                <strong>Logistic and Technical Support:</strong> Carlos Veríssimo and both teams from Teatro Aveirense and Museu de Santa Joana.`,
+                images: [
+                    { src: 'img/prana/1.jpg', title: 'Empty room' },
+                    { src: 'img/prana/2.jpg', title: 'One person.' },
+                    { src: 'img/prana/3.jpg', title: 'Multiple people inside.' }
+                ]
+            },
+            'compass': {
+                title: 'Compasso Incerto',
+                subtitle: '— Broken compass for Lisboa Soa in 2020. —',
+                description: `Uncertain Compass is an installation which works with the instability of the body, turned into a sound object by the activation of the audience that explores it. The balance and strength of each person will act as the tools that make both the experience and the sound composition unique, which will react only to the human body and its movement and rhythm.
+
+                It is a reference to a floating object and to the planet's water, simultaneously threatened and a threat to our society, today.
+
+                It is also a particularly intimate form of navigation, of a surrounding journey, mental and sensorial, without leaving the place.
+
+                Compass being a tool for orientation and navigation in the planet, also refers to a tool for drawing circles and beat rhythm in music. In Portuguese, its original name also performs a sound pun, meaning "com passo", literally translated as "with footstep" or using a more ambiguous expression "paced", alluding to the small journey made within the circular unstable platform in the installation.
+
+                The sounds were recorded with a contact microphone from objects using natural matter as wood, stone, clay or metal. The all resonate as white noises and allude to the four winds.
+
+                Project presented in the 2020 edition of Lisboa Soa music festival in Estufa Fria, Lisbon.
+
+                <strong>Logistic and Technical Support:</strong> Carmo Medeiros and workers from Centro de Interpretação da Estufa Fria de Lisboa.`,
+                images: [
+                    { src: 'img/compass/1.jpg', title: 'Overview.' },
+                    { src: 'img/compass/2.jpg', title: 'Details #1.' },
+                    { src: 'img/compass/3.jpg', title: 'Details #2.' },
+                    { src: 'img/compass/4.jpg', title: 'Details #3.' },
+                    { src: 'img/compass/5.jpg', title: 'Details #4.' },
+                    { src: 'img/compass/6.jpg', title: 'Details #5.' },
+                    { src: 'img/compass/7.png', title: 'Active compass #1.' },
+                    { src: 'img/compass/8.png', title: 'Active compass #2.' }
+                ]
+            },
+            'eachother': {
+                title: 'Each Other',
+                subtitle: '— Scenic project to share interactions. Project in development since 2017. —',
+                description: `Each Other is a project aiming to merge two distinct creative fields – architecture+design and performing arts - into the creation of several pieces that define, through a mechanical and scenic artefact, a place and physical condition for the viewer in relation with the other spectators.
+
+                In the same way there is, in each piece, an instructive proposal that guides the way in which the situation will be experienced, considering the user simultaneously the visitor and the performative body of the work. It articulates the conception and design of various objects to the dramaturgy of a performance based on the creation of three mechanical artefacts inspired by notions of unstable movement aiming to motivate the reflection on balance, relations, forces, weights, dependencies, presupposing to establish action-reaction dynamics between at least two people.
+
+                <strong>Presentations:</strong>
+                A Salto, 2019 (Elvas)
+                MEXE, 2019 (Porto)
+                Teatro Aveirense, 2021 (Aveiro)
+                Festival Portas do Sol, 2025 (Covilhã)
+
+                Project in development in collaboration with Diogo Alvim (musician and composer), Lígia Soares (choreographer and playwright) and Rita Vilhena (performer, dancer and choreographer).`,
+                images: [
+                    { src: 'img/EO/a.jpg', title: 'Promotion of concept.' },
+                    { src: 'img/EO/b.jpg', title: 'Promotion of concept.' },
+                    { src: 'img/EO/1.jpg', title: '(Un)Balanced: Mexe 2019, Campanhã.' },
+                    { src: 'img/EO/2.jpg', title: '(Un)Balanced: Mexe 2019, Campanhã.' },
+                    { src: 'img/EO/3.jpg', title: '(Un)Balanced: Mexe 2019, Trindade.' },
+                    { src: 'img/EO/4.jpg', title: '(Un)Balanced: Mexe 2019, Trindade.' },
+                    { src: 'img/EO/5j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
+                    { src: 'img/EO/6j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
+                    { src: 'img/EO/7j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
+                    { src: 'img/EO/8j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
+                    { src: 'img/EO/9p.jpg', title: '(Un)Balanced: Mexe 2019, São Bento. © Pedro Cavaco Leitão' },
+                    { src: 'img/EO/10p.jpg', title: '(Un)Balanced: Mexe 2019, São Bento. © Pedro Cavaco Leitão' },
+                    { src: 'img/EO/11p.jpg', title: '(Un)Balanced: Mexe 2019, São Bento. © Pedro Cavaco Leitão' },
+                    { src: 'img/EO/12a.jpg', title: '(Un)Balanced: A Salto 2019.' },
+                    { src: 'img/EO/12b.jpg', title: '(Un)Balanced: A Salto 2019.' },
+                    { src: 'img/EO/13.jpg', title: '(Un)Balanced: A Salto 2019.' },
+                    { src: 'img/EO/14.jpg', title: '(Un)Balanced: A Salto 2019.' },
+                    { src: 'img/EO/15.jpg', title: 'Waving Ball: Presentation MEXE 2019.' },
+                    { src: 'img/EO/16.png', title: 'Waving Ball: Presentation MEXE 2019.' }
+                ]
+            },
+            'formainforme': {
+                title: 'Forma Informe',
+                subtitle: '— Perception of Form for Trilhos Culturais 2019. —',
+                description: `Forma Informe questions the importance and meaning we attach to form as a defining element of something or someone. Why do we tend to define the world based on what we see when everything is much more than just the limits on which our eyes lie?
+
+                The subjectivity of form as a concept is portrayed: something that our brain produces with the information captured by the eyes in order to synthesize and simplify our apprehension of reality. At the same time, it can complexify the world by changing according to the point of view from which we look, or the being and feeling of the beholder.
+
+                What is its validity and why do we attach such significance to it? Why do we focus and limit ourselves to it when the thing we want to realize is so much bigger, more complex, more volatile than the way it appears to us?
+
+                What matters to know in depth the object of our attention is to look at it beyond its form: in its matter, in its reasons for being but at the same time in its absurdity; in your order and in your chaos. The form itself does not say everything, but still we could say that the form does not matter?
+                Something is always bigger and more complex than it appears.
+                
+                Forma Informe explores the meaning of form as the defining element of something.
+                Project developed for the 2019 edition of Trilhos Culturais in Caldas de São Jorge.
+                
+                <strong>Logistic and Technical Support:</strong> President José Martins extended to all collaborators, in particular to Elísio Mota.
+                <strong>Photographers:</strong> Luís Eusébio and Hélder Cunha.`,
+                images: [
+                    { src: 'img/formainforme/1ll.png', title: 'Active circle. © Luís Eusébio' },
+                    { src: 'img/formainforme/2ll.png', title: 'Active circle. © Luís Eusébio' },
+                    { src: 'img/formainforme/3h.jpg', title: 'Active hexagon. © Hélder Cunha' },
+                    { src: 'img/formainforme/4hl.png', title: 'Active pentagon. © Hélder Cunha (left), Luís Eusébio (right)' },
+                    { src: 'img/formainforme/5h.jpg', title: 'Active square. © Hélder Cunha' },
+                    { src: 'img/formainforme/6lh.png', title: 'Active triagle and line. © Luís Eusébio (left), Hélder Cunha (right)' },
+                    { src: 'img/formainforme/7ll.png', title: 'Passive line and triangle. © Luís Eusébio' },
+                    { src: 'img/formainforme/8ll.png', title: 'Passive square and pentagon. © Luís Eusébio' },
+                    { src: 'img/formainforme/9ll.png', title: 'Passive hexagon and circle. © Luís Eusébio' },
+                    { src: 'img/formainforme/10h.jpg', title: 'Circle during the day. © Hélder Cunha' },
+                    { src: 'img/formainforme/11.png', title: 'Passive line and circle during the day.' }
+                ]
+            },
+            'apice': {
+                title: 'Ápice',
+                subtitle: '— Journey of a light particle for Trilhos Culturais 2018. —',
+                description: `Ápice represents an instant perpetuated in an infinite time. Materialized in a (dis)charge of energy, memory or emotion, it develops until its resolution, being simultaneously beginning and end. A tiny fragment of the order of the universe, where everything is transformed.
+
+                Project developed for the event Trilhos Culturais in Caldas de São Jorge.
+
+                We thank support on logistics and construction to: José Martins, José Luís, Jorge Silva, Jorge Gomes, Paulo Gouveia, Maria Irene Ribeiro, Elísio Mota, Hélder Cunha, Vítor Santos, João Peranda, Pedro Cavaco Leitão and Alfredo Ceia.`,
+                images: [
+                    { src: 'img/apice/1.jpg', title: 'Genesis. © Hélder Cunha' },
+                    { src: 'img/apice/2.png', title: 'Genesis.' },
+                    { src: 'img/apice/3.jpg', title: 'Linear journey. © Hélder Cunha' },
+                    { src: 'img/apice/4.png', title: 'Linear journey.' },
+                    { src: 'img/apice/5.jpg', title: 'Eye.' },
+                    { src: 'img/apice/6.jpg', title: 'Linear journey.' },
+                    { src: 'img/apice/7.jpg', title: 'Line.' },
+                    { src: 'img/apice/8.jpg', title: 'Fragmentation.' },
+                    { src: 'img/apice/9.jpg', title: 'Fragmentation. © Hélder Cunha' },
+                    { src: 'img/apice/10.png', title: 'Explosion. Left photo, © Hélder Cunha' },
+                    { src: 'img/apice/11.jpg', title: 'Debris. © Hélder Cunha' },
+                    { src: 'img/apice/12.jpg', title: 'Debris.' },
+                    { src: 'img/apice/13.jpg', title: 'Fragmentation to explosion.' },
+                    { src: 'img/apice/14.png', title: 'General view at night.' },
+                    { src: 'img/apice/15.jpg', title: 'Explosion on the cascate. © Hélder Cunha' },
+                    { src: 'img/apice/16.jpg', title: 'Explosion at dawn. © Hélder Cunha' },
+                    { src: 'img/apice/17.png', title: 'Installation during the day.' }
+                ]
+            },
+            'manifesto': {
+                title: 'Manifesto da Luz',
+                subtitle: '— Narrative of a Light for the Alumia project in 2017. —',
+                description: `Manifesto da Luz asks <em>Does that which are unable to see really exist?</em> Without light, there is no perception of matter. It can be nothing, it can be anything. Here, Light quietly manifests its existence. Interestingly, it does so through the reverse phenomenon that it alone is able to produce: Shadow.
+                
+                For Alumia event celebrating 20th anniversary of the Historic Centre of Porto as a UNESCO World Heritage site and National Day of Historic Centres. The event was organised and sponsored by Porto Lazer, and logistics for artists were supported by Opium.`,
+                images: [
+                    { src: 'img/manifesto/manifesto/night.JPG', title: 'Detail at night' },
+                    { src: 'img/manifesto/pres/1.jpg', title: 'Public presentation. © Porto Lazer' },
+                    { src: 'img/manifesto/pres/2.jpg', title: 'Public presentation. © Porto Lazer' },
+                    { src: 'img/manifesto/pres/4.jpg', title: 'Public presentation. © Porto Lazer' },
+                    { src: 'img/manifesto/pres/5.jpg', title: 'Public presentation. © Porto Lazer' },
+                    { src: 'img/manifesto/pres/6.jpg', title: 'Public presentation. © Porto Lazer' },
+                    { src: 'img/manifesto/pres/7.jpg', title: 'Public presentation. © Porto Lazer' },
+                    { src: 'img/manifesto/d.jpg', title: 'Installation at night.' },
+                    { src: 'img/manifesto/b.jpg', title: 'Installation at night.' },
+                    { src: 'img/manifesto/e.png', title: 'Installation at night.' },
+                    { src: 'img/manifesto/manifesto/1.JPG', title: 'Installation during the day.' },
+                    { src: 'img/manifesto/manifesto/6_1.jpg', title: 'Installation during the day.' },
+                    { src: 'img/manifesto/manifesto/4.JPG', title: 'Installation during the day.' },
+                    { src: 'img/manifesto/a.jpg', title: 'Promotion.' },
+                    { src: 'img/manifesto/a1.jpg', title: 'Narrative.' }
+                ]
+            },
+            'unbalanced': {
+                title: '(Un)Balanced',
+                subtitle: '— Swing measuring action/reaction for Mala Voadora in 2016. —',
+                description: `(Un)Balanced is an interactive installation, built with wood structure, in which two swings are suspended, connected by a circuit of strings that work together, shifting in vertical oscillatory motion according to the weight and force imposed by the users. There is a subversion of the typical swing that uses a pendulum movement to front and rear with individual function, for this proposal it acquires an up and down action that is dependent on the binomial relationship.
+                
+                The object has three definitions, 1) sculptural, with a minimalist elegance, 2) dynamic, providing fun, and 3) reflective of the relationship with the other. aims to be an analogy of human, social and political relations and as well a demonstration that balance only depends on the harmonious relationship between the parts.
+                
+                Developed in collaboration with Patrick Hubmann (designer) for the event "Happy Together 2016" organised by Mala Voadora for Forum of the Future. It was also presented in Porto Innovation Hub and event Second Chance, both in 2017.`,
+                images: [
+                    { src: 'img/unb/unb1.jpg', title: 'Side view.' },
+                    { src: 'img/unb/unb2.jpg', title: 'Detail #1.' },
+                    { src: 'img/unb/unb3.jpg', title: 'Detail #2.' },
+                    { src: 'img/unb/unb4.jpg', title: 'Detail #3.' },
+                    { src: 'img/unb/unb5.jpg', title: 'Performance #1.' },
+                    { src: 'img/unb/unb6.jpg', title: 'Performance #2.' },
+                    { src: 'img/unb/unb7.jpg', title: 'Interaction #1.' },
+                    { src: 'img/unb/unb8.jpg', title: 'Interaction #2.' },
+                    { src: 'img/unb/unb9.jpg', title: 'Interaction #3.' },
+                    { src: 'img/unb/unb10.jpg', title: 'Interaction #4.' },
+                    { src: 'img/unb/unb11.jpg', title: 'Interaction #5.' },
+                    { src: 'img/unb/unb12.jpg', title: 'Interaction #6.' },
+                    { src: 'img/unb/10seg.gif', title: 'Animated illustration.' }
+                ]
+            }
+        };
+
+        // About page data
+        const aboutData = {
+            description: `Suspeito is an artistic collective formed by the designer and engineer João Dias-Oliveira and by the architects Nuno Mota and Rossana Ribeiro. Beginning with early collaborations in 2016, it was only in 2018 that the collective identity was defined.
+            The multidisciplinary group has the ambition of expanding itself on the limits of art, architecture and design, exploring creative ways to involve society to take a deeper look at our surroundings.
+            Its creative process is defined by a concerned research for concepts, phenomena or theories that can be materialised to motivate reactions, seeking not only to represent but to accentuate the poetic dimensions of many elements that take part in the world we know, theorise and idealise.
+            
+            <strong>Contact:</strong>
+            email: colectivo.suspeito@gmail.com
+            phone: +351 938711215
+            fb/ig: colectivo.suspeito
+
+            <strong>About the Collective:</strong>
+            The interventions of Suspeito arise mainly on the form of installation and scenography, imbued with an often performative load. Its restless and curious personality, wants to question itself constantly on new topics, not to just one predefined method neither the same working strategies.
+            The approach to creation, through continuous investigation of themes, seek inspiration in humanities and social sciences, in natural phenomena and in more abstract theories.
+            The execution is morphologically and technically diversified, involving an experimentalism that necessarily generates an implicit risk, to which Suspeito does not surrender.
+            The group intends to assume itself as an artistic practice that works the relations of interdependence between three parts: art piece, receiver and space, which may focus more on one or another depending on each work or concept. By varying the used method - either by admiration, interaction or immersion - the ultimate objective is to create relevant sensorial experiences.
+            
+            <strong>Timeline:</strong>
+            2025 DEZ | Sankofa with BCN, Milheirós de Poiares.
+            2025 OUT | Cassandra with BCN, Milheirós de Poiares.
+            2025 JUL | Each Other: (Un)Balanced, Festival Portas do Sol, Covilhã.
+            2024 SEP | Ultrassom with Maria R. Soares and Ricardo Nogueira Fernandes, 2º Encontro Artes Performativas, Santa Maria da Feira.
+            2023 OUT | ALBA with BCN, EuroParque, Santa Maria da Feira.
+            <span class="timeline-item albaGuarda">2023 OUT | ALBA with BCN, Teatro Municipal da Guarda.</span>
+            2022 NOV | Experiência 01 with Ricardo Nogueira Fernandes, RE=INICIAR, Santa Maria da Feira.
+            2022 MAR | Compasso Incerto with Rita Pinheiro, Teatro Aveirense, Aveiro.
+            <span class="timeline-item ainda">2021 SET | Ainda with Ricardo Nogueira Fernandes, Trilhos Culturais, Caldas S. Jorge.</span>
+            2021 SET | Each Other: (Un)Balanced, Teatro Aveirense, Aveiro.
+            2021 MAI | 2020: a domestic space odissey, a topos, Venice, Italy.
+            <span class="timeline-item azevedo">2021 MAI | Satélite, Azevedo (promoted by PELE), Oporto.</span>
+            <span class="timeline-item prana">2020 OCT | Prana, Criatech, Aveiro.</span>
+            <span class="timeline-item compass">2020 SEP | Compasso Incerto, Lisboa Soa, Lisbon.</span>
+            2020 JUL | 2020: Odisseia no espaço doméstico, (RE=)INICIAÇÃO, Online.
+            2019 OCT | Forma Informe with Ricardo Nogueira Fernandes, Gravitações, Oporto.
+            <span class="timeline-item eachotherMexe">2019 SEP | Each Other: (Un)Balanced, Mexe, Oporto.</span>
+            <span class="timeline-item eachotherElvas">2019 AUG | Each Other: (Un)Balanced with voice of Lígia Soares, Festival A Salto, Elvas.</span>
+            <span class="timeline-item formainforme">2019 JUL | Forma Informe, Trilhos Culturais, Caldas S. Jorge.</span>
+            2019 MAR | Faro, LUCity workshop with Moradavaga, Bari, Italy.
+            <span class="timeline-item apice">2018 JUL | Ápice, Trilhos Culturais, Caldas S. Jorge.</span>
+            2018 APR | (Un)Balanced, Second Chance, Oporto.
+            <span class="timeline-item manifesto">2017 JAN | Light Manifesto, Alumia, Oporto.</span>
+            2016 DEC | (Un)Balanced, Porto Innovation Hub, Oporto.
+            <span class="timeline-item unbalanced">2016 NOV | (Un)Balanced with Patrick Hubman, Forum of the Future and Mala Voadora, Oporto.</span>
+            <span class="timeline-item cotton">2016 OCT | Cotton Candy, Festival noc noc, Guimarães.</span>
+            <span class="timeline-item sweet">2016 JUN | Sweet Ride, Festival Doce, Caldas de S. Jorge.</span>`,
+            images: [
+                { src: 'img/about/us6.jpg', title: 'About Us' }
+            ]
+        };
+
+        // Color system integration
+        const randomColors = [
+            "rgb(227, 227, 106)",
+            "rgb(185, 205, 218)",
+            "rgb(255, 172, 129)",
+            "rgb(242, 246, 208)",
+            "rgb(197, 239, 203)",
+            "rgb(242, 243, 174)",
+            "rgb(205, 232, 171)",
+            "rgb(229, 159, 113)",
+            "rgb(206, 215, 242)",
+            "rgb(207, 190, 200)",
+            "rgb(142, 189, 220)",
+            "rgb(161, 175, 157)"
+        ];
+
+        function getRandomColor() {
+            return randomColors[Math.floor(Math.random() * randomColors.length)];
+        }
+
+        function applyColorToNav() {
+            const nav = document.querySelector('.project-nav');
+            if (nav) {
+                const color = getRandomColor();
+                nav.style.backgroundColor = color;
+                nav.style.transition = 'background-color 500ms linear';
+            }
+        }
+
+        // Store the current color changing state
+        let currentColorIndex = 0;
+        let shuffledColors = [];
+
+        function initializeColors() {
+            // Create a shuffled array of colors like the main page
+            shuffledColors = [...randomColors];
+            for (let i = shuffledColors.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledColors[i], shuffledColors[j]] = [shuffledColors[j], shuffledColors[i]];
+            }
+            currentColorIndex = 0;
+        }
+
+        function getNextNavColor() {
+            if (shuffledColors.length === 0) {
+                initializeColors();
+            }
+            const color = shuffledColors[currentColorIndex];
+            currentColorIndex = (currentColorIndex + 1) % shuffledColors.length;
+            return color;
+        }
+
+        function applySequentialColorToNav() {
+            // Find the visible navigation element
+            const aboutPage = document.getElementById('about-page');
+            const projectDetail = document.getElementById('project-detail');
+            let nav = null;
+            
+            if (aboutPage && aboutPage.style.display === 'flex') {
+                nav = aboutPage.querySelector('.project-nav');
+            } else if (projectDetail && projectDetail.style.display === 'flex') {
+                nav = projectDetail.querySelector('.project-nav');
+            }
+            
+            if (nav) {
+                const color = getNextNavColor();
+                nav.style.setProperty('background-color', color, 'important');
+                nav.style.transition = 'background-color 500ms linear';
+            }
+        }
+
+        // Navigation functions
+        function showAbout() {
+            // Hide header, project list and show about page
+            document.querySelector('header').style.display = 'none';
+            document.getElementById('project-list').style.display = 'none';
+            document.getElementById('project-detail').style.display = 'none';
+            document.getElementById('about-page').style.display = 'flex';
+
+            // Get the current color from the header (Suspeito line)
+            const headerColor = window.getComputedStyle(document.querySelector('header')).backgroundColor;
+            const content = document.querySelector('#about-page .project-content');
+            if (content) {
+                content.style.backgroundColor = headerColor;
+            }
+
+            // Initialize and apply color to navigation
+            initializeColors();
+            applySequentialColorToNav();
+
+            // Update about content with line break formatting
+            let formattedAboutDescription = aboutData.description
+                .replace(/\n\n/g, '<br/><br/>')  // Double line breaks to paragraph breaks
+                .replace(/\n/g, '<br/>');        // Single line breaks to line breaks
+            
+            document.getElementById('about-text').innerHTML = formattedAboutDescription;
+
+            // Timeline hover effects are now handled by CSS classes
+
+            // Update about gallery (include all images now)
+            const gallery = document.getElementById('about-gallery');
+            gallery.innerHTML = '';
+            
+            aboutData.images.forEach((image, index) => {
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'gallery-item';
+                
+                if (image.type === 'video' && image.src.includes('vimeo.com')) {
+                    // Create Vimeo embed
+                    const iframe = document.createElement('iframe');
+                    iframe.src = image.src.replace('vimeo.com/', 'player.vimeo.com/video/');
+                    iframe.width = '100%';
+                    iframe.height = '300';
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+                    iframe.allowFullscreen = true;
+                    iframe.title = image.title;
+                    
+                    imgContainer.appendChild(iframe);
+                } else {
+                    // Create regular image
+                    const img = document.createElement('img');
+                    img.src = image.src;
+                    img.alt = image.title;
+                    img.title = image.title;
+                    img.loading = 'lazy';
+                    
+                    imgContainer.appendChild(img);
+                }
+                
+                gallery.appendChild(imgContainer);
+            });
+
+            // Update URL without page reload
+            history.pushState({ page: 'about' }, '', '#about');
+        }
+
+        function showProject(projectId) {
+            const project = projects[projectId];
+            if (!project) return;
+
+            // Hide header, project list and about page, show project detail
+            document.querySelector('header').style.display = 'none';
+            document.getElementById('project-list').style.display = 'none';
+            document.getElementById('about-page').style.display = 'none';
+            document.getElementById('project-detail').style.display = 'flex';
+
+            // Find the clicked project line and get its color
+            const projectLinks = document.querySelectorAll('#project-list a[onclick*="showProject"]');
+            let clickedColor = 'rgb(242, 243, 174)'; // fallback color
+            
+            projectLinks.forEach(link => {
+                if (link.getAttribute('onclick').includes(`'${projectId}'`)) {
+                    const projectSection = link.closest('.half');
+                    if (projectSection) {
+                        clickedColor = window.getComputedStyle(projectSection).backgroundColor;
+                    }
+                }
+            });
+
+            // Set background color for content area to match clicked line
+            const content = document.querySelector('#project-detail .project-content');
+            if (content) {
+                content.style.backgroundColor = clickedColor;
+            }
+
+            // Initialize and apply color to navigation (same as about page)
+            initializeColors();
+            applySequentialColorToNav();
+
+            // Update project content
+            document.getElementById('project-title').textContent = project.title;
+            document.getElementById('project-subtitle').innerHTML = project.subtitle;
+            
+            // Format description: convert line breaks
+            let formattedDescription = project.description
+                .replace(/\n\n/g, '<br/><br/>')  // Double line breaks to paragraph breaks
+                .replace(/\n/g, '<br/>');        // Single line breaks to line breaks
+            
+            document.getElementById('project-text').innerHTML = formattedDescription;
+
+            // Update project gallery (include all images now)
+            const gallery = document.getElementById('project-gallery');
+            gallery.innerHTML = '';
+            
+            project.images.forEach((image, index) => {
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'gallery-item';
+                
+                if (image.type === 'video' && image.src.includes('vimeo.com')) {
+                    // Create Vimeo embed
+                    const iframe = document.createElement('iframe');
+                    iframe.src = image.src.replace('vimeo.com/', 'player.vimeo.com/video/');
+                    iframe.width = '100%';
+                    iframe.height = '300';
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+                    iframe.allowFullscreen = true;
+                    iframe.title = image.title;
+                    
+                    imgContainer.appendChild(iframe);
+                } else {
+                    // Create regular image
+                    const img = document.createElement('img');
+                    img.src = image.src;
+                    img.alt = image.title;
+                    img.title = image.title;
+                    img.loading = 'lazy';
+                    
+                    imgContainer.appendChild(img);
+                }
+                
+                gallery.appendChild(imgContainer);
+            });
+
+            // Update URL without page reload
+            history.pushState({ project: projectId }, '', `#${projectId}`);
+        }
+
+        function showProjectList() {
+            // Show header, project list and hide other views
+            document.querySelector('header').style.display = 'block';
+            document.getElementById('project-list').style.display = 'block';
+            document.getElementById('project-detail').style.display = 'none';
+            document.getElementById('about-page').style.display = 'none';
+
+            // Update URL
+            history.pushState({}, '', window.location.pathname);
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(event) {
+            if (event.state && event.state.project) {
+                showProject(event.state.project);
+            } else if (event.state && event.state.page === 'about') {
+                showAbout();
+            } else {
+                showProjectList();
+            }
+        });
+
+        // Handle initial page load with hash
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash === 'about') {
+                showAbout();
+            } else if (hash && projects[hash]) {
+                showProject(hash);
+            }
+        });
+
+        // Color changing interval for navigation column only
+        setInterval(function() {
+            // Only change color if we're on a detail page (not main page)
+            const projectDetail = document.getElementById('project-detail');
+            const aboutPage = document.getElementById('about-page');
+            if (projectDetail && projectDetail.style.display === 'flex') {
+                applySequentialColorToNav();
+            } else if (aboutPage && aboutPage.style.display === 'flex') {
+                applySequentialColorToNav();
+            }
+        }, 2000);
+    </script>
 
 </body>
 </HTML>
