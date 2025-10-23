@@ -464,6 +464,10 @@ a:hover {
 	background-image: url('../img/timeline/ainda.jpg') !important;
 }
 
+.timeline-item.cassandra:hover::after {
+	background-image: url('../img/timeline/cassandra.jpg') !important;
+}
+
 .timeline-item.albaGuarda:hover::after {
 	background-image: url('../img/timeline/alba-guarda.jpg') !important;
 }
@@ -472,8 +476,16 @@ a:hover {
 	background-image: url('../img/timeline/azevedo.jpg') !important;
 }
 
+.timeline-item.experiencia:hover::after {
+	background-image: url('../img/timeline/experiencia.jpeg') !important;
+}
+
 .timeline-item.compass:hover::after {
 	background-image: url('../img/timeline/compass-lisboasoa.jpg') !important;
+}
+
+.timeline-item.compassTA:hover::after {
+	background-image: url('../img/timeline/compassoTA.JPG') !important;
 }
 
 .timeline-item.eachotherMexe:hover::after {
@@ -500,8 +512,36 @@ a:hover {
 	background-image: url('../img/timeline/prana.jpeg') !important;
 }
 
+.timeline-item.faro:hover::after {
+	background-image: url('../img/timeline/faro.jpg') !important;
+}
+
+.timeline-item.gravitacoes:hover::after {
+	background-image: url('../img/timeline/gravitacoes.jpg') !important;
+}
+
 .timeline-item.unbalanced:hover::after {
 	background-image: url('../img/timeline/unbalanced.jpg') !important;
+}
+
+.timeline-item.unbalancedCovilha:hover::after {
+	background-image: url('../img/timeline/unbalanced-covilha.jpg') !important;
+}
+
+.timeline-item.unbalancedTA:hover::after {
+	background-image: url('../img/timeline/unbalanced-ta.JPG') !important;
+}
+
+.timeline-item.atopos:hover::after {
+	background-image: url('../img/timeline/atopos.jpg') !important;
+}
+
+.timeline-item.unbalancedPIH:hover::after {
+	background-image: url('../img/timeline/unbalances-pih.JPG') !important;
+}
+
+.timeline-item.ultrassom:hover::after {
+	background-image: url('../img/timeline/ultrassom.JPG') !important;
 }
 
 .timeline-item.apice:hover::after {
