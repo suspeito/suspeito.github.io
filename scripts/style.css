@@ -512,10 +512,6 @@ a:hover {
 	background-image: url('../img/timeline/prana.jpeg') !important;
 }
 
-.timeline-item.faro:hover::after {
-	background-image: url('../img/timeline/faro.jpg') !important;
-}
-
 .timeline-item.gravitacoes:hover::after {
 	background-image: url('../img/timeline/gravitacoes.jpg') !important;
 }
