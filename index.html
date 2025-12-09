@@ -74,7 +74,13 @@
         <!-- ### Project List View ### -->
         <div id="project-list" class="project-list">
 
-        <!-- ### New Project ### -->
+        <section class="half">
+        <a onclick="showProject('sankofa'); return false;">
+                <img id="anim6" src="img/anim/11.png">
+                <p><span>&mdash; Scenography for a theater and dance show. &mdash;</span>Sankofa</p>
+            </a>
+        </section>
+
         <section class="half">
         	<a onclick="showProject('cassandra'); return false;">
                 <img id="anim11" src="img/anim/21.png">
@@ -82,7 +88,6 @@
             </a>
         </section>
 
-        <!-- ### Project 3 ### -->
         <section class="half">
 		<a onclick="showProject('alba'); return false;">
                 <img id="anim7" src="img/anim/13.png">
@@ -90,7 +95,6 @@
             </a>
         </section>
 
-	<!-- ### Project A1 ### -->
         <section class="half">
 		<a onclick="showProject('ainda'); return false;">
                 <img id="anim10" src="img/anim/19.png">
@@ -98,7 +102,6 @@
             </a>
         </section>
 
-	<!-- ### Project A2 ### -->
         <section class="half">
 		<a onclick="showProject('azevedo'); return false;">
                 <img id="anim9" src="img/anim/17.png">
@@ -106,7 +109,6 @@
             </a>
         </section>
 
-	<!-- ### Project A3 ### -->
         <section class="half">
 		<a onclick="showProject('prana'); return false;">
                 <img id="anim5" src="img/anim/9.png">
@@ -114,7 +116,6 @@
             </a>
         </section>
 
-        <!-- ### Project A4 ### -->
         <section class="half">
 		<a onclick="showProject('compass'); return false;">
                 <img id="anim4" src="img/anim/7.png">
@@ -122,15 +123,6 @@
             </a>
         </section>
 
-    	<!-- ### Project 1 ### -->
-        <section class="half">
-		<a onclick="showProject('eachother'); return false;">
-                <img id="anim6" src="img/anim/11.png">
-                <p><span>&mdash; Scenic project to share interactions. &mdash;</span>Each Other</p>
-            </a>
-        </section>
-
-        <!-- ### Project 2 ### -->
         <section class="half">
 		<a onclick="showProject('formainforme'); return false;">
                 <img id="anim3" src="img/anim/5.png">
@@ -143,7 +135,6 @@
             </a>
         </section>
 
-        <!-- ### Project 4 ### -->
         <section class="half">
 		<a onclick="showProject('apice'); return false;">
                 <img id="anim8" src="img/anim/15.png">
@@ -151,7 +142,6 @@
             </a>
         </section>
 
-        <!-- ### Project 5 ### -->
         <section class="half">
 		<a onclick="showProject('manifesto'); return false;">
                 <img id="anim2" src="img/anim/3.png">
@@ -159,7 +149,6 @@
             </a>
         </section>
 
-        <!-- ### Project 6 ### -->
         <section class="half">
 		<a onclick="showProject('unbalanced'); return false;">
                 <img id="anim1" src="img/anim/1.png">
@@ -396,41 +385,50 @@
                     { src: 'https://youtu.be/Yp_w2WEF3bE?si=DsY8BIJXK9dU4GgZ', title: 'Recorded by Lisboa Soa', type: 'video' }
                 ]
             },
-            'eachother': {
-                title: 'Each Other',
-                subtitle: '— Scenic project to share interactions. Project in development since 2017. —',
-                description: `Each Other is a project aiming to merge two distinct creative fields – architecture+design and performing arts - into the creation of several pieces that define, through a mechanical and scenic artefact, a place and physical condition for the viewer in relation with the other spectators.
+            'sankofa': {
+                title: 'Sankofa',
+                subtitle: '— Scenography for a theater and dance show —',
+                description: `<em>What is the best way to get somewhere?
+                You, who have traveled the longest road, who carry a door in your chest,
+                You, who are made of fibers that resonate with the tremor of trumpets and missiles,
+                You, who tremble in your muscles with the constant murmur of memories, fears, and laughter.
 
-                In the same way there is, in each piece, an instructive proposal that guides the way in which the situation will be experienced, considering the user simultaneously the visitor and the performative body of the work. It articulates the conception and design of various objects to the dramaturgy of a performance based on the creation of three mechanical artefacts inspired by notions of unstable movement aiming to motivate the reflection on balance, relations, forces, weights, dependencies, presupposing to establish action-reaction dynamics between at least two people.
+                Or, Your Excellency, who deals with the big issues,
+                Of urbanism and urbanity,
+                Who does what is seen around the world,
+                What is the best way to get to a place?
+
+                Run now so you don't have to run later,
+                You don't run less because you desire more,
+                You know you've already run in the right direction and in the opposite direction,
+                Because you've already run in all directions,
+                Without knowing if the urgency that pushes you is a rush to arrive or a reason to flee.
+                What is the best way to get to a place?</em>
+                -
+                Synopsis, originally in Portuguese
 
                 <strong>Presentations:</strong>
-                A Salto, 2019 (Elvas)
-                MEXE, 2019 (Porto)
-                Teatro Aveirense, 2021 (Aveiro)
-                Festival Portas do Sol, 2025 (Covilhã)
+                Centro Cultural Milheirós de Poiares, 2025 (Santa Maria da Feira)
+                
+                <strong>Concept:</strong> Edmilson Gomes
+                <strong>Performance and Choreography:</strong> Dinis Quilavei, Filipa Duarte, Mariana Pontes Barbosa and Rafael Pinto
+                <strong>Lighting Design:</strong> Pedro Abreu
+                <strong>Music Composition:</strong> Pedro Augusto
+                <strong>Scenography:</strong> Colectivo Suspeito
+                <strong>Costume Design:</strong> Beatriz Filomeno
+                <strong>Production:</strong> BCN and Liliana Claro
+                <strong>Photography:</strong> Miguel Refresco
+                <strong>Illustration:</strong> Mariana Natário
+                <strong>Curation:</strong> Susana Otero
 
-                Project in development in collaboration with Diogo Alvim (musician and composer), Lígia Soares (choreographer and playwright) and Rita Vilhena (performer, dancer and choreographer).`,
-                images: [
-                    { src: 'img/EO/a.jpg', title: 'Promotion of concept.' },
-                    // { src: 'img/EO/b.jpg', title: 'Promotion of concept.' },
-                    { src: 'img/EO/1.jpg', title: '(Un)Balanced: Mexe 2019, Campanhã.' },
-                    { src: 'img/EO/2.jpg', title: '(Un)Balanced: Mexe 2019, Campanhã.' },
-                    { src: 'img/EO/3.jpg', title: '(Un)Balanced: Mexe 2019, Trindade.' },
-                    { src: 'img/EO/4.jpg', title: '(Un)Balanced: Mexe 2019, Trindade.' },
-                    { src: 'img/EO/5j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
-                    { src: 'img/EO/6j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
-                    { src: 'img/EO/7j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
-                    { src: 'img/EO/8j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
-                    { src: 'img/EO/9p.jpg', title: '(Un)Balanced: Mexe 2019, São Bento. © Pedro Cavaco Leitão' },
-                    { src: 'img/EO/10p.jpg', title: '(Un)Balanced: Mexe 2019, São Bento. © Pedro Cavaco Leitão' },
-                    { src: 'img/EO/11p.jpg', title: '(Un)Balanced: Mexe 2019, São Bento. © Pedro Cavaco Leitão' },
-                    { src: 'https://youtu.be/prW7WNFu-x8?si=wQTcH6QrXMX21LbT', title: 'Each Other Video', type: 'video' },
-                    { src: 'img/EO/12a.jpg', title: '(Un)Balanced: A Salto 2019.' },
-                    { src: 'img/EO/12b.jpg', title: '(Un)Balanced: A Salto 2019.' },
-                    { src: 'img/EO/13.jpg', title: '(Un)Balanced: A Salto 2019.' },
-                    { src: 'img/EO/14.jpg', title: '(Un)Balanced: A Salto 2019.' },
-                    { src: 'img/EO/15.jpg', title: 'Waving Ball: Presentation MEXE 2019.' },
-                    { src: 'img/EO/16.png', title: 'Waving Ball: Presentation MEXE 2019.' }
+                <strong>Support and co-production:</strong> Câmara Municipal de Santa Maria da Feira e Cineteatro António Lamoso
+
+                <em>(more pictures soon)</em>`,
+                images: [                    
+                    { src: 'img/sankofa/bcn_25_11_82.jpg', title: '© Miguel Refresco' },
+                    { src: 'img/sankofa/bcn_25_11_110.jpg', title: '© Miguel Refresco' },
+                    { src: 'img/sankofa/bcn_25_11_121.jpg', title: '© Miguel Refresco' },
+                    { src: 'img/sankofa/bcn_25_11_136.jpg', title: '© Miguel Refresco' }
                 ]
             },
             'formainforme': {
@@ -525,13 +523,39 @@
                 
                 The object has three definitions, 1) sculptural, with a minimalist elegance, 2) dynamic, providing fun, and 3) reflective of the relationship with the other. aims to be an analogy of human, social and political relations and as well a demonstration that balance only depends on the harmonious relationship between the parts.
                 
-                Developed in collaboration with Patrick Hubmann (designer) for the event "Happy Together 2016" organised by Mala Voadora for Forum of the Future.
+                Initially developed in collaboration with Patrick Hubmann (designer) for the event "Happy Together 2016" organised by Mala Voadora for Forum of the Future.
+                Headphones version integrated from explorations for Each Other project. Text and voice by Lígia Soares.
 
                 <strong>Presentations:</strong>
                 Forum of the Future, 2016 (Mala Voadora, Porto)
                 Porto Innovation Hub, 2016 (Porto)
-                Second Chance, 2018 (Porto)`,
+                Second Chance, 2018 (Porto)
+                A Salto, 2019 (Elvas) (voice of Lígia Soares)
+                MEXE, 2019 (Porto) (voice of Lígia Soares)
+                Teatro Aveirense, 2021 (Aveiro) (voice of Lígia Soares)
+                Festival Portas do Sol, 2025 (Covilhã) (voice of Lígia Soares)`,
                 images: [
+                    { src: 'img/EO/9p.jpg', title: '(Un)Balanced: Mexe 2019, São Bento. © Pedro Cavaco Leitão' },
+                    { src: 'img/EO/10p.jpg', title: '(Un)Balanced: Mexe 2019, São Bento. © Pedro Cavaco Leitão' },
+                    { src: 'img/EO/11p.jpg', title: '(Un)Balanced: Mexe 2019, São Bento. © Pedro Cavaco Leitão' },
+
+                    { src: 'img/EO/5j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
+                    { src: 'img/EO/6j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
+                    { src: 'img/EO/7j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
+                    { src: 'img/EO/8j.jpg', title: '(Un)Balanced: Mexe 2019, Trindade. © João Pedro Azevedo' },
+
+                    { src: 'img/EO/1.jpg', title: '(Un)Balanced: Mexe 2019, Campanhã.' },
+                    { src: 'img/EO/2.jpg', title: '(Un)Balanced: Mexe 2019, Campanhã.' },
+                    { src: 'img/EO/3.jpg', title: '(Un)Balanced: Mexe 2019, Trindade.' },
+                    { src: 'img/EO/4.jpg', title: '(Un)Balanced: Mexe 2019, Trindade.' },
+                    
+                    { src: 'https://youtu.be/prW7WNFu-x8?si=wQTcH6QrXMX21LbT', title: 'Each Other Video', type: 'video' },
+
+                    { src: 'img/EO/12a.jpg', title: '(Un)Balanced: A Salto 2019.' },
+                    { src: 'img/EO/12b.jpg', title: '(Un)Balanced: A Salto 2019.' },
+                    { src: 'img/EO/13.jpg', title: '(Un)Balanced: A Salto 2019.' },
+                    { src: 'img/EO/14.jpg', title: '(Un)Balanced: A Salto 2019.' },
+
                     { src: 'img/unb/unb1.jpg', title: 'Side view.' },
                     { src: 'img/unb/unb2.jpg', title: 'Detail #1.' },
                     { src: 'img/unb/unb3.jpg', title: 'Detail #2.' },
@@ -568,7 +592,7 @@
             The group intends to assume itself as an artistic practice that works the relations of interdependence between three parts: art piece, receiver and space, which may focus more on one or another depending on each work or concept. By varying the used method - either by admiration, interaction or immersion - the ultimate objective is to create relevant sensorial experiences.
             
             <strong>Timeline:</strong>
-            2025 DEZ | Sankofa (scenography), Centro Cultural de Milheirós de Poiares.
+            <span class="timeline-item sankofa">2025 DEZ | Sankofa (scenography), Centro Cultural de Milheirós de Poiares.</span>
             <span class="timeline-item cassandra">2025 OUT | Cassandra (scenography), Praia Fluvial da Mâmoa.</span>
             <span class="timeline-item unbalancedCovilha">2025 JUL | Each Other: (Un)Balanced, Festival Portas do Sol, Covilhã.</span>
             <span class="timeline-item ultrassom">2024 SEP | Ultrassom with Maria R. Soares and Ricardo Nogueira Fernandes, 2º Encontro Artes Performativas, Santa Maria da Feira.</span>
@@ -585,9 +609,9 @@
             <span class="timeline-item compass">2020 SEP | Compasso Incerto, Lisboa Soa, Lisbon.</span>
             2020 JUL | 2020: Odisseia no espaço doméstico, (RE=)INICIAÇÃO, Online.
             <span class="timeline-item gravitacoes">2019 OCT | Forma Informe, Gravitações, Oporto.</span>
-            <span class="timeline-item eachotherMexe">2019 SEP | Each Other: (Un)Balanced, Mexe, Oporto.</span>
-            <span class="timeline-item eachotherElvas">2019 AUG | Each Other: (Un)Balanced with voice of Lígia Soares, Festival A Salto, Elvas.</span>
-            <span class="timeline-item formainforme">2019 JUL | Forma Informe, Trilhos Culturais, Caldas S. Jorge.</span>
+            <span class="timeline-item eachotherMexe">2019 SEP | Each Other: (Un)Balanced, Encontro Mexe, Oporto.</span>
+            <span class="timeline-item eachotherElvas">2019 AUG | Each Other: (Un)Balanced (text by Lígia Soares), Festival A Salto, Elvas.</span>
+            <span class="timeline-item formainforme">2019 JUL | Forma Informe (sound by Ricardo Nogueira Fernandes), Trilhos Culturais, Caldas S. Jorge.</span>
             <span class="timeline-item apice">2018 JUL | Ápice, Trilhos Culturais, Caldas S. Jorge.</span>
             2018 APR | (Un)Balanced, Second Chance, Oporto.
             <span class="timeline-item manifesto">2017 JAN | Light Manifesto, Alumia, Oporto.</span>

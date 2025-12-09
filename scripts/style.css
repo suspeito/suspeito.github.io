@@ -464,6 +464,10 @@ a:hover {
 	background-image: url('../img/timeline/ainda.jpg') !important;
 }
 
+.timeline-item.sankofa:hover::after {
+	background-image: url('../img/timeline/sankofa.jpg') !important;
+}
+
 .timeline-item.cassandra:hover::after {
 	background-image: url('../img/timeline/cassandra.jpg') !important;
 }
