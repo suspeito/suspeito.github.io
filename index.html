@@ -1,21 +1,58 @@
-<!DOCTYPE HTML>
-<HTML>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-    <!-- Suspeito webpage -->
     <meta charset="utf-8">
-    <title>Suspeito</title>
-    <link href="img/favicon.png" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colectivo Suspeito</title>
+    <meta name="description" content="Suspeito is a Portuguese artistic collective working at the intersection of art, architecture and design. Specialising in installation, scenography and light art across Portugal and Europe.">
+    <meta name="keywords" content="Suspeito, artistic collective, installation art, scenography, light art, Portugal, contemporary art, interactive installation, architecture, design">
+    <meta name="author" content="Colectivo Suspeito">
 
-    <!-- Load jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
+    <link rel="canonical" href="https://suspeito.github.io/">
 
-    <!-- ###  #########  ### -->
-    <!-- ###   scripts   ### -->
-    <!-- ###  #########  ### -->
-    <script src="scripts/colors.js" type="text/javascript"></script>
-    <link href="scripts/style.css" rel="stylesheet" type="text/css"/>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Suspeito">
+    <meta property="og:title" content="Suspeito — Artistic Collective | Installation, Scenography & Light Art">
+    <meta property="og:description" content="Portuguese artistic collective working on art installation, scenography and light art.">
+    <meta property="og:url" content="https://suspeito.github.io/">
+    <meta property="og:image" content="https://suspeito.github.io/img/about/suspeito.jpg">
+    <meta property="og:locale" content="en_GB">
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Colectivo Suspeito">
+    <meta name="twitter:description" content="Portuguese artistic collective specialising in installation, scenography and light art.">
+    <meta name="twitter:image" content="https://suspeito.github.io/img/about/suspeito.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Colectivo Suspeito",
+        "alternateName": "Suspeito",
+        "url": "https://suspeito.github.io",
+        "logo": "https://suspeito.github.io/img/anim/SUSPEITO.png",
+        "description": "Suspeito is an artistic collective formed by João Dias-Oliveira, Nuno Mota and Rossana Ribeiro, working at the intersection of art, architecture and design.",
+        "email": "colectivo.suspeito@gmail.com",
+        "telephone": "+351938711215",
+        "foundingDate": "2018",
+        "sameAs": [
+            "https://www.facebook.com/colectivo.suspeito/",
+            "https://www.instagram.com/colectivo.suspeito/"
+        ],
+        "knowsAbout": ["Installation Art", "Scenography", "Light Art", "Interactive Installation", "Architecture", "Design"]
+    }
+    </script>
+
+    <link href="scripts/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" defer></script>
+    <script src="scripts/colors.js" defer></script>
 </head>
 
 <!-- ### ########## ### -->
@@ -31,7 +68,7 @@
 
     <!-- ### Front page ### -->
     <div class="overlay" id="hide">
-        <img style="height: 150px;width: 150px;margin-left: calc(50% - 75px);margin-top: 30vh;" src="img/SUSPEITO.gif">
+        <img style="height: 150px;width: 150px;margin-left: calc(50% - 75px);margin-top: 30vh;" src="img/SUSPEITO.gif" alt="Colectivo Suspeito logo">
 
         <!-- ### Moving eye ### -->
         <div class="container">
@@ -41,17 +78,17 @@
         </div>
 
         <div class="centered">
-            <a href="mailto:colectivo.suspeito@gmail.com">
-            	<img id="mail" src="img/mail.png">
+            <a href="mailto:colectivo.suspeito@gmail.com" aria-label="Send email to Colectivo Suspeito">
+            	<img id="mail" src="img/mail.png" alt="Email">
             </a>
-            <a href="tel:+351938711215">
-            	<img id="phone" src="img/phone.png">
+            <a href="tel:+351938711215" aria-label="Call Colectivo Suspeito">
+            	<img id="phone" src="img/phone.png" alt="Phone">
             </a>
-            <a href="https://www.facebook.com/colectivo.suspeito/" target="_blank">
-            	<img id="facebook" src="img/facebook.png">
+            <a href="https://www.facebook.com/colectivo.suspeito/" target="_blank" rel="noopener noreferrer" aria-label="Colectivo Suspeito on Facebook">
+            	<img id="facebook" src="img/facebook.png" alt="Facebook">
             </a>
-            <a href="https://www.instagram.com/colectivo.suspeito/" target="_blank">
-            	<img id="instagram" src="img/instagram.png">
+            <a href="https://www.instagram.com/colectivo.suspeito/" target="_blank" rel="noopener noreferrer" aria-label="Colectivo Suspeito on Instagram">
+            	<img id="instagram" src="img/instagram.png" alt="Instagram">
             </a>
             <br><br>
             Poke the logo to enter.
@@ -64,7 +101,8 @@
     <!-- ### Top bar ### -->
     <header>
         <a onclick="showAbout(); return false;">
-            <img src="img/anim/SUSPEITO.png" title="Poke it!">
+            <img src="img/anim/SUSPEITO.png" title="Poke it!" alt="Colectivo Suspeito logo">
+            <h1 class="sr-only">Suspeito — Artistic Collective</h1>
             <p>Suspeito</p>
         </a>
     </header>
@@ -76,56 +114,56 @@
 
         <section class="half">
         <a onclick="showProject('sankofa'); return false;">
-                <img id="anim6" src="img/anim/11.png">
+                <img id="anim6" src="img/anim/11.png" alt="Sankofa — Scenography for a theater and dance show">
                 <p><span>&mdash; Scenography for a theater and dance show. &mdash;</span>Sankofa</p>
             </a>
         </section>
 
         <section class="half">
         	<a onclick="showProject('cassandra'); return false;">
-                <img id="anim11" src="img/anim/21.png">
+                <img id="anim11" src="img/anim/21.png" alt="Cassandra — Scenography for a dance show">
                 <p><span>&mdash; Scenography for a dance show. &mdash;</span>Cassandra</p>
             </a>
         </section>
 
         <section class="half">
 		<a onclick="showProject('alba'); return false;">
-                <img id="anim7" src="img/anim/13.png">
+                <img id="anim7" src="img/anim/13.png" alt="Alba — Scenography for dance and classical music">
                 <p><span>&mdash; Scenography for dance and classical music. &mdash;</span>Alba</p>
             </a>
         </section>
 
         <section class="half">
 		<a onclick="showProject('ainda'); return false;">
-                <img id="anim10" src="img/anim/19.png">
+                <img id="anim10" src="img/anim/19.png" alt="Ainda — Reflections of light and sound installation">
                 <p><span>&mdash; Reflections of light and sound. &mdash;</span>Ainda</p>
             </a>
         </section>
 
         <section class="half">
 		<a onclick="showProject('azevedo'); return false;">
-                <img id="anim9" src="img/anim/17.png">
+                <img id="anim9" src="img/anim/17.png" alt="Azevedo — Movable devices for a community project">
                 <p><span>&mdash; Movable devices for a community project. &mdash;</span>Azevedo</p>
             </a>
         </section>
 
         <section class="half">
 		<a onclick="showProject('prana'); return false;">
-                <img id="anim5" src="img/anim/9.png">
+                <img id="anim5" src="img/anim/9.png" alt="Prana — Breathing light synced with the intensity of the space">
                 <p><span>&mdash; Breathing light synced with the intensity of the space. &mdash;</span>Prana</p>
             </a>
         </section>
 
         <section class="half">
 		<a onclick="showProject('compass'); return false;">
-                <img id="anim4" src="img/anim/7.png">
+                <img id="anim4" src="img/anim/7.png" alt="Compasso Incerto — Broken compass and sound responsive installation">
                 <p><span>&mdash; Broken compass and a sound responsive. &mdash;</span>Compasso Incerto</p>
             </a>
         </section>
 
         <section class="half">
 		<a onclick="showProject('formainforme'); return false;">
-                <img id="anim3" src="img/anim/5.png">
+                <img id="anim3" src="img/anim/5.png" alt="Forma Informe — Perception of Form of light">
                 <p>
                     <span>
                     — Perception of Form of light. —
@@ -137,21 +175,21 @@
 
         <section class="half">
 		<a onclick="showProject('apice'); return false;">
-                <img id="anim8" src="img/anim/15.png">
+                <img id="anim8" src="img/anim/15.png" alt="Ápice — Journey of a light particle in a space">
                 <p><span>&mdash; Journey of a light particle in a space. &mdash;</span>Ápice</p>
             </a>
         </section>
 
         <section class="half">
 		<a onclick="showProject('manifesto'); return false;">
-                <img id="anim2" src="img/anim/3.png">
+                <img id="anim2" src="img/anim/3.png" alt="Manifesto da Luz — Narrative of a light entity">
                 <p><span>&mdash; Narrative of a Light entity. &mdash;</span>Manifesto da Luz</p>
             </a>
         </section>
 
         <section class="half">
 		<a onclick="showProject('unbalanced'); return false;">
-                <img id="anim1" src="img/anim/1.png">
+                <img id="anim1" src="img/anim/1.png" alt="(Un)Balanced — Swing measuring action and reaction">
                 <p><span>&mdash; Swing measuring action/reaction. &mdash;</span>(Un)Balanced</p>
             </a>
         </section>
@@ -208,12 +246,34 @@
 
     </main>
 
-    <!-- ###  #########  ### -->
-    <!-- ###   scripts   ### -->
-    <!-- ###  #########  ### -->
-    <script src="scripts/eye.js" type="text/javascript"></script>
-    <script src="scripts/noiser.js" type="text/javascript"></script>
-    <script src="scripts/loader.js" type="text/javascript"></script>
+    <script src="scripts/eye.js" defer></script>
+    <script src="scripts/noiser.js" defer></script>
+    <script src="scripts/loader.js" defer></script>
+
+    <!-- SEO: crawlable content for search engines -->
+    <noscript>
+        <article>
+            <h2>About Suspeito</h2>
+            <p>Suspeito is an artistic collective formed by the designer and engineer João Dias-Oliveira and by the architects Nuno Mota and Rossana Ribeiro. The multidisciplinary group works at the intersection of art, architecture and design, exploring creative ways to involve society to take a deeper look at our surroundings.</p>
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Sankofa</strong> — Scenography for a theater and dance show, Centro Cultural Milheirós de Poiares, 2025.</li>
+                <li><strong>Cassandra</strong> — Scenography for a dance show, BCN, 2025.</li>
+                <li><strong>Alba</strong> — Scenography for dance and classical music, EuroParque, 2023.</li>
+                <li><strong>Ainda</strong> — Reflections of light and sound, Trilhos Culturais, 2021.</li>
+                <li><strong>Azevedo</strong> — Movable devices for a community project, PELE, 2021.</li>
+                <li><strong>Prana</strong> — Breathing light synced with the intensity of the space, Criatech, 2020.</li>
+                <li><strong>Compasso Incerto</strong> — Broken compass and sound responsive installation, Lisboa Soa, 2020.</li>
+                <li><strong>Forma Informe</strong> — Perception of Form of light, Trilhos Culturais, 2019.</li>
+                <li><strong>Ápice</strong> — Journey of a light particle in a space, Trilhos Culturais, 2018.</li>
+                <li><strong>Manifesto da Luz</strong> — Narrative of a Light entity, Alumia, 2017.</li>
+                <li><strong>(Un)Balanced</strong> — Swing measuring action/reaction, Mala Voadora, 2016.</li>
+            </ul>
+            <h2>Contact</h2>
+            <p>Email: colectivo.suspeito@gmail.com | Phone: +351 938711215</p>
+            <p>Facebook: <a href="https://www.facebook.com/colectivo.suspeito/">colectivo.suspeito</a> | Instagram: <a href="https://www.instagram.com/colectivo.suspeito/">colectivo.suspeito</a></p>
+        </article>
+    </noscript>
 
     <!-- Project Navigation Script -->
     <script type="text/javascript">
@@ -898,4 +958,4 @@
     </script>
 
 </body>
-</HTML>
+</html>
