@@ -21,6 +21,10 @@ header {
 	height: calc( 100% / 12);
 }
 
+header a {
+	cursor: pointer;
+}
+
 main {
 	height: calc( 100% / 12 * 11);
 }
