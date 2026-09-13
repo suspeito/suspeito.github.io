@@ -157,6 +157,32 @@ a:hover {
 	font-size: 12px;
 }
 
+.social-links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 12px;
+	white-space: nowrap;
+}
+
+.social-links a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-links img,
+#mail,
+#phone,
+#facebook,
+#instagram {
+	float: none;
+	height: 15px;
+	width: 15px;
+	margin: 0;
+}
+
 #follower {
 	position: relative;
 	background-color: white;
@@ -187,30 +213,6 @@ a:hover {
 	overflow: hidden;
 	border: 1px solid #000000;
 	background-color: black;
-}
-
-#mail {
-	height: 15px;
-	width: 15px;
-	margin-left: calc(50% - 52.5px) /* (with*n_icons+margin*n_intervals)/2 */
-}
-
-#phone {
-	height: 15px;
-	width: 15px;
-	margin-left: 15px;
-}
-
-#facebook {
-	height: 15px;
-	width: 15px;
-	margin-left: 15px;
-}
-
-#instagram {
-	height: 15px;
-	width: 15px;
-	margin-left: 15px;
 }
 
 .noise {
@@ -610,7 +612,8 @@ a:hover {
 }
 
 /* Responsive Design */
-@media only screen and (max-device-width: 800px) {
+@media only screen and (max-width: 800px),
+only screen and (max-device-width: 800px) {
 	html,
 	body {
 		border-width: 0px;
@@ -622,7 +625,7 @@ a:hover {
 		left: 0px;
 	}
 	p {
-		font-size: 5vw;
+		font-size: 4.2vw;
 		vertical-align: middle;
 	}
 	span {
@@ -632,28 +635,29 @@ a:hover {
 		display: none;
 	}
 	.centered {
-		top: 80%;
-		font-size: 40px;
+		top: 78%;
+		font-size: 14px;
+		line-height: 1.4;
+		padding: 0 16px;
+		box-sizing: border-box;
 	}
-	#mail {
-		height: 60px;
-		width: 60px;
-		margin-left: calc(50% - 195px); /* (with*n_icons+margin*n_intervals)/2 */
+	.social-links {
+		gap: 4px;
+		margin-bottom: 10px;
 	}
-	#phone {
-		height: 60px;
-		width: 60px;
-		margin-left: 50px;
+	.social-links a {
+		width: 44px;
+		height: 44px;
 	}
-	#facebook {
-		height: 60px;
-		width: 60px;
-		margin-left: 50px;
-	}
+	.social-links img,
+	#mail,
+	#phone,
+	#facebook,
 	#instagram {
-		height: 60px;
-		width: 60px;
-		margin-left: 50px;
+		height: 22px;
+		width: 22px;
+		margin: 0;
+		float: none;
 	}
 	#follower {
 		visibility: hidden;
@@ -668,7 +672,7 @@ a:hover {
 		opacity: .1;
 	}
 	#preloader {
-		background-size: 250px 250px;
+		background-size: 100px 100px;
 		background-position: center 50vh;
 	}
 	
@@ -681,7 +685,7 @@ a:hover {
 		width: 100%;
 		height: auto;
 		position: relative;
-		padding: 22px;
+		padding: 14px;
 		border-right: none;
 		border-bottom: none;
 		flex-direction: row;
@@ -692,7 +696,7 @@ a:hover {
 		writing-mode: horizontal-tb;
 		text-orientation: initial;
 		transform: none;
-		font-size: 18px;
+		font-size: 16px;
 	}
 	
 	.project-content {
@@ -705,14 +709,16 @@ a:hover {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 105vh;
+		margin-bottom: 24px;
 	}
 	
 	.project-header h1 {
-		font-size: 80px;
+		font-size: 32px;
 	}
 	
 	.project-subtitle, #project-subtitle {
-		font-size: 24px;
+		font-size: 14px;
+		letter-spacing: 0.5px;
 	}
 	
 	.project-images {
@@ -742,23 +748,24 @@ a:hover {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 105vh;
+		margin-bottom: 28px;
 	}
 	
 	.project-description p {
-		font-size: 32px;
-		line-height: 1.6;
+		font-size: 16px;
+		line-height: 1.55;
 	}
 	
 	/* Mobile styles for about and project text content */
 	#about-text, #project-text {
-		font-size: 32px !important;
-		line-height: 1.6 !important;
+		font-size: 16px !important;
+		line-height: 1.55 !important;
 	}
 	
 	#about-text p, #project-text p {
-		font-size: 32px !important;
-		line-height: 1.6 !important;
-		margin-bottom: 20px !important;
+		font-size: 16px !important;
+		line-height: 1.55 !important;
+		margin-bottom: 16px !important;
 	}
 	
 	#about-text strong, #project-text strong {
@@ -767,7 +774,7 @@ a:hover {
 	
 	/* Mobile Project List Layout */
 	.project-list p {
-		font-size: 4.5vw;
+		font-size: 4.2vw;
 		vertical-align: middle;
 	}
 	
@@ -777,8 +784,8 @@ a:hover {
 	
 	/* Mobile undo button */
 	.undo-button {
-		width: 48px;
-		height: 48px;
+		width: 28px;
+		height: 28px;
 		display: block;
 		margin: 0 auto;
 		opacity: 0.8;
